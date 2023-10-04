@@ -42,6 +42,8 @@ services:
       - 1338:1338
     volumes:
       - ./volumes/ricardo-backend/logs/:/ricardo-backend/Logs/
+    group_add:
+      - dialout
     devices:
       - ${SERIAL_PATH}:${SERIAL_PATH}
     restart: unless-stopped
