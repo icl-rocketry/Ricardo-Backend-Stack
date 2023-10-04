@@ -1,0 +1,60 @@
+version: "3"
+
+services:
+
+  caddy:
+    image: caddy
+    container_name: caddy
+    user: "${UID}:${GID}"
+    environment:
+      - RICARDO_BACKEND_DOMAIN=${RICARDO_BACKEND_DOMAIN}
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./volumes/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+    restart: unless-stopped
+
+  grafana:
+    image: grafana-iclr
+    build:
+      context: ./submodules/grafana
+      args:
+        - GF_INSTALL_PLUGINS=golioth-websocket-datasource,agenty-flowcharting-panel,speakyourcode-button-panel,grafana-clock-panel,yesoreyeram-infinity-datasource
+    container_name: grafana
+    user: "${UID}:${GID}"
+    ports:
+      - 3000:3000
+    volumes:
+      - ./volumes/grafana/grafana.db:/var/lib/grafana/grafana.db
+    restart: unless-stopped
+
+  ricardo-backend:
+    image: ricardo-backend
+    build:
+      context: ./submodules/Ricardo-Backend
+    container_name: ricardo-backend
+    user: "${UID}:${GID}"
+    environment:
+      - RICARDO_BACKEND_DEVICE=${SERIAL_PATH}
+    ports:
+      - 1337:1337
+      - 1338:1338
+    volumes:
+      - ./volumes/ricardo-backend/logs/:/ricardo-backend/Logs/
+    devices:
+      - ${SERIAL_PATH}:${SERIAL_PATH}
+    restart: unless-stopped
+
+  ricardo-commandserver:
+    image: ricardo-commandserver
+    build:
+      context: ./submodules/Ricardo-CommandServer
+    container_name: ricardo-commandserver
+    user: "${UID}:${GID}"
+    environment:
+      - RICARDO_COMMANDSERVER_BACKEND_HOST=ricardo-backend
+    ports:
+      - 1339:1339
+    restart: unless-stopped
+    

@@ -1,0 +1,6 @@
+[submodule "submodules/Ricardo-Backend"]
+	path = submodules/Ricardo-Backend
+	url = https://github.com/icl-rocketry/Ricardo-Backend
+[submodule "submodules/Ricardo-CommandServer"]
+	path = submodules/Ricardo-CommandServer
+	url = https://github.com/icl-rocketry/Ricardo-CommandServer/
