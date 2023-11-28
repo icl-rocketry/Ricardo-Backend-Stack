@@ -4,3 +4,6 @@
 [submodule "submodules/Ricardo-CommandServer"]
 	path = submodules/Ricardo-CommandServer
 	url = https://github.com/icl-rocketry/Ricardo-CommandServer/
+[submodule "submodules/Ricardo-InfluxRelay"]
+	path = submodules/Ricardo-InfluxRelay
+	url = https://github.com/icl-rocketry/Ricardo-InfluxRelay
