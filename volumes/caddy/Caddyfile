@@ -11,3 +11,7 @@ http://backend.{$RICARDO_BACKEND_DOMAIN} {
 	reverse_proxy ricardo-backend:1337
 	reverse_proxy /socket.io/* ricardo-backend:1337
 }
+
+http://command.{$RICARDO_BACKEND_DOMAIN} {
+	reverse_proxy ricardo-commandserver:1339
+}
