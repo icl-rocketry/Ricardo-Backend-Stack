@@ -7,7 +7,7 @@ http://grafana.{$RICARDO_BACKEND_DOMAIN} {
 	reverse_proxy /api/live/* @ws grafana:3000
 }
 
-http://flask.{$RICARDO_BACKEND_DOMAIN} {
+http://backend.{$RICARDO_BACKEND_DOMAIN} {
 	reverse_proxy ricardo-backend:1337
 	reverse_proxy /socket.io/* ricardo-backend:1337
 }
