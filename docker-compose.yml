@@ -61,4 +61,13 @@ services:
     ports:
       - 1339:1339
     restart: unless-stopped
-    
+  
+  ricardo-influxrelay:
+    image: ricardo-influxrelay
+    build:
+      context: ./submodules/Ricardo-InfluxRelay
+    container_name: ricardo-influxrelay
+    user: "${UID}:${GID}"
+    volumes:
+      - ./volumes/ricardo-influxrelay/config/config.yml:/ricardo-influxrelay/config/config.yml:ro
+    restart: unless-stopped
