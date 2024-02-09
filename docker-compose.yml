@@ -29,6 +29,15 @@ services:
       - ./volumes/grafana/grafana.db:/var/lib/grafana/grafana.db
     restart: unless-stopped
 
+  influxdb:
+    image: influxdb:alpine
+    container_name: influxdb
+    ports:
+      - 8086:8086
+    volumes:
+      - ./volumes/influxdb/:/var/lib/influxdb2
+    restart: unless-stopped
+
   ricardo-backend:
     image: ricardo-backend
     build:
@@ -42,6 +51,7 @@ services:
       - 1338:1338
     volumes:
       - ./volumes/ricardo-backend/config/:/ricardo-backend/Config/
+      - ./volumes/ricardo-backend/fakedata/:/ricardo-backend/ricardobackend/flaskinterface/emitter/data/:ro
       - ./volumes/ricardo-backend/logs/:/ricardo-backend/Logs/
     group_add:
       - dialout
@@ -60,4 +70,13 @@ services:
     ports:
       - 1339:1339
     restart: unless-stopped
-    
+  
+  ricardo-influxrelay:
+    image: ricardo-influxrelay
+    build:
+      context: ./submodules/Ricardo-InfluxRelay
+    container_name: ricardo-influxrelay
+    user: "${UID}:${GID}"
+    volumes:
+      - ./volumes/ricardo-influxrelay/config/config.yml:/ricardo-influxrelay/config/config.yml:ro
+    restart: unless-stopped
