@@ -2,9 +2,6 @@ socket:
   url: ws://ricardo-backend:1337
 
 handlers:
-  - type: print
-    namespace: /telemetry
-
   - type: influxdb
     namespace: /telemetry
     url: http://influxdb:8086
