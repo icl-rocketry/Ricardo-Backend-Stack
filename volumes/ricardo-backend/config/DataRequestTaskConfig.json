@@ -2,7 +2,7 @@
  {
   "task_name": "act0_telemetry",
   "autostart": false,
-  "poll_delta": 500,
+  "poll_delta": 200,
   "running": true,
   "logger": true,
   "receiveOnly": false,
@@ -18,7 +18,6 @@
    "fuelAngle": "uint16_t",
    "oxAngle": "uint16_t",
    "thanosState": "uint8_t",
-   "oDrvState": "uint8_t",
    "system_status": "uint32_t",
    "system_time": "uint64_t"
   },
@@ -51,41 +50,7 @@
      },
      {
       "id": 3,
-      "description": "NOMINAL_THRUST"
-     },
-     {
-      "id": 4,
-      "description": "TVCCIRCLE"
-     },
-     {
-      "id": 6,
-      "description": "DEBUG"
-     }
-    ]
-   },
-   {
-    "variable_name": "oDrv_state",
-    "bitfield": "oDrvState",
-    "flags": [
-     {
-      "id": 0,
-      "description": "IDLE"
-     },
-     {
-      "id": 1,
-      "description": "ARMED"
-     },
-     {
-      "id": 2,
-      "description": "LOCKED"
-     },
-     {
-      "id": 3,
-      "description": "HOTFIRE"
-     },
-     {
-      "id": 4,
-      "description": "CALIBRATION"
+      "description": "Controlled"
      },
      {
       "id": 5,
@@ -94,15 +59,15 @@
     ]
    }
   ],
-  "rxCounter": 1072,
-  "txCounter": 1072,
+  "rxCounter": 5,
+  "txCounter": 5,
   "connected": true,
-  "lastReceivedPacket": "af1600a13c020067660102ba85bd400000000040400104000008c80f0000000000"
+  "lastReceivedPacket": "af150054dd020067660102ab1bbb40000000000101040000415a310000000000"
  },
  {
   "task_name": "act1_telemetry",
   "autostart": false,
-  "poll_delta": 500,
+  "poll_delta": 10000,
   "running": true,
   "logger": true,
   "receiveOnly": false,
@@ -130,15 +95,15 @@
     ]
    }
   ],
-  "rxCounter": 1071,
-  "txCounter": 1071,
+  "rxCounter": 187,
+  "txCounter": 190,
   "connected": true,
-  "lastReceivedPacket": "af1000a43c0200676701015f95bc40010000004ff7090000000000"
+  "lastReceivedPacket": "af1000cfdc020067670102ae82bb400104000025521b0000000000"
  },
  {
   "task_name": "act2_telemetry",
   "autostart": false,
-  "poll_delta": 500,
+  "poll_delta": 10000,
   "running": true,
   "logger": true,
   "receiveOnly": false,
@@ -166,16 +131,16 @@
     ]
    }
   ],
-  "rxCounter": 1069,
-  "txCounter": 1069,
+  "rxCounter": 190,
+  "txCounter": 190,
   "connected": true,
-  "lastReceivedPacket": "af10009d3c02006768010261fcbc4001040000b9c70f0000000000"
+  "lastReceivedPacket": "af1000d0dc020067680102b5b7bc40010400001152310000000000"
  },
  {
   "task_name": "fuelventsrv_telemetry",
   "autostart": false,
   "poll_delta": 500,
-  "running": false,
+  "running": true,
   "logger": true,
   "receiveOnly": false,
   "request_config": {
@@ -225,16 +190,16 @@
     ]
    }
   ],
-  "rxCounter": 0,
-  "txCounter": 0,
+  "rxCounter": 3778,
+  "txCounter": 3778,
   "connected": true,
-  "lastReceivedPacket": ""
+  "lastReceivedPacket": "af060057dd0a0001680102010096000000"
  },
  {
   "task_name": "n2fillsrv_telemetry",
   "autostart": false,
   "poll_delta": 500,
-  "running": false,
+  "running": true,
   "logger": true,
   "receiveOnly": false,
   "request_config": {
@@ -284,15 +249,15 @@
     ]
    }
   ],
-  "rxCounter": 0,
-  "txCounter": 0,
+  "rxCounter": 3778,
+  "txCounter": 3778,
   "connected": true,
-  "lastReceivedPacket": ""
+  "lastReceivedPacket": "af06005bdd0b0001680102020000000000"
  },
  {
   "task_name": "oxfillsrv_telemetry",
   "autostart": false,
-  "poll_delta": 200,
+  "poll_delta": 500,
   "running": true,
   "logger": true,
   "receiveOnly": false,
@@ -343,15 +308,15 @@
     ]
    }
   ],
-  "rxCounter": 2571,
-  "txCounter": 2571,
+  "rxCounter": 3630,
+  "txCounter": 3777,
   "connected": true,
-  "lastReceivedPacket": "af0600a03c0a000167010101008b000000"
+  "lastReceivedPacket": "af060048dd0a0001670102010000000000"
  },
  {
   "task_name": "oxventsrv_telemetry",
   "autostart": false,
-  "poll_delta": 200,
+  "poll_delta": 500,
   "running": true,
   "logger": true,
   "receiveOnly": false,
@@ -402,15 +367,15 @@
     ]
    }
   ],
-  "rxCounter": 2515,
-  "txCounter": 2515,
+  "rxCounter": 3634,
+  "txCounter": 3777,
   "connected": true,
-  "lastReceivedPacket": "af0600a33c0b0001670101010017000000"
+  "lastReceivedPacket": "af06004bdd0b0001670102020000000000"
  },
  {
   "task_name": "pdu0_telemetry",
   "autostart": false,
-  "poll_delta": 500,
+  "poll_delta": 10000,
   "running": false,
   "logger": true,
   "receiveOnly": false,
@@ -455,8 +420,8 @@
  {
   "task_name": "pyreng_telemetry",
   "autostart": false,
-  "poll_delta": 200,
-  "running": false,
+  "poll_delta": 500,
+  "running": true,
   "logger": true,
   "receiveOnly": false,
   "request_config": {
@@ -506,16 +471,16 @@
     ]
    }
   ],
-  "rxCounter": 0,
-  "txCounter": 0,
+  "rxCounter": 3777,
+  "txCounter": 3777,
   "connected": true,
-  "lastReceivedPacket": ""
+  "lastReceivedPacket": "af060050dd0c00016b01020a0000000000"
  },
  {
   "task_name": "sen0_telemetry",
   "autostart": false,
-  "poll_delta": 500,
-  "running": false,
+  "poll_delta": 20,
+  "running": true,
   "logger": true,
   "receiveOnly": false,
   "request_config": {
@@ -553,14 +518,18 @@
      {
       "id": 0,
       "description": "STATE_IDLE"
+     },
+     {
+      "id": 19,
+      "description": "ERROR_SD"
      }
     ]
    }
   ],
-  "rxCounter": 0,
-  "txCounter": 0,
+  "rxCounter": 90225,
+  "txCounter": 90225,
   "connected": true,
-  "lastReceivedPacket": ""
+  "lastReceivedPacket": "af4c005edd0200676a010168f9703f0020d3446234b73fa9ce273f00f0e8c50060aa440800f4c271146f423fb68c3fa1fb7d3f53737c3f004026c700708641000078410000000000807c410100000075f61c0000000000"
  },
  {
   "task_name": "thanos_telemetry",
@@ -616,15 +585,15 @@
     ]
    }
   ],
-  "rxCounter": 1058,
-  "txCounter": 1058,
+  "rxCounter": 3777,
+  "txCounter": 3777,
   "connected": true,
-  "lastReceivedPacket": "af0600a23c0a0001660102010000000000"
+  "lastReceivedPacket": "af060055dd0a0001660102020000000000"
  },
  {
   "task_name": "senraw0_telemetry",
   "autostart": false,
-  "poll_delta": 50,
+  "poll_delta": 100,
   "running": false,
   "logger": true,
   "receiveOnly": false,
@@ -671,7 +640,7 @@
  {
   "task_name": "fc_telemetry",
   "autostart": false,
-  "poll_delta": 20,
+  "poll_delta": 10000,
   "running": false,
   "logger": false,
   "receiveOnly": false,
@@ -888,7 +857,7 @@
   "receiveOnly": false,
   "request_config": {
    "source": 1,
-   "destination": 106,
+   "destination": 0,
    "destination_service": 2,
    "command_id": 250,
    "command_arg": 1
@@ -904,7 +873,7 @@
  {
   "task_name": "sen1_telemetry",
   "autostart": false,
-  "poll_delta": 100,
+  "poll_delta": 10000,
   "running": false,
   "logger": true,
   "receiveOnly": false,
