@@ -32,15 +32,6 @@ services:
       - ./volumes/grafana/grafana.db:/var/lib/grafana/grafana.db
     restart: unless-stopped
 
-  influxdb:
-    image: influxdb:alpine
-    container_name: influxdb
-    ports:
-      - 8086:8086
-    volumes:
-      - ./volumes/influxdb/:/var/lib/influxdb2
-    restart: unless-stopped
-
   ricardo-backend:
     image: ricardo-backend
     build:
@@ -74,12 +65,21 @@ services:
       - 1339:1339
     restart: unless-stopped
   
-  ricardo-influxrelay:
-    image: ricardo-influxrelay
-    build:
-      context: ./submodules/Ricardo-InfluxRelay
-    container_name: ricardo-influxrelay
-    user: "${UID}:${GID}"
-    volumes:
-      - ./volumes/ricardo-influxrelay/config/config.yml:/ricardo-influxrelay/config/config.yml:ro
-    restart: unless-stopped
+  # influxdb:
+  #   image: influxdb:alpine
+  #   container_name: influxdb
+  #   ports:
+  #     - 8086:8086
+  #   volumes:
+  #     - ./volumes/influxdb/:/var/lib/influxdb2
+  #   restart: unless-stopped
+
+  # ricardo-influxrelay:
+  #   image: ricardo-influxrelay
+  #   build:
+  #     context: ./submodules/Ricardo-InfluxRelay
+  #   container_name: ricardo-influxrelay
+  #   user: "${UID}:${GID}"
+  #   volumes:
+  #     - ./volumes/ricardo-influxrelay/config/config.yml:/ricardo-influxrelay/config/config.yml:ro
+  #   restart: unless-stopped
