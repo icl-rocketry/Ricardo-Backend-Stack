@@ -5,7 +5,7 @@ services:
   caddy:
     image: caddy
     container_name: caddy
-    user: "${UID}:${GID}"
+    user: root
     environment:
       - RICARDO_BACKEND_DOMAIN=${RICARDO_BACKEND_DOMAIN}
     ports:
@@ -22,7 +22,7 @@ services:
       args:
         - GF_INSTALL_PLUGINS=golioth-websocket-datasource,agenty-flowcharting-panel,speakyourcode-button-panel,grafana-clock-panel,yesoreyeram-infinity-datasource
     container_name: grafana
-    user: "${UID}:${GID}"
+    user: root
     ports:
       - 3000:3000
     volumes:
@@ -34,7 +34,7 @@ services:
     build:
       context: ./submodules/Ricardo-Backend
     container_name: ricardo-backend
-    user: "${UID}:${GID}"
+    user: root
     environment:
       - RICARDO_BACKEND_DEVICE=${SERIAL_PATH}
     ports:
@@ -42,6 +42,7 @@ services:
       - 1338:1338
     volumes:
       - ./volumes/ricardo-backend/config/:/ricardo-backend/Config/
+      - ./volumes/ricardo-backend/fakedata/:/ricardo-backend/ricardobackend/flaskinterface/emitter/data/:ro
       - ./volumes/ricardo-backend/logs/:/ricardo-backend/Logs/
     group_add:
       - dialout
@@ -54,10 +55,9 @@ services:
     build:
       context: ./submodules/Ricardo-CommandServer
     container_name: ricardo-commandserver
-    user: "${UID}:${GID}"
+    user: root
     environment:
       - RICARDO_COMMANDSERVER_BACKEND_HOST=ricardo-backend
     ports:
       - 1339:1339
     restart: unless-stopped
-    
