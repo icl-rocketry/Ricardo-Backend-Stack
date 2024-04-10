@@ -2,7 +2,7 @@
  {
   "task_name": "act0_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 200,
   "running": true,
   "logger": true,
@@ -68,7 +68,7 @@
  {
   "task_name": "act1_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 10000,
   "running": true,
   "logger": true,
@@ -105,7 +105,7 @@
  {
   "task_name": "act2_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 10000,
   "running": true,
   "logger": true,
@@ -142,7 +142,7 @@
  {
   "task_name": "fuelventsrv_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 500,
   "running": true,
   "logger": true,
@@ -202,7 +202,7 @@
  {
   "task_name": "n2fillsrv_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 500,
   "running": true,
   "logger": true,
@@ -262,7 +262,7 @@
  {
   "task_name": "oxfillsrv_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 500,
   "running": true,
   "logger": true,
@@ -322,7 +322,7 @@
  {
   "task_name": "oxventsrv_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 500,
   "running": true,
   "logger": true,
@@ -382,7 +382,7 @@
  {
   "task_name": "pdu0_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 10000,
   "running": false,
   "logger": true,
@@ -428,7 +428,7 @@
  {
   "task_name": "pyreng_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 500,
   "running": true,
   "logger": true,
@@ -488,7 +488,7 @@
  {
   "task_name": "sen0_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 20,
   "running": true,
   "logger": true,
@@ -544,7 +544,7 @@
  {
   "task_name": "thanos_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 500,
   "running": true,
   "logger": true,
@@ -604,7 +604,7 @@
  {
   "task_name": "senraw0_telemetry",
   "autostart": false,
-  "grouped": false,
+  "groups": [],
   "poll_delta": 100,
   "running": false,
   "logger": true,
@@ -652,7 +652,7 @@
  {
   "task_name": "fc_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 10000,
   "running": false,
   "logger": false,
@@ -864,7 +864,7 @@
  {
   "task_name": "freeram",
   "autostart": false,
-  "grouped": false,
+  "groups": [],
   "poll_delta": 50,
   "running": false,
   "logger": true,
@@ -887,7 +887,7 @@
  {
   "task_name": "sen1_telemetry",
   "autostart": false,
-  "grouped": true,
+  "groups": [],
   "poll_delta": 10000,
   "running": false,
   "logger": true,
