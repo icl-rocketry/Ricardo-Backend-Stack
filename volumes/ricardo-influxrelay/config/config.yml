@@ -1,12 +1,12 @@
-socket:
-  url: ws://ricardo-backend:1337
+sockets:
+  - url: http://ricardo-backend:1337
+    tags:
+      source: local
 
 handlers:
   - type: influxdb
     namespace: /telemetry
-    url: http://influxdb:8086
-    token: fZDWkTVbzxVQGY9-Pm9Pc-gPr6mPO7H7pG7FLFVPyG_GkkqwKTINfyFhLv20gxB3-uYR4ED-3sBUkxxmDe7acQ==
+    url: http://questdb:9000
+    token: ""
     org: ICLR
     bucket: telemetry
-    tags:
-      source: wired
