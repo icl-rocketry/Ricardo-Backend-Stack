@@ -16,6 +16,6 @@ http://grafana.{$RICARDO_BACKEND_DOMAIN} {
 	reverse_proxy /api/live/* @ws grafana:3000
 }
 
-http://influxdb.{$RICARDO_BACKEND_DOMAIN} {
-	reverse_proxy influxdb:8086
+http://questdb.{$RICARDO_BACKEND_DOMAIN} {
+	reverse_proxy questdb:9000
 }

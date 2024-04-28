@@ -7,6 +7,5 @@ handlers:
   - type: influxdb
     namespace: /telemetry
     url: http://questdb:9000
-    token: ""
     org: ICLR
     bucket: telemetry
