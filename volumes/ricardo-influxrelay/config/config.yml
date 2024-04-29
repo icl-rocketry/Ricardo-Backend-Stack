@@ -1,11 +1,9 @@
 sockets:
   - url: http://ricardo-backend:1337
     tags:
-      source: local
+      source: Local
 
 handlers:
   - type: influxdb
     namespace: /telemetry
     url: http://questdb:9000
-    org: ICLR
-    bucket: telemetry
