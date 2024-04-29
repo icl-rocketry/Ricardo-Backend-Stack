@@ -81,6 +81,8 @@ services:
   questdb:
     image: questdb/questdb
     container_name: questdb
+    environment:
+      - QDB_PG_READONLY_USER_ENABLED=true
     volumes:
       - ./volumes/questdb/:/var/lib/questdb/
     ports:
