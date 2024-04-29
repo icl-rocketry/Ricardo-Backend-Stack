@@ -5,14 +5,17 @@ services:
   caddy:
     image: caddy
     container_name: caddy
-    user: "${UID}:${GID}"
     environment:
       - RICARDO_BACKEND_DOMAIN=${RICARDO_BACKEND_DOMAIN}
     ports:
       - 80:80
       - 443:443
+      - 443:443/udp
     volumes:
       - ./volumes/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./volumes/caddy/data/:/data/
+      - ./volumes/caddy/config/:/config/
+      - ./volumes/caddy/index.html:/www/html/index.html
     restart: unless-stopped
 
   grafana:
