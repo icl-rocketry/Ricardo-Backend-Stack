@@ -22,8 +22,6 @@ services:
     image: grafana-iclr
     build:
       context: ./submodules/grafana
-      args:
-        - GF_INSTALL_PLUGINS=golioth-websocket-datasource,agenty-flowcharting-panel,speakyourcode-button-panel,grafana-clock-panel,yesoreyeram-infinity-datasource
     container_name: grafana
     user: "${UID}:${GID}"
     environment:
