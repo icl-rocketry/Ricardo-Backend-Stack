@@ -64,6 +64,8 @@ services:
       - RICARDO_COMMANDSERVER_BACKEND_HOST=ricardo-backend
     ports:
       - 1339:1339
+    volumes:
+      - ./volumes/ricardo-commandserver/Commands/:/ricardo-commandserver/Commands
     restart: unless-stopped
 
   ricardo-influxrelay:
