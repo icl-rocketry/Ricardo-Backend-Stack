@@ -34,58 +34,130 @@ services:
       - ./volumes/grafana/img:/usr/share/grafana/public/img/bg
     restart: unless-stopped
 
-  ricardo-backend:
+  # ricardo-backend:
+  #   image: ricardo-backend
+  #   build:
+  #     context: ./submodules/Ricardo-Backend
+  #   container_name: ricardo-backend
+  #   user: "${UID}:${GID}"
+  #   environment:
+  #     - RICARDO_BACKEND_DEVICE=${SERIAL_PATH}
+  #   ports:
+  #     - 1337:1337
+  #     - 1338:1338
+  #   volumes:
+  #     - ./volumes/ricardo-backend/config/:/ricardo-backend/Config/
+  #     - ./volumes/ricardo-backend/fakedata/:/ricardo-backend/ricardobackend/flaskinterface/emitter/data/:ro
+  #     - ./volumes/ricardo-backend/logs/:/ricardo-backend/Logs/
+  #   group_add:
+  #     - dialout
+  #   devices:
+  #     - ${SERIAL_PATH}:${SERIAL_PATH}
+  #   restart: unless-stopped
+
+  ricardo-backend_0:
     image: ricardo-backend
     build:
       context: ./submodules/Ricardo-Backend
-    container_name: ricardo-backend
+    container_name: ricardo-backend_0
     user: "${UID}:${GID}"
     environment:
-      - RICARDO_BACKEND_DEVICE=${SERIAL_PATH}
+      - RICARDO_BACKEND_DEVICE=${SERIAL_PATH_0}
     ports:
-      - 1337:1337
-      - 1338:1338
+      - ${BACKEND_HTTP_PORT_0}:1337
+      - ${BACKEND_WS_PORT_0}:1338
     volumes:
-      - ./volumes/ricardo-backend/config/:/ricardo-backend/Config/
-      - ./volumes/ricardo-backend/fakedata/:/ricardo-backend/ricardobackend/flaskinterface/emitter/data/:ro
-      - ./volumes/ricardo-backend/logs/:/ricardo-backend/Logs/
+      - ./volumes/ricardo-backend_0/config/:/ricardo-backend/Config/
+      - ./volumes/ricardo-backend_0/fakedata/:/ricardo-backend/ricardobackend/flaskinterface/emitter/data/:ro
+      - ./volumes/ricardo-backend_0/logs/:/ricardo-backend/Logs/
     group_add:
       - dialout
     devices:
-      - ${SERIAL_PATH}:${SERIAL_PATH}
+      - ${SERIAL_PATH_0}:${SERIAL_PATH_0}
     restart: unless-stopped
 
-  ricardo-commandserver:
+  ricardo-backend_1:
+    image: ricardo-backend
+    build:
+      context: ./submodules/Ricardo-Backend
+    container_name: ricardo-backend_1
+    user: "${UID}:${GID}"
+    environment:
+      - RICARDO_BACKEND_DEVICE=${SERIAL_PATH_1}
+    ports:
+      - ${BACKEND_HTTP_PORT_1}:1337
+      - ${BACKEND_WS_PORT_1}:1338
+    volumes:
+      - ./volumes/ricardo-backend_1/config/:/ricardo-backend/Config/
+      - ./volumes/ricardo-backend_1/fakedata/:/ricardo-backend/ricardobackend/flaskinterface/emitter/data/:ro
+      - ./volumes/ricardo-backend_1/logs/:/ricardo-backend/Logs/
+    group_add:
+      - dialout
+    devices:
+      - ${SERIAL_PATH_1}:${SERIAL_PATH_1}
+    restart: unless-stopped
+
+
+  # ricardo-commandserver:
+  #   image: ricardo-commandserver
+  #   build:
+  #     context: ./submodules/Ricardo-CommandServer
+  #   container_name: ricardo-commandserver
+  #   user: "${UID}:${GID}"
+  #   environment:
+  #     - RICARDO_COMMANDSERVER_BACKEND_HOST=ricardo-backend
+  #   ports:
+  #     - 1339:1339
+  #   volumes:
+  #     - ./volumes/ricardo-commandserver/Commands/:/ricardo-commandserver/Commands
+  #   restart: unless-stopped
+
+  ricardo-commandserver_0:
     image: ricardo-commandserver
     build:
       context: ./submodules/Ricardo-CommandServer
-    container_name: ricardo-commandserver
+    container_name: ricardo-commandserver_0
     user: "${UID}:${GID}"
     environment:
-      - RICARDO_COMMANDSERVER_BACKEND_HOST=ricardo-backend
+      - RICARDO_COMMANDSERVER_BACKEND_HOST=ricardo-backend_0
     ports:
-      - 1339:1339
+      - ${COMMAND_SERVER_PORT_0}:1339
     volumes:
-      - ./volumes/ricardo-commandserver/Commands/:/ricardo-commandserver/Commands
+      - ./volumes/ricardo-commandserver_0/Commands/:/ricardo-commandserver/Commands
     restart: unless-stopped
 
-  ricardo-influxrelay:
-    image: ricardo-influxrelay
+  ricardo-commandserver_1:
+    image: ricardo-commandserver
     build:
-      context: ./submodules/Ricardo-InfluxRelay
-    container_name: ricardo-influxrelay
+      context: ./submodules/Ricardo-CommandServer
+    container_name: ricardo-commandserver_1
     user: "${UID}:${GID}"
+    environment:
+      - RICARDO_COMMANDSERVER_BACKEND_HOST=ricardo-backend_1
+    ports:
+      - ${COMMAND_SERVER_PORT_1}:1339
     volumes:
-      - ./volumes/ricardo-influxrelay/config/config.yml:/ricardo-influxrelay/config/config.yml:ro
+      - ./volumes/ricardo-commandserver_1/Commands/:/ricardo-commandserver/Commands
     restart: unless-stopped
 
-  questdb:
-    image: questdb/questdb
-    container_name: questdb
-    environment:
-      - QDB_PG_READONLY_USER_ENABLED=true
-    volumes:
-      - ./volumes/questdb/:/var/lib/questdb/
-    ports:
-      - 9001:9000
-    restart: unless-stopped
+
+ # ricardo-influxrelay:
+ #   image: ricardo-influxrelay
+ #   build:
+ #     context: ./submodules/Ricardo-InfluxRelay
+ #   container_name: ricardo-influxrelay
+ #   user: "${UID}:${GID}"
+ #   volumes:
+ #     - ./volumes/ricardo-influxrelay/config/config.yml:/ricardo-influxrelay/config/config.yml:ro
+ #   restart: unless-stopped
+
+  # questdb:
+  #   image: questdb/questdb
+  #   container_name: questdb
+  #   environment:
+  #     - QDB_PG_READONLY_USER_ENABLED=true
+  #   volumes:
+  #     - ./volumes/questdb/:/var/lib/questdb/
+  #   ports:
+  #     - 9001:9000
+  #   restart: unless-stopped

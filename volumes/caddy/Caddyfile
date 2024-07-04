@@ -7,23 +7,43 @@ home.{$RICARDO_BACKEND_DOMAIN} {
     file_server
 }
 
-backend.{$RICARDO_BACKEND_DOMAIN} {
+backend.0.{$RICARDO_BACKEND_DOMAIN} {
     # Use self-signed certificates
     tls internal
 
     # Proxy Flask, Socket.IO, and Websockets
-    reverse_proxy ricardo-backend:1337
-    reverse_proxy /socket.io/* ricardo-backend:1337
-    reverse_proxy /ws/* ricardo-backend:1338
+    reverse_proxy ricardo-backend_0:1337
+    reverse_proxy /socket.io/* ricardo-backend_0:1337
+    reverse_proxy /ws/* ricardo-backend_0:1338
 }
 
-command.{$RICARDO_BACKEND_DOMAIN} {
+command.0.{$RICARDO_BACKEND_DOMAIN} {
     # Use self-signed certificates
     tls internal
 
     # Proxy Command Server
-    reverse_proxy ricardo-commandserver:1339
+    reverse_proxy ricardo-commandserver_0:1339
 }
+
+
+backend.1.{$RICARDO_BACKEND_DOMAIN} {
+    # Use self-signed certificates
+    tls internal
+
+    # Proxy Flask, Socket.IO, and Websockets
+    reverse_proxy ricardo-backend_1:1337
+    reverse_proxy /socket.io/* ricardo-backend_1:1337
+    reverse_proxy /ws/* ricardo-backend_1:1338
+}
+
+command.1.{$RICARDO_BACKEND_DOMAIN} {
+    # Use self-signed certificates
+    tls internal
+
+    # Proxy Command Server
+    reverse_proxy ricardo-commandserver_1:1339
+}
+
 
 grafana.{$RICARDO_BACKEND_DOMAIN} {
     # Add handler for Websockets
