@@ -4,5 +4,8 @@
 # Apple
 .DS_Store
 
-#pycache
+# PyCache
 /pycache/*
+
+# venv
+.venv
