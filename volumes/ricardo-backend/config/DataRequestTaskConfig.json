@@ -1,236 +1,65 @@
 [
  {
-  "task_name": "act0_telemetry",
+  "task_name": "freeram",
   "autostart": false,
-  "poll_delta": 500,
-  "running": true,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 102,
-   "destination_service": 2,
-   "command_id": 69,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "servoVoltage": "float",
-   "fuelAngle": "float",
-   "oxAngle": "float",
-   "P_angle": "float",
-   "I_angle": "float",
-   "system_status": "uint32_t",
-   "system_time": "uint64_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "STATE_IDLE"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 3614,
-  "txCounter": 4014,
-  "connected": true,
-  "lastReceivedPacket": "af200056be0200676601020e41bd400000000000000000d5030000fadf04000104000009e0040000000000",
-  "rxBytes": 155402,
-  "txBytes": 64224
- },
- {
-  "task_name": "act1_telemetry",
-  "autostart": false,
-  "poll_delta": 10000,
-  "running": true,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 103,
-   "destination_service": 2,
-   "command_id": 69,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "servoVoltage": "float",
-   "system_status": "uint32_t",
-   "system_time": "uint64_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "STATE_IDLE"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 202,
-  "txCounter": 202,
-  "connected": true,
-  "lastReceivedPacket": "af100038be0200676701026fffbe4001040000c73b350000000000",
-  "rxBytes": 5454,
-  "txBytes": 3232
- },
- {
-  "task_name": "act2_telemetry",
-  "autostart": false,
-  "poll_delta": 10000,
-  "running": true,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 104,
-   "destination_service": 2,
-   "command_id": 69,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "servoVoltage": "float",
-   "system_status": "uint32_t",
-   "system_time": "uint64_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "STATE_IDLE"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 202,
-  "txCounter": 202,
-  "connected": true,
-  "lastReceivedPacket": "af100039be0200676801026463bd4001040000ab3b350000000000",
-  "rxBytes": 5454,
-  "txBytes": 3232
- },
- {
-  "task_name": "fuelventsrv_telemetry",
-  "autostart": false,
-  "poll_delta": 750,
-  "running": true,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 104,
-   "destination_service": 10,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 2,
-      "description": "ERROR_NORESPONSE"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 4,
-      "description": "ERROR_PINS"
-     },
-     {
-      "id": 5,
-      "description": "ERROR_I2C"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 2199,
-  "txCounter": 2202,
-  "connected": true,
-  "lastReceivedPacket": "af06005dbe0a0001680102020000000000",
-  "rxBytes": 37383,
-  "txBytes": 35232
- },
- {
-  "task_name": "n2fillsrv_telemetry",
-  "autostart": false,
-  "poll_delta": 500,
+  "poll_delta": 50,
   "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
-   "normally_off"
+   "debug"
   ],
   "request_config": {
    "source": 1,
-   "destination": 104,
-   "destination_service": 11,
-   "command_id": 1,
+   "destination": 0,
+   "destination_service": 2,
+   "command_id": 250,
+   "command_arg": 1
+  },
+  "packet_descriptor": {
+   "ram": "uint32_t"
+  },
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "gss_sen_telem_raw",
+  "autostart": false,
+  "poll_delta": 40,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "debug",
+   "gss"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 102,
+   "destination_service": 2,
+   "command_id": 9,
    "command_arg": 0
   },
   "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
+   "ch0sens": "int32_t",
+   "ch1sens": "int32_t",
+   "ch2sens": "int32_t",
+   "ch3sens": "int32_t",
+   "system_status": "uint32_t",
+   "system_time": "uint64_t"
   },
   "bitfield_decoders": [
    {
-    "variable_name": "component_status",
-    "bitfield": "state",
+    "variable_name": "state",
+    "bitfield": "system_status",
     "flags": [
      {
       "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 2,
-      "description": "ERROR_NORESPONSE"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 4,
-      "description": "ERROR_PINS"
-     },
-     {
-      "id": 5,
-      "description": "ERROR_I2C"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
+      "description": "STATE_IDLE"
      }
     ]
    }
@@ -243,140 +72,19 @@
   "txBytes": 0
  },
  {
-  "task_name": "oxfillsrv_telemetry",
-  "autostart": false,
-  "poll_delta": 750,
-  "running": true,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 103,
-   "destination_service": 10,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 2,
-      "description": "ERROR_NORESPONSE"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 4,
-      "description": "ERROR_PINS"
-     },
-     {
-      "id": 5,
-      "description": "ERROR_I2C"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 2184,
-  "txCounter": 2185,
-  "connected": true,
-  "lastReceivedPacket": "af060054be0a0001670102020000000000",
-  "rxBytes": 37128,
-  "txBytes": 34960
- },
- {
-  "task_name": "oxventsrv_telemetry",
-  "autostart": false,
-  "poll_delta": 750,
-  "running": true,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 103,
-   "destination_service": 11,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 2,
-      "description": "ERROR_NORESPONSE"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 4,
-      "description": "ERROR_PINS"
-     },
-     {
-      "id": 5,
-      "description": "ERROR_I2C"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 2176,
-  "txCounter": 2176,
-  "connected": true,
-  "lastReceivedPacket": "af060040be0b0001670102020000000000",
-  "rxBytes": 36992,
-  "txBytes": 34816
- },
- {
-  "task_name": "pdu0_telemetry",
+  "task_name": "nim_pdu0_telem",
   "autostart": false,
   "poll_delta": 10000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
-   "normally_off"
+   "PDU",
+   "rocket"
   ],
   "request_config": {
    "source": 1,
-   "destination": 105,
+   "destination": 3,
    "destination_service": 2,
    "command_id": 4,
    "command_arg": 0
@@ -407,105 +115,34 @@
     ]
    }
   ],
-  "rxCounter": 2,
-  "txCounter": 2,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af100063be020066690102de0cc14401040000253f350000000000",
-  "rxBytes": 54,
-  "txBytes": 32
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
-  "task_name": "pyreng_telemetry",
+  "task_name": "nim_pdu1_telem",
   "autostart": false,
-  "poll_delta": 400,
-  "running": true,
+  "poll_delta": 10000,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 107,
-   "destination_service": 10,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 2,
-      "description": "ERROR_NORESPONSE"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 4,
-      "description": "ERROR_PINS"
-     },
-     {
-      "id": 5,
-      "description": "ERROR_I2C"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
+  "groups": [
+   "PDU",
+   "rocket"
   ],
-  "rxCounter": 5013,
-  "txCounter": 5015,
-  "connected": true,
-  "lastReceivedPacket": "af06005cbe0a00016b01020a0000000000",
-  "rxBytes": 85221,
-  "txBytes": 80240
- },
- {
-  "task_name": "sen0_telemetry",
-  "autostart": false,
-  "poll_delta": 20,
-  "running": true,
-  "logger": true,
-  "receiveOnly": false,
   "request_config": {
    "source": 1,
-   "destination": 106,
+   "destination": 4,
    "destination_service": 2,
-   "command_id": 8,
+   "command_id": 4,
    "command_arg": 0
   },
   "packet_descriptor": {
-   "ch0sens": "float",
-   "ch1sens": "float",
-   "ch2sens": "float",
-   "ch3sens": "float",
-   "ch4sens": "float",
-   "ch5sens": "float",
-   "ch6sens": "float",
-   "ch7sens": "float",
-   "ch8sens": "float",
-   "ch9sens": "float",
-   "ch10sens": "float",
-   "ch11sens": "float",
-   "temp0": "float",
-   "temp1": "float",
-   "temp2": "float",
-   "temp3": "float",
+   "logicVoltage": "uint16_t",
+   "depVoltage": "uint16_t",
    "system_status": "uint32_t",
    "system_time": "uint64_t"
   },
@@ -519,190 +156,38 @@
       "description": "STATE_IDLE"
      },
      {
-      "id": 19,
-      "description": "ERROR_SD"
+      "id": 1,
+      "description": "STATE_READY"
+     },
+     {
+      "id": 2,
+      "description": "STATE_LIVE"
      }
     ]
    }
   ],
-  "rxCounter": 96326,
-  "txCounter": 96327,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af4c0065be0200676a0101d4866f3f0060d64445286a3f2a02d53ec57f1bc2000093446255dfc2c0a4a04105ae883ff66965c1ea19a23f008323c70000c07f00e0e441000000000000c07f01000000d6b8490000000000",
-  "rxBytes": 8380362,
-  "txBytes": 1541232
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
-  "task_name": "thanos_telemetry",
+  "task_name": "nim_oxventsrv_telem",
   "autostart": false,
   "poll_delta": 750,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
+  "groups": [
+   "servos",
+   "rocket"
+  ],
   "request_config": {
    "source": 1,
-   "destination": 102,
+   "destination": 9,
    "destination_service": 10,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 2,
-      "description": "ERROR_NORESPONSE"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 4,
-      "description": "ERROR_PINS"
-     },
-     {
-      "id": 5,
-      "description": "ERROR_I2C"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   },
-   {
-    "variable_name": "thanos_state",
-    "bitfield": "value",
-    "flags": [
-     {
-      "id": 0,
-      "description": "DEFAULT"
-     },
-     {
-      "id": 1,
-      "description": "IGNITION"
-     },
-     {
-      "id": 2,
-      "description": "SHUTDOWN"
-     },
-     {
-      "id": 3,
-      "description": "Controlled"
-     },
-     {
-      "id": 5,
-      "description": "DEBUG"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 1889,
-  "txCounter": 2156,
-  "connected": true,
-  "lastReceivedPacket": "af060043be0a0001660102020001000000",
-  "rxBytes": 32113,
-  "txBytes": 34496
- },
- {
-  "task_name": "senraw0_telemetry",
-  "autostart": false,
-  "poll_delta": 40,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 106,
-   "destination_service": 2,
-   "command_id": 9,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "ch0sens": "int32_t",
-   "ch1sens": "int32_t",
-   "ch2sens": "int32_t",
-   "ch3sens": "int32_t",
-   "ch4sens": "int32_t",
-   "ch5sens": "int32_t",
-   "ch6sens": "int32_t",
-   "ch7sens": "int32_t",
-   "ch8sens": "int32_t",
-   "ch9sens": "int32_t",
-   "ch10sens": "int32_t",
-   "ch11sens": "int32_t",
-   "system_status": "uint32_t",
-   "system_time": "uint64_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "STATE_IDLE"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 1,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "af3c008c430200686a010144521500ba060000376f0a000f760c000061fffff8040000774afeffe606000038f00b00235dffff62c20c00355dffff01000000c5132b0000000000",
-  "rxBytes": 71,
-  "txBytes": 0
- },
- {
-  "task_name": "freeram",
-  "autostart": false,
-  "poll_delta": 50,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 0,
-   "destination_service": 2,
-   "command_id": 250,
-   "command_arg": 1
-  },
-  "packet_descriptor": {
-   "ram": "uint32_t"
-  },
-  "rxCounter": 1,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "af04006c430200696a0101c46b0400",
-  "rxBytes": 15,
-  "txBytes": 0
- },
- {
-  "task_name": "pyrdel_telemetry",
-  "autostart": false,
-  "poll_delta": 400,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "request_config": {
-   "source": 1,
-   "destination": 107,
-   "destination_service": 13,
    "command_id": 1,
    "command_arg": 0
   },
@@ -754,18 +239,186 @@
   "txBytes": 0
  },
  {
-  "task_name": "pyrfuelsol_telemetry",
+  "task_name": "nim_greg_telem",
   "autostart": false,
-  "poll_delta": 400,
+  "poll_delta": 50,
   "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
-   "normally_off"
+   "greg",
+   "rocket"
   ],
   "request_config": {
    "source": 1,
-   "destination": 107,
+   "destination": 7,
+   "destination_service": 2,
+   "command_id": 8,
+   "command_arg": 0
+  },
+  "packet_descriptor": {
+   "Feedforward": "float",
+   "FuelTankP": "float",
+   "regAngle": "uint32_t",
+   "Proportional_Term": "float",
+   "Kp": "float",
+   "system_status": "uint32_t",
+   "system_time": "uint64_t"
+  },
+  "bitfield_decoders": [
+   {
+    "variable_name": "state",
+    "bitfield": "system_status",
+    "flags": [
+     {
+      "id": 0,
+      "description": "STATE_IDLE"
+     }
+    ]
+   }
+  ],
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "nim_ereg_telem",
+  "autostart": false,
+  "poll_delta": 100,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "greg",
+   "rocket"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 7,
+   "destination_service": 10,
+   "command_id": 1,
+   "command_arg": 0
+  },
+  "packet_descriptor": {
+   "state": "uint16_t",
+   "value": "int32_t"
+  },
+  "bitfield_decoders": [
+   {
+    "variable_name": "component_status",
+    "bitfield": "state",
+    "flags": [
+     {
+      "id": 0,
+      "description": "NOMINAL"
+     },
+     {
+      "id": 1,
+      "description": "DISARMED"
+     },
+     {
+      "id": 2,
+      "description": "ERROR_NORESPONSE"
+     },
+     {
+      "id": 3,
+      "description": "ERROR_CONTINUITY"
+     },
+     {
+      "id": 4,
+      "description": "ERROR_PINS"
+     },
+     {
+      "id": 5,
+      "description": "ERROR_I2C"
+     },
+     {
+      "id": 6,
+      "description": "ERROR"
+     }
+    ]
+   },
+   {
+    "variable_name": "controller_states",
+    "bitfield": "value",
+    "flags": [
+     {
+      "id": 0,
+      "description": "DEFAULT"
+     },
+     {
+      "id": 1,
+      "description": "PRESSURISE"
+     },
+     {
+      "id": 2,
+      "description": "CONTROLLED"
+     },
+     {
+      "id": 3,
+      "description": "SHUTDOWN"
+     },
+     {
+      "id": 4,
+      "description": "HALF-ABORT"
+     },
+     {
+      "id": 5,
+      "description": "DEBUG"
+     }
+    ]
+   },
+   {
+    "variable_name": "controller_errors",
+    "bitfield": "value",
+    "flags": [
+     {
+      "id": 6,
+      "description": "ERR CRITICAL OVERPRESSURE"
+     },
+     {
+      "id": 7,
+      "description": "ERR LOCAL FUEL TANK P"
+     },
+     {
+      "id": 8,
+      "description": "ERR REMOTE FUEL TANK P"
+     },
+     {
+      "id": 9,
+      "description": "ERR OX TANK P"
+     },
+     {
+      "id": 10,
+      "description": "ERR NITROGEN TANK P"
+     }
+    ]
+   }
+  ],
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "gss_oxfillsrv_telem",
+  "autostart": false,
+  "poll_delta": 750,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "gss",
+   "servos"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 104,
    "destination_service": 11,
    "command_id": 1,
    "command_arg": 0
@@ -818,19 +471,20 @@
   "txBytes": 0
  },
  {
-  "task_name": "pyroxsol_telemetry",
+  "task_name": "nim_fuelventsol_telem",
   "autostart": false,
-  "poll_delta": 400,
+  "poll_delta": 750,
   "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
-   "normally_off"
+   "rocket",
+   "solenoids"
   ],
   "request_config": {
    "source": 1,
-   "destination": 107,
-   "destination_service": 12,
+   "destination": 104,
+   "destination_service": 10,
    "command_id": 1,
    "command_arg": 0
   },
@@ -882,25 +536,95 @@
   "txBytes": 0
  },
  {
-  "task_name": "act3_telemetry",
+  "task_name": "gss_n2fillsrv_telem",
   "autostart": false,
-  "poll_delta": 50,
-  "running": true,
+  "poll_delta": 500,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
+  "groups": [
+   "gss",
+   "servos"
+  ],
   "request_config": {
    "source": 1,
-   "destination": 108,
-   "destination_service": 2,
-   "command_id": 69,
+   "destination": 103,
+   "destination_service": 11,
+   "command_id": 1,
    "command_arg": 0
   },
   "packet_descriptor": {
-   "ff_angle": "float",
-   "OxTankP": "float",
-   "RegAngle": "float",
-   "P_angle": "float",
-   "I_angle": "float",
+   "state": "uint16_t",
+   "value": "int32_t"
+  },
+  "bitfield_decoders": [
+   {
+    "variable_name": "component_status",
+    "bitfield": "state",
+    "flags": [
+     {
+      "id": 0,
+      "description": "NOMINAL"
+     },
+     {
+      "id": 1,
+      "description": "DISARMED"
+     },
+     {
+      "id": 2,
+      "description": "ERROR_NORESPONSE"
+     },
+     {
+      "id": 3,
+      "description": "ERROR_CONTINUITY"
+     },
+     {
+      "id": 4,
+      "description": "ERROR_PINS"
+     },
+     {
+      "id": 5,
+      "description": "ERROR_I2C"
+     },
+     {
+      "id": 6,
+      "description": "ERROR"
+     }
+    ]
+   }
+  ],
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "gss_sen_telem",
+  "autostart": false,
+  "poll_delta": 20,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "sensors",
+   "gss"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 102,
+   "destination_service": 2,
+   "command_id": 8,
+   "command_arg": 0
+  },
+  "packet_descriptor": {
+   "ch0sens": "float",
+   "ch1sens": "float",
+   "ch2sens": "float",
+   "ch3sens": "float",
+   "temp0": "float",
+   "temp1": "float",
    "system_status": "uint32_t",
    "system_time": "uint64_t"
   },
@@ -912,27 +636,86 @@
      {
       "id": 0,
       "description": "STATE_IDLE"
+     },
+     {
+      "id": 19,
+      "description": "ERROR_SD"
      }
     ]
    }
   ],
-  "rxCounter": 32743,
-  "txCounter": 33134,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af200061be0200676c010200005c42c0f7133f00000000000000000000000001040000aac9160000000000",
-  "rxBytes": 1407949,
-  "txBytes": 530144
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
-  "task_name": "ereg_telemetry",
+  "task_name": "nim_sen_telem",
   "autostart": false,
-  "poll_delta": 500,
-  "running": true,
+  "poll_delta": 20,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
+  "groups": [
+   "sensors",
+   "rocket"
+  ],
   "request_config": {
    "source": 1,
-   "destination": 108,
+   "destination": 8,
+   "destination_service": 2,
+   "command_id": 8,
+   "command_arg": 0
+  },
+  "packet_descriptor": {
+   "ch0sens": "float",
+   "ch1sens": "float",
+   "ch2sens": "float",
+   "ch3sens": "float",
+   "temp0": "float",
+   "temp1": "float",
+   "system_status": "uint32_t",
+   "system_time": "uint64_t"
+  },
+  "bitfield_decoders": [
+   {
+    "variable_name": "state",
+    "bitfield": "system_status",
+    "flags": [
+     {
+      "id": 0,
+      "description": "STATE_IDLE"
+     },
+     {
+      "id": 19,
+      "description": "ERROR_SD"
+     }
+    ]
+   }
+  ],
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "gss_oxhosesrv_telem",
+  "autostart": false,
+  "poll_delta": 750,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "gss",
+   "servos"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 104,
    "destination_service": 10,
    "command_id": 1,
    "command_arg": 0
@@ -975,39 +758,143 @@
       "description": "ERROR"
      }
     ]
-   },
+   }
+  ],
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "gss_n2hosesrv_telem",
+  "autostart": false,
+  "poll_delta": 750,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "gss",
+   "servos"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 103,
+   "destination_service": 10,
+   "command_id": 1,
+   "command_arg": 0
+  },
+  "packet_descriptor": {
+   "state": "uint16_t",
+   "value": "int32_t"
+  },
+  "bitfield_decoders": [
    {
-    "variable_name": "ereg_state",
-    "bitfield": "value",
+    "variable_name": "component_status",
+    "bitfield": "state",
     "flags": [
      {
       "id": 0,
-      "description": "DEFAULT"
+      "description": "NOMINAL"
      },
      {
       "id": 1,
-      "description": "Filling"
+      "description": "DISARMED"
      },
      {
       "id": 2,
-      "description": "SHUTDOWN"
+      "description": "ERROR_NORESPONSE"
      },
      {
       "id": 3,
-      "description": "Controlled"
+      "description": "ERROR_CONTINUITY"
+     },
+     {
+      "id": 4,
+      "description": "ERROR_PINS"
      },
      {
       "id": 5,
-      "description": "DEBUG"
+      "description": "ERROR_I2C"
+     },
+     {
+      "id": 6,
+      "description": "ERROR"
      }
     ]
    }
   ],
-  "rxCounter": 3114,
-  "txCounter": 3157,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af060051be0a00016c0102020001000000",
-  "rxBytes": 52938,
-  "txBytes": 50512
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "nim_oxventpot_telem",
+  "autostart": false,
+  "poll_delta": 750,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "sensors",
+   "rocket"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 9,
+   "destination_service": 12,
+   "command_id": 1,
+   "command_arg": 0
+  },
+  "packet_descriptor": {
+   "state": "uint16_t",
+   "value": "float"
+  },
+  "bitfield_decoders": [
+   {
+    "variable_name": "component_status",
+    "bitfield": "state",
+    "flags": [
+     {
+      "id": 0,
+      "description": "NOMINAL"
+     },
+     {
+      "id": 1,
+      "description": "DISARMED"
+     },
+     {
+      "id": 2,
+      "description": "ERROR_NORESPONSE"
+     },
+     {
+      "id": 3,
+      "description": "ERROR_CONTINUITY"
+     },
+     {
+      "id": 4,
+      "description": "ERROR_PINS"
+     },
+     {
+      "id": 5,
+      "description": "ERROR_I2C"
+     },
+     {
+      "id": 6,
+      "description": "ERROR"
+     }
+    ]
+   }
+  ],
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  }
 ]
