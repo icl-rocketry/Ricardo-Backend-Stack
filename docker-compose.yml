@@ -17,6 +17,11 @@ services:
       - ./volumes/caddy/config/:/config/
       - ./volumes/caddy/index.html:/www/html/index.html
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: 3
 
   grafana:
     image: grafana-iclr
@@ -33,6 +38,11 @@ services:
       - ./volumes/grafana/grafana.db:/var/lib/grafana/grafana.db
       - ./volumes/grafana/img:/usr/share/grafana/public/img/bg
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: 3
 
   ricardo-backend:
     image: ricardo-backend
@@ -54,6 +64,11 @@ services:
     devices:
       - ${SERIAL_PATH}:${SERIAL_PATH}
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: 3
 
   ricardo-commandserver:
     image: ricardo-commandserver
@@ -68,6 +83,11 @@ services:
     volumes:
       - ./volumes/ricardo-commandserver/Commands/:/ricardo-commandserver/Commands
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: 3
 
   ricardo-influxrelay:
     image: ricardo-influxrelay
@@ -78,6 +98,11 @@ services:
     volumes:
       - ./volumes/ricardo-influxrelay/config/config.yml:/ricardo-influxrelay/config/config.yml:ro
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: 3
 
   questdb:
     image: questdb/questdb
@@ -89,3 +114,8 @@ services:
     ports:
       - 9001:9000
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: 3
