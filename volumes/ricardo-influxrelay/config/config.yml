@@ -1,9 +1,27 @@
 sockets:
-  - url: http://ricardo-backend:1337
+  - url: ws://ricardo-backend:1337/ws
+    ssl_verify: False
     tags:
       source: Local
 
+  - url: ws://backend.mcc.iclr/ws
+    ssl_verify: False
+    tags:
+      source: MCC
+
+  - url: ws://backend.pad.iclr/ws
+    ssl_verify: False
+    tags:
+      source: PAD
+
 handlers:
   - type: influxdb
-    namespace: /telemetry
+    namespaces:
+      - /telemetry
     url: http://questdb:9000
+
+  - type: websocket
+    host: 0.0.0.0
+    port: 1338
+    namespaces:
+      - /telemetry
