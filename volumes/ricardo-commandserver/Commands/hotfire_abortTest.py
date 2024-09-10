@@ -18,7 +18,7 @@ def hotfire_abortTest(instance,args):
 
     instance.send_command_packet(command_packet_args)
 
-    time.sleep(0.5)
+    time.sleep(0.05)
 
     command_packet_args = {"source":1,
                         "source_service":instance.source_service,
