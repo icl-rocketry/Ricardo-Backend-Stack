@@ -1,6 +1,6 @@
-ARG GRAFANA_VERSION="latest"
 
-FROM grafana/grafana:${GRAFANA_VERSION}
+
+FROM grafana/grafana:10.4.8
 
 ARG GF_INSTALL_IMAGE_RENDERER_PLUGIN="false"
 
@@ -38,7 +38,7 @@ RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
         plugins install grafana-image-renderer; \
     fi
 
-ARG GF_INSTALL_PLUGINS="golioth-websocket-datasource,agenty-flowcharting-panel,speakyourcode-button-panel,grafana-clock-panel,yesoreyeram-infinity-datasource"
+ARG GF_INSTALL_PLUGINS="golioth-websocket-datasource,agenty-flowcharting-panel,speakyourcode-button-panel,grafana-clock-panel,yesoreyeram-infinity-datasource,andrewbmchugh-flow-panel"
 
 RUN if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then \
       OLDIFS=$IFS; \
