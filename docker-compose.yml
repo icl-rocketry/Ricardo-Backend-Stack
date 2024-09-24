@@ -105,6 +105,7 @@ services:
       options:
         max-size: 10m
         max-file: 3
+    profiles: ['dev']
 
   questdb:
     image: questdb/questdb
@@ -121,3 +122,4 @@ services:
       options:
         max-size: 10m
         max-file: 3
+    profiles: ['dev']
