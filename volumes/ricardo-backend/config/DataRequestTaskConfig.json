@@ -38,7 +38,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 102,
+   "destination": 100,
    "destination_service": 2,
    "command_id": 9,
    "command_arg": 0
@@ -83,7 +83,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 3,
+   "destination": 21,
    "destination_service": 2,
    "command_id": 4,
    "command_arg": 0
@@ -135,7 +135,11 @@
   ],
   "request_config": {
    "source": 1,
+<<<<<<< HEAD
+   "destination": 20,
+=======
    "destination": 25,
+>>>>>>> refs/remotes/origin/v3-DEV
    "destination_service": 2,
    "command_id": 4,
    "command_arg": 0
@@ -187,7 +191,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 9,
+   "destination": 11,
    "destination_service": 10,
    "command_id": 1,
    "command_arg": 0
@@ -252,7 +256,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 7,
+   "destination": 13,
    "destination_service": 2,
    "command_id": 8,
    "command_arg": 0
@@ -298,7 +302,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 7,
+   "destination": 13,
    "destination_service": 10,
    "command_id": 1,
    "command_arg": 0
@@ -459,7 +463,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 104,
+   "destination": 3,
    "destination_service": 11,
    "command_id": 1,
    "command_arg": 0
@@ -524,7 +528,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 6,
+   "destination": 14,
    "destination_service": 12,
    "command_id": 1,
    "command_arg": 0
@@ -577,7 +581,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 103,
+   "destination": 102,
    "destination_service": 11,
    "command_id": 1,
    "command_arg": 0
@@ -642,7 +646,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 102,
+   "destination": 100,
    "destination_service": 2,
    "command_id": 8,
    "command_arg": 0
@@ -693,7 +697,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 8,
+   "destination": 12,
    "destination_service": 2,
    "command_id": 8,
    "command_arg": 0
@@ -744,7 +748,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 104,
+   "destination": 3,
    "destination_service": 10,
    "command_id": 1,
    "command_arg": 0
@@ -809,7 +813,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 103,
+   "destination": 102,
    "destination_service": 10,
    "command_id": 1,
    "command_arg": 0
@@ -858,7 +862,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 9,
+   "destination": 11,
    "destination_service": 12,
    "command_id": 1,
    "command_arg": 0
@@ -922,7 +926,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 8,
+   "destination": 12,
    "destination_service": 2,
    "command_id": 9,
    "command_arg": 0
@@ -967,7 +971,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 6,
+   "destination": 102,
    "destination_service": 11,
    "command_id": 1,
    "command_arg": 0
@@ -1020,7 +1024,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 6,
+   "destination": 14,
    "destination_service": 13,
    "command_id": 1,
    "command_arg": 0
@@ -1417,7 +1421,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 5,
+   "destination": 30,
    "destination_service": 11,
    "command_id": 1,
    "command_arg": 0
@@ -1471,7 +1475,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 5,
+   "destination": 30,
    "destination_service": 10,
    "command_id": 1,
    "command_arg": 0
@@ -1524,7 +1528,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 11,
+   "destination": 31,
    "destination_service": 11,
    "command_id": 1,
    "command_arg": 0
@@ -1589,7 +1593,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 11,
+   "destination": 31,
    "destination_service": 10,
    "command_id": 1,
    "command_arg": 0
@@ -1654,7 +1658,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 9,
+   "destination": 11,
    "destination_service": 2,
    "command_id": 8,
    "command_arg": 0
@@ -1696,7 +1700,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 11,
+   "destination": 31,
    "destination_service": 2,
    "command_id": 8,
    "command_arg": 0
@@ -1742,7 +1746,7 @@
   ],
   "request_config": {
    "source": 1,
-   "destination": 6,
+   "destination": 14,
    "destination_service": 2,
    "command_id": 8,
    "command_arg": 0
@@ -1780,7 +1784,11 @@
   "task_name": "nim_fc_telem",
   "autostart": false,
   "poll_delta": 1000,
+<<<<<<< HEAD
+  "running": false,
+=======
   "running": true,
+>>>>>>> refs/remotes/origin/v3-DEV
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1986,11 +1994,112 @@
     ]
    }
   ],
+<<<<<<< HEAD
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "gss_n2_chad_telem",
+  "autostart": false,
+  "poll_delta": 1000,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "chad",
+   "gss"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 102,
+   "destination_service": 2,
+   "command_id": 69,
+   "command_arg": 0
+  },
+  "packet_descriptor": {
+   "ServoVoltage": "float",
+   "system_status": "uint32_t",
+   "system_time": "uint64_t"
+  },
+  "bitfield_decoders": [
+   {
+    "variable_name": "state",
+    "bitfield": "system_status",
+    "flags": [
+     {
+      "id": 0,
+      "description": "STATE_IDLE"
+     },
+     {
+      "id": 19,
+      "description": "ERROR_SD"
+     }
+    ]
+   }
+  ],
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+ },
+ {
+  "task_name": "gss_ox_chad_telem",
+  "autostart": false,
+  "poll_delta": 1000,
+  "running": false,
+  "logger": true,
+  "receiveOnly": false,
+  "groups": [
+   "chad",
+   "gss"
+  ],
+  "request_config": {
+   "source": 1,
+   "destination": 3,
+   "destination_service": 2,
+   "command_id": 8,
+   "command_arg": 0
+  },
+  "packet_descriptor": {
+   "ServoVoltage": "float",
+   "system_status": "uint32_t",
+   "system_time": "uint64_t"
+  },
+  "bitfield_decoders": [
+   {
+    "variable_name": "state",
+    "bitfield": "system_status",
+    "flags": [
+     {
+      "id": 0,
+      "description": "STATE_IDLE"
+     },
+     {
+      "id": 19,
+      "description": "ERROR_SD"
+     }
+    ]
+   }
+  ],
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
+=======
   "rxCounter": 2,
   "txCounter": 2,
   "connected": true,
   "lastReceivedPacket": "afab00c82d0200650201020000000000000000000000000000000000000000000000000000000000000000000000002df737c020800f3d22f53940b4d4cabaadcaf3bd27e37bbfcd8e093e000000000000000000000000000000123d0080853e0020793f0319c8bd00000080c21296be00409c3e0000fabd0000fabd00c835bf00e0f03d00e066be4bc096431612c4475a8d9c42cc0c000000000000000000000000000002440c00f4b201000000000094ff00000000",
   "rxBytes": 364,
   "txBytes": 32
+>>>>>>> refs/remotes/origin/v3-DEV
  }
 ]
