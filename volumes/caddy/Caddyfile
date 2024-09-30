@@ -1,49 +1,34 @@
-home.{$RICARDO_BACKEND_DOMAIN} {
-    # Use self-signed certificates
-    tls internal
-
+http://home.{$RICARDO_BACKEND_DOMAIN} {
     # Serve index file
     root * /www/html
     file_server
 }
 
-backend.{$RICARDO_BACKEND_DOMAIN} {
-    # Use self-signed certificates
-    tls internal
-
-    # Proxy Flask, Socket.IO, and Websockets
+http://backend.{$RICARDO_BACKEND_DOMAIN} {
+    # Proxy Flask, Socket.IO, and WebSockets
     reverse_proxy ricardo-backend:1337
     reverse_proxy /socket.io/* ricardo-backend:1337
     reverse_proxy /ws/* ricardo-backend:1338
 }
 
-command.{$RICARDO_BACKEND_DOMAIN} {
-    # Use self-signed certificates
-    tls internal
-
+http://command.{$RICARDO_BACKEND_DOMAIN} {
     # Proxy Command Server
     reverse_proxy ricardo-commandserver:1339
 }
 
-grafana.{$RICARDO_BACKEND_DOMAIN} {
+http://grafana.{$RICARDO_BACKEND_DOMAIN} {
     # Add handler for Websockets
     @ws {
         header Upgrade websocket
         header Connection *Upgrade*
     }
 
-    # Use self-signed certificates
-    tls internal
-
     # Proxy Grafana (and its websocket connections)
     reverse_proxy grafana:3000
     reverse_proxy /api/live/* @ws grafana:3000
 }
 
-questdb.{$RICARDO_BACKEND_DOMAIN} {
-    # Use self-signed certificates
-    tls internal
-
+http://questdb.{$RICARDO_BACKEND_DOMAIN} {
     # Proxy QuestDB
     reverse_proxy questdb:9000
 }
