@@ -72,6 +72,8 @@ if [ -x "$(command -v docker)" ]; then
     # Docker already installed
     echo "Docker already installed..." |
         tee -a $LOG_FILE
+    echo "" |
+        tee -a $LOG_FILE
 else
     # Install Docker
     echo "Installing Docker..." |
@@ -96,9 +98,9 @@ else
         tee -a $LOG_FILE
     sudo usermod -aG docker $USER |
         tee -a $LOG_FILE
+    echo "" |
+        tee -a $LOG_FILE
 fi
-echo "" |
-    tee -a $LOG_FILE
 
 # Generate environment file
 echo "Generating environment file..." |
