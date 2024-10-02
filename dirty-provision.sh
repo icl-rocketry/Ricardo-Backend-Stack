@@ -3,6 +3,20 @@
 # Throw error if any command fails
 set -e
 
+# Logging functions
+log() {
+    cat >>$LOG_FILE
+}
+log_display() {
+    cat |
+        tee -a $LOG_FILE
+}
+log_display_indent() {
+    cat |
+        sed 's/^/  /' |
+        log_display
+}
+
 # Ensure working directory matches script location
 cd "$(dirname "$0")"
 
@@ -21,118 +35,112 @@ LOG_FILE=dirty-provision.log
 
 # Print start message
 echo "Ricardo-Backend-Stack dirty provisioning script" |
-    tee -a $LOG_FILE
+    log_display
 echo "WARNING: This script is not meant for production deployment" |
-    tee -a $LOG_FILE
+    log_display
 
 # Ask user whether to proceed
 read -r -p "Do you wish to continue? [y/N] " response
-echo "Do you wish to continue? [y/N] $response" >>$LOG_FILE
+echo "Do you wish to continue? [y/N] $response" |
+    log
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     true
 else
     exit
 fi
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Request sudo password
 echo "Elevating permissions (using sudo caching)..." |
-    tee -a $LOG_FILE
+    log_display
 sudo -v 2>&1 |
-    sed 's/^/  /' |
-    tee -a $LOG_FILE
+    log_display_indent
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Set variables
 # NOTE: UID already set
 echo "Setting variables..." |
-    tee -a $LOG_FILE
+    log_display
 GID=$UID
 read -p "Repository branch: " BRANCH
 read -p "Backend domain: " RICARDO_BACKEND_DOMAIN
 read -p "Serial path: " SERIAL_PATH
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Update repository
 echo "Updating repository..." |
-    tee -a $LOG_FILE
+    log_display
 git checkout $BRANCH 2>&1 |
-    sed 's/^/  /' |
-    tee -a $LOG_FILE
+    log_display_indent
 git pull 2>&1 |
-    sed 's/^/  /' |
-    tee -a $LOG_FILE
+    log_display_indent
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Update submodules
 echo "Updating submodules..." |
-    tee -a $LOG_FILE
+    log_display
 git submodule update --init --recursive 2>&1 |
-    sed 's/^/  /' |
-    tee -a $LOG_FILE
+    log_display_indent
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Update packages
 echo "Updating packages..." |
-    tee -a $LOG_FILE
+    log_display
 sudo apt-get update 2>&1 |
-    sed 's/^/  /' |
-    tee -a $LOG_FILE
+    log_display_indent
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Upgrade packages
 echo "Upgrading packages..." |
-    tee -a $LOG_FILE
+    log_display
 sudo apt-get upgrade -y 2>&1 |
-    sed 's/^/  /' |
-    tee -a $LOG_FILE
+    log_display_indent
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Install Docker
 if [ -x "$(command -v docker)" ]; then
     # Docker already installed
     echo "Docker already installed..." |
-        tee -a $LOG_FILE
+        log_display
     echo "" |
-        tee -a $LOG_FILE
+        log_display
 else
     # Install Docker
     echo "Installing Docker..." |
-        tee -a $LOG_FILE
+        log_display
     curl https://get.docker.com 2>&1 |
         bash |
-        sed 's/^/  /' |
-        tee -a $LOG_FILE
+        log_display_indent
     echo "" |
-        tee -a $LOG_FILE
+        log_display
 
     # Ensure Docker group exists
     echo "Creating Docker group..." |
-        tee -a $LOG_FILE
+        log_display
     sudo groupadd docker 2>&1 |
-        tee -a $LOG_FILE
+        log_display_indent
     echo "" |
-        tee -a $LOG_FILE
+        log_display
 
     # Add user to Docker group
     echo "Adding user to Docker group..." |
-        tee -a $LOG_FILE
+        log_display
     sudo usermod -aG docker $USER 2>&1 |
-        tee -a $LOG_FILE
+        log_display_indent
     echo "" |
-        tee -a $LOG_FILE
+        log_display
 fi
 
 # Generate environment file
 echo "Generating environment file..." |
-    tee -a $LOG_FILE
+    log_display
 cat >$ENV_FILE <<EOF
 UID=$UID
 GID=$UID
@@ -140,23 +148,21 @@ RICARDO_BACKEND_DOMAIN=$RICARDO_BACKEND_DOMAIN
 SERIAL_PATH=$SERIAL_PATH
 EOF
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Pull images
 # NOTE: Output not saved from pull command
 echo "Pulling images..." |
-    tee -a $LOG_FILE
+    log_display
 docker compose pull 2>&1 |
-    sed 's/^/  /' |
-    tee -a $LOG_FILE
+    log_display_indent
 echo "" |
-    tee -a $LOG_FILE
+    log_display
 
 # Build images
 echo "Building images..." |
-    tee -a $LOG_FILE
+    log_display
 docker compose --progress plain build 2>&1 |
-    sed 's/^/  /' |
-    tee -a $LOG_FILE
+    log_display_indent
 echo "" |
-    tee -a $LOG_FILE
+    log_display
