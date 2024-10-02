@@ -36,18 +36,46 @@ fi
 echo "" |
     tee -a $LOG_FILE
 
+# Request sudo password
+echo "Elevating permissions (using sudo caching)..." |
+    tee -a $LOG_FILE
+sudo -v 2>&1 |
+    sed 's/^/  /' |
+    tee -a $LOG_FILE
+echo "" |
+    tee -a $LOG_FILE
+
 # Set variables
 # NOTE: UID already set
 echo "Setting variables..." |
     tee -a $LOG_FILE
 GID=$UID
+read -p "Repository branch: " BRANCH
 read -p "Backend domain: " RICARDO_BACKEND_DOMAIN
 read -p "Serial path: " SERIAL_PATH
 echo "" |
     tee -a $LOG_FILE
 
-# Request sudo password
-sudo -v
+# Update repository
+echo "Updating repository..." |
+    tee -a $LOG_FILE
+git checkout $BRANCH 2>&1 |
+    sed 's/^/  /' |
+    tee -a $LOG_FILE
+git pull 2>&1 |
+    sed 's/^/  /' |
+    tee -a $LOG_FILE
+echo "" |
+    tee -a $LOG_FILE
+
+# Update submodules
+echo "Updating submodules..." |
+    tee -a $LOG_FILE
+git submodule update --init --recursive 2>&1 |
+    sed 's/^/  /' |
+    tee -a $LOG_FILE
+echo "" |
+    tee -a $LOG_FILE
 
 # Update packages
 echo "Updating packages..." |
