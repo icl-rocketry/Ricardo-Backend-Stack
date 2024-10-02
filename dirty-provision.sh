@@ -52,7 +52,7 @@ sudo -v
 # Update packages
 echo "Updating packages..." |
     tee -a $LOG_FILE
-sudo apt-get update |
+sudo apt-get update 2>&1 |
     sed 's/^/  /' |
     tee -a $LOG_FILE
 echo "" |
@@ -61,7 +61,7 @@ echo "" |
 # Upgrade packages
 echo "Upgrading packages..." |
     tee -a $LOG_FILE
-sudo apt-get upgrade -y |
+sudo apt-get upgrade -y 2>&1 |
     sed 's/^/  /' |
     tee -a $LOG_FILE
 echo "" |
@@ -78,7 +78,7 @@ else
     # Install Docker
     echo "Installing Docker..." |
         tee -a $LOG_FILE
-    curl https://get.docker.com |
+    curl https://get.docker.com 2>&1 |
         bash |
         sed 's/^/  /' |
         tee -a $LOG_FILE
@@ -88,7 +88,7 @@ else
     # Ensure Docker group exists
     echo "Creating Docker group..." |
         tee -a $LOG_FILE
-    sudo groupadd docker |
+    sudo groupadd docker 2>&1 |
         tee -a $LOG_FILE
     echo "" |
         tee -a $LOG_FILE
@@ -96,7 +96,7 @@ else
     # Add user to Docker group
     echo "Adding user to Docker group..." |
         tee -a $LOG_FILE
-    sudo usermod -aG docker $USER |
+    sudo usermod -aG docker $USER 2>&1 |
         tee -a $LOG_FILE
     echo "" |
         tee -a $LOG_FILE
@@ -118,7 +118,7 @@ echo "" |
 # NOTE: Output not saved from pull command
 echo "Pulling images..." |
     tee -a $LOG_FILE
-docker compose pull |
+docker compose pull 2>&1 |
     sed 's/^/  /' |
     tee -a $LOG_FILE
 echo "" |
@@ -127,7 +127,8 @@ echo "" |
 # Build images
 echo "Building images..." |
     tee -a $LOG_FILE
-docker compose --progress plain build | sed 's/^/  /' |
+docker compose --progress plain build 2>&1 |
+    sed 's/^/  /' |
     tee -a $LOG_FILE
 echo "" |
     tee -a $LOG_FILE
