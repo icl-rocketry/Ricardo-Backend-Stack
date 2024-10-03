@@ -136,6 +136,12 @@ else
         log_display_indent
     echo "" |
         log_display
+
+    # Print warning regarding groups
+    echo "WARNING: Users may need to log out and in to refresh groups" |
+        log_display
+    echo "" |
+        log_display
 fi
 
 # Generate environment file
@@ -154,7 +160,7 @@ echo "" |
 # NOTE: Output not saved from pull command
 echo "Pulling images..." |
     log_display
-docker compose pull 2>&1 |
+sudo docker compose pull 2>&1 |
     log_display_indent
 echo "" |
     log_display
@@ -162,7 +168,7 @@ echo "" |
 # Build images
 echo "Building images..." |
     log_display
-docker compose --progress plain build 2>&1 |
+sudo docker compose --progress plain build 2>&1 |
     log_display_indent
 echo "" |
     log_display
