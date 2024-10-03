@@ -3,14 +3,15 @@ from cmd2 import Cmd2ArgumentParser
 
 import time
 
-ereg_disarm_ap = Cmd2ArgumentParser()
+canard_disarm_ap = Cmd2ArgumentParser()
+canard_disarm_ap.add_argument("--destination",type=int,required=True)
 
-@CommandServer.register('ereg_disarm',argparse=ereg_disarm_ap)
-def ereg_disarm(instance,args):
+@CommandServer.register('canard_disarm',argparse=canard_disarm_ap)
+def canard_disarm(instance,args):
 
     command_packet_args = {"source":1,
                         "source_service":instance.source_service,
-                        "destination":13,
+                        "destination":args['destination'],
                         "destination_service":10,
                         "command_id":4,
                         "command_arg":0}
