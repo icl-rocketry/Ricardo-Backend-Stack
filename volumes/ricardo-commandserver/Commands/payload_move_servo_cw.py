@@ -7,7 +7,7 @@ payload_move_servo_cw_ap = Cmd2ArgumentParser()
 payload_move_servo_cw_ap.add_argument("--destination_service",type=int,required=True)
 payload_move_servo_cw_ap.add_argument('--duration',type=float,required=False,default=1)
 
-@CommandServer.register('payload_move_payload_move_servo_cw',argparse=payload_move_servo_cw_ap)
+@CommandServer.register('payload_move_servo_cw',argparse=payload_move_servo_cw_ap)
 def payload_move_servo_cw(instance,args):
 
     command_packet_args = {"source":1,

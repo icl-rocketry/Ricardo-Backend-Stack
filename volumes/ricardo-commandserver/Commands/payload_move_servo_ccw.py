@@ -6,7 +6,7 @@ import time
 payload_move_servo_ccw_ap = Cmd2ArgumentParser()
 payload_move_servo_ccw_ap.add_argument('--duration',type=float,required=False,default=1)
 
-@CommandServer.register('payload_move_payload_move_servo_ccw',argparse=payload_move_servo_ccw_ap)
+@CommandServer.register('payload_move_servo_ccw',argparse=payload_move_servo_ccw_ap)
 def payload_move_servo_ccw(instance,args):
 
     command_packet_args = {"source":1,
