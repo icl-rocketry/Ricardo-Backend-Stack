@@ -18,24 +18,24 @@ def payload_move_servo_cw(instance,args):
                         "command_arg":70}
 
     instance.send_command_packet(command_packet_args)
-    time.sleep(0.02)
+    time.sleep(0.1)
     instance.send_command_packet(command_packet_args)
-    time.sleep(0.02)
+    time.sleep(0.1)
     instance.send_command_packet(command_packet_args)
-    time.sleep(0.02)
+    time.sleep(0.1)
     instance.send_command_packet(command_packet_args)
-    time.sleep(0.02)
+    time.sleep(0.1)
     instance.send_command_packet(command_packet_args)
     time.sleep(args.get('duration',1))
     command_packet_args['command_arg'] = 90
     instance.send_command_packet(command_packet_args)
-    time.sleep(0.02)
+    time.sleep(0.1)
     instance.send_command_packet(command_packet_args)
-    time.sleep(0.02)
+    time.sleep(0.1)
     instance.send_command_packet(command_packet_args)
-    time.sleep(0.02)
+    time.sleep(0.1)
     instance.send_command_packet(command_packet_args)
-    time.sleep(0.02)
+    time.sleep(0.1)
     instance.send_command_packet(command_packet_args)
 
     return True
