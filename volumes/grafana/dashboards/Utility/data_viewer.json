@@ -1,0 +1,161 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 15,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 24,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "maxDataPoints": 2,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "/.*/",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {
+            "titleSize": 15,
+            "valueSize": 15
+          },
+          "textMode": "value_and_name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/${TaskName}",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Full Telemetry Frame",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "source": "data"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "data": true,
+                "flag_error": true,
+                "flag_info": true,
+                "flightphase": true,
+                "state": true,
+                "timestamp": false
+              },
+              "indexByName": {},
+              "renameByName": {}
+            }
+          }
+        ],
+        "type": "stat"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "nim_sen_telem",
+            "value": "nim_sen_telem"
+          },
+          "hide": 0,
+          "label": "TaskName",
+          "name": "TaskName",
+          "options": [
+            {
+              "selected": true,
+              "text": "nim_sen_telem",
+              "value": "nim_sen_telem"
+            }
+          ],
+          "query": "nim_sen_telem",
+          "skipUrlSync": false,
+          "type": "textbox"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Data Viewer",
+    "uid": "dc08ce0d-6857-4b1b-a722-cc659f9bf570",
+    "version": 5,
+    "weekStart": ""
+  }
