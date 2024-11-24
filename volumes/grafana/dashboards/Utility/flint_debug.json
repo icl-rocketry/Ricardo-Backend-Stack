@@ -1,0 +1,1084 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 58,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "dark-red",
+              "mode": "fixed"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "volt"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "maxDataPoints": 1111111,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              },
+              {
+                "jsonPath": "$.data.busV",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/flint_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Panel Title",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "semi-dark-yellow",
+              "mode": "fixed"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "amp"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 8,
+          "y": 0
+        },
+        "id": 2,
+        "maxDataPoints": 11111,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.current",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/flint_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Panel Title",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "ms"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 0,
+          "y": 7
+        },
+        "id": 11,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/pyr0_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Panel Title",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "ms"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 4,
+          "y": 7
+        },
+        "id": 12,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/pyr1_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Panel Title",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "ms"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 8,
+          "y": 7
+        },
+        "id": 13,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/pyr2_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Panel Title",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "ms"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 12,
+          "y": 7
+        },
+        "id": 14,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/pyr3_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Panel Title",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 0,
+          "y": 12
+        },
+        "id": 3,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/armpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/firepyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10,\\\"argument\\\":10000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "FIRE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/disarmpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "title": "Pyro 0",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 4,
+          "y": 12
+        },
+        "id": 4,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/armpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/firepyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":11,\\\"argument\\\":10000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "FIRE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/disarmpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "title": "Pyro 1",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 8,
+          "y": 12
+        },
+        "id": 5,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/armpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/firepyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":12,\\\"argument\\\":10000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "FIRE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/disarmpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "title": "Pyro 2",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 12,
+          "y": 12
+        },
+        "id": 6,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/armpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/firepyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":13,\\\"argument\\\":10000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "FIRE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/disarmpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "title": "Pyro 3",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 0,
+          "y": 17
+        },
+        "id": 7,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/pyr0_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Pyro 0 Status",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {}
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "component_status"
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 4,
+          "y": 17
+        },
+        "id": 8,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/pyr1_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Pyro 1 Status",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {}
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "component_status"
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 8,
+          "y": 17
+        },
+        "id": 9,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/pyr2_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Pyro 2 Status",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {}
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "component_status"
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 12,
+          "y": 17
+        },
+        "id": 10,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/pyr3_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Pyro 3 Status",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {}
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "component_status"
+            }
+          }
+        ],
+        "type": "stat"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "hide": 2,
+          "name": "commandserverip",
+          "query": "localhost:1339",
+          "skipUrlSync": false,
+          "type": "constant"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Flint Debug",
+    "uid": "a742f1c9-19c1-48e1-8133-68ce6e383ab9",
+    "version": 1,
+    "weekStart": ""
+  }

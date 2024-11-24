@@ -1,15 +1,27 @@
-socket:
-  url: ws://ricardo-backend:1337
+sockets:
+  - url: ws://ricardo-backend:1337/ws
+    ssl_verify: False
+    tags:
+      source: Local
+
+  - url: ws://backend.mcc.iclr/ws
+    ssl_verify: False
+    tags:
+      source: MCC
+
+  - url: ws://backend.pad.iclr/ws
+    ssl_verify: False
+    tags:
+      source: PAD
 
 handlers:
-  - type: print
-    namespace: /telemetry
-
   - type: influxdb
-    namespace: /telemetry
-    url: http://influxdb:8086
-    token: fZDWkTVbzxVQGY9-Pm9Pc-gPr6mPO7H7pG7FLFVPyG_GkkqwKTINfyFhLv20gxB3-uYR4ED-3sBUkxxmDe7acQ==
-    org: ICLR
-    bucket: telemetry
-    tags:
-      source: wired
+    namespaces:
+      - /telemetry
+    url: http://questdb:9000
+
+  - type: websocket
+    host: 0.0.0.0
+    port: 1338
+    namespaces:
+      - /telemetry

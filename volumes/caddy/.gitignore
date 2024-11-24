@@ -1,0 +1,7 @@
+# Ignore all files
+*
+
+# Except Caddyfile and .gitignore
+!.gitignore
+!Caddyfile
+!index.html
