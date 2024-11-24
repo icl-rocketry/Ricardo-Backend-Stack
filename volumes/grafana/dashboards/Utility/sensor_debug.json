@@ -1,0 +1,274 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 10,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "default": true,
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "__systemRef": "hideSeriesFrom",
+              "matcher": {
+                "id": "byNames",
+                "options": {
+                  "mode": "exclude",
+                  "names": [
+                    "ch0sens"
+                  ],
+                  "prefix": "All except:",
+                  "readOnly": true
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 23,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              },
+              {
+                "jsonPath": "$.data.ch0sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch1sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch2sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch3sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch4sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch5sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch6sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch7sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch8sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch9sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch10sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.ch11sens",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.temp0",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              },
+              {
+                "jsonPath": "$.data.temp1",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              },
+              {
+                "jsonPath": "$.data.temp2",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              },
+              {
+                "jsonPath": "$.data.temp3",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/${TaskName}",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Sensors",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "nim_sen_telem",
+            "value": "nim_sen_telem"
+          },
+          "hide": 0,
+          "label": "DTRH Task Name",
+          "name": "TaskName",
+          "options": [
+            {
+              "selected": true,
+              "text": "nim_sen_telem",
+              "value": "nim_sen_telem"
+            }
+          ],
+          "query": "nim_sen_telem",
+          "skipUrlSync": false,
+          "type": "textbox"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-1m",
+      "to": "now+20s"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Sensors",
+    "uid": "f23b8947-8518-4720-973f-f690d8e46bb1",
+    "version": 73,
+    "weekStart": ""
+  }
