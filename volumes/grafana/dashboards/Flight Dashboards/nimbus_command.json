@@ -118,6 +118,11 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 7,
         "w": 3,
@@ -125,11 +130,53 @@
         "y": 0
       },
       "id": 17,
-      "libraryPanel": {
-        "name": "NIMBUS 24 PDU0 CONTROL",
-        "uid": "bdyw8us1zqqkgd"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Restart Logic",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "GO LIVE",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Back To Ready",
+            "variant": "primary"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "PDU0"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "PDU0",
+      "type": "speakyourcode-button-panel"
     },
     {
       "datasource": {
@@ -229,6 +276,11 @@
       "type": "canvas"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 7,
         "w": 4,
@@ -236,11 +288,58 @@
         "y": 0
       },
       "id": 131,
-      "libraryPanel": {
-        "name": "Nimbus 24 PDU Compound Commands",
-        "uid": "fdz3o22ohfg1se"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_full_reset\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21,\\\"restart_duration\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Full Bus Restart",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Restart Logic",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "GO LIVE",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Back To Ready"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "PDU Compound Commands"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "PDU Compound Commands",
+      "type": "speakyourcode-button-panel"
     },
     {
       "datasource": {
@@ -340,6 +439,11 @@
       "type": "canvas"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 7,
         "w": 2,
@@ -347,13 +451,83 @@
         "y": 0
       },
       "id": 129,
-      "libraryPanel": {
-        "name": "NIMBUS 24 PDU1 CONTROL",
-        "uid": "cdyw8xhacge80a"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Restart Logic",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "GO LIVE",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Back To Ready",
+            "variant": "primary"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "PDU1"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "PDU1",
+      "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 7,
         "w": 4,
@@ -361,11 +535,59 @@
         "y": 0
       },
       "id": 126,
-      "libraryPanel": {
-        "name": "NIMBUS 24 PDU1 State",
-        "uid": "cdyw9gjbliygwd"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "PDU1 State"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.state",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "hide": false,
+          "path": "/nim_pdu1_telem",
+          "refId": "B",
+          "withStreaming": true
+        }
+      ],
+      "title": "PDU1 State",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "state"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {}
+        }
+      ],
+      "type": "stat"
     },
     {
       "collapsed": false,
@@ -946,6 +1168,33 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 2,
@@ -953,13 +1202,87 @@
         "y": 8
       },
       "id": 113,
-      "libraryPanel": {
-        "name": "Nimbus 24 Thanos Status",
-        "uid": "de0dhc4ohbeo0d"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "Thanos Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_thanos_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Thanos Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 2,
@@ -967,11 +1290,58 @@
         "y": 8
       },
       "id": 116,
-      "libraryPanel": {
-        "name": "Nimbus 24 Pyro Engine Status",
-        "uid": "fe0di3084fim8f"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "Pyro Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_pyro_engine_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pyro Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
       "datasource": {
@@ -1197,6 +1567,33 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 2,
@@ -1204,11 +1601,45 @@
         "y": 12
       },
       "id": 115,
-      "libraryPanel": {
-        "name": "Nimbus 24 Pyro Engine Time",
-        "uid": "fe0diau7ia70ge"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Pyro time"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/nim_pyro_engine_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pyro time",
+      "type": "stat"
     },
     {
       "collapsed": false,
@@ -1224,6 +1655,33 @@
       "type": "row"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 2,
@@ -1231,11 +1689,45 @@
         "y": 17
       },
       "id": 41,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Fill Servo Position",
-        "uid": "edyvkpshounswb"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Ox Fill Position"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_oxfillsrv_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Fill Position",
+      "type": "stat"
     },
     {
       "datasource": {
@@ -1331,6 +1823,49 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "CLOSED"
+                },
+                "1": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "OPEN"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 3,
@@ -1338,13 +1873,74 @@
         "y": 17
       },
       "id": 84,
-      "libraryPanel": {
-        "name": "Ox Vent Sol Value",
-        "uid": "fdysozbikijnke"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Ox Vent Sol Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/nim_oxventsol_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Vent Sol Status",
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 2,
@@ -1352,11 +1948,45 @@
         "y": 17
       },
       "id": 88,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Hose Vent Servo Position",
-        "uid": "cdyvkmk1tqy2oa"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Ox Hose Position"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_oxhosesrv_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Hose Position",
+      "type": "stat"
     },
     {
       "datasource": {
@@ -1384,6 +2014,33 @@
       "type": "text"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 2,
@@ -1391,13 +2048,74 @@
         "y": 17
       },
       "id": 94,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Hose Position",
-        "uid": "adyvlja5g8o3kb"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "N2 Hose Position"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_n2hosesrv_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Hose Position",
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 3,
@@ -1405,13 +2123,90 @@
         "y": 17
       },
       "id": 91,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Fill Servo Position ",
-        "uid": "ddyvkzzwu6by8c"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "N2 Fill Position"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_n2fillsrv_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Fill Position",
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "CLOSED"
+                },
+                "1": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "OPEN"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 3,
@@ -1419,13 +2214,90 @@
         "y": 17
       },
       "id": 97,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Solenoid Value",
-        "uid": "edysq7u0iwao0b"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "N2 Solenoid Value"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/nim_n2ventsol_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Solenoid Value",
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "CLOSED"
+                },
+                "1": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "OPEN"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 2,
@@ -1433,13 +2305,52 @@
         "y": 17
       },
       "id": 39,
-      "libraryPanel": {
-        "name": "Nimbus 24 Fuel Vent Solenoid Value",
-        "uid": "adysqtbd8os1sf"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Fuel Vent Solenoid Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/nim_fuelventsol_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Vent Solenoid Status",
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 9,
         "w": 2,
@@ -1447,13 +2358,65 @@
         "y": 21
       },
       "id": 82,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Fill Servo Command",
-        "uid": "ddyvknpt255a8d"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11,\\\"argument\\\":170}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "Ox Fill"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Fill",
+      "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 9,
         "w": 3,
@@ -1461,13 +2424,87 @@
         "y": 21
       },
       "id": 128,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Vent Servo",
-        "uid": "fdysnqs828lc0b"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":180}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":115}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Fast Vent",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":105}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Slow Vent",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_srv_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11, \\\"destination_service\\\":10,\\\"duration\\\":0.2,\\\"open_position\\\":160}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Blip Vent"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":95}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Extra Slow Vent"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "Ox Vent Servo"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Vent Servo",
+      "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 9,
         "w": 3,
@@ -1475,13 +2512,72 @@
         "y": 21
       },
       "id": 133,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Vent Solenoid Command",
-        "uid": "cdysnwyihg0lcb"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_sol_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Blip Vent",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "Ox Vent Solenoid"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Vent Solenoid",
+      "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 9,
         "w": 2,
@@ -1489,11 +2585,58 @@
         "y": 21
       },
       "id": 105,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Hose Vent Servo Command",
-        "uid": "edyvklmxp7h8ge"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":10,\\\"argument\\\":120}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":10,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "Ox Hose"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Hose",
+      "type": "speakyourcode-button-panel"
     },
     {
       "datasource": {
@@ -1556,6 +2699,11 @@
       "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 9,
         "w": 2,
@@ -1563,13 +2711,66 @@
         "y": 21
       },
       "id": 103,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Hose Command",
-        "uid": "cdyvljqme4yyod"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10,\\\"argument\\\":60}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "N2 Hose"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "N2 Hose",
+      "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 9,
         "w": 3,
@@ -1577,13 +2778,71 @@
         "y": 21
       },
       "id": 104,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Fill Servo Command ",
-        "uid": "edyvl0tg5gav4f"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11,\\\"argument\\\":60}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open Slow"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11,\\\"argument\\\":90}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open Fast",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "N2 Fill"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "N2 Fill",
+      "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 9,
         "w": 3,
@@ -1591,13 +2850,66 @@
         "y": 21
       },
       "id": 108,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Solenoid Command",
-        "uid": "cdysq5ppk25fkb"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "N2 Solenoid"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "N2 Solenoid",
+      "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
       "gridPos": {
         "h": 9,
         "w": 2,
@@ -1605,31 +2917,66 @@
         "y": 21
       },
       "id": 106,
-      "libraryPanel": {
-        "name": "Nimbus 24 Fuel Solenoid Command",
-        "uid": "bdysqu0l6a4n4f"
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
       },
-      "title": "Fuel Solenoid"
-    },
-    {
-      "gridPos": {
-        "h": 8,
-        "w": 2,
-        "x": 0,
-        "y": 30
-      },
-      "id": 83,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Fill Servo Status",
-        "uid": "edyvkqdkk05j4a"
-      },
-      "title": "Ox Fill Status"
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Fuel Solenoid",
+      "type": "speakyourcode-button-panel"
     },
     {
       "datasource": {
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1640,7 +2987,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -1662,7 +3010,130 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 0,
+        "y": 30
+      },
+      "id": 83,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/gss_oxfillsrv_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Fill Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -1699,7 +3170,7 @@
         "textMode": "name",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.8",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
@@ -1746,6 +3217,58 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 8,
         "w": 3,
@@ -1753,13 +3276,123 @@
         "y": 30
       },
       "id": 87,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Vent Sol Status",
-        "uid": "ddysp4c64ndhcc"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "Ox Vent Sol Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_oxventsol_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Vent Sol Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR",
+                "ERROR_CONTINUITY"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 8,
         "w": 2,
@@ -1767,11 +3400,68 @@
         "y": 30
       },
       "id": 90,
-      "libraryPanel": {
-        "name": "Nimbus 24 Ox Hose Vent Servo Status",
-        "uid": "cdyvkm3tozr40d"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "Ox Hose Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/gss_oxhosesrv_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Hose Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
       "datasource": {
@@ -1795,7 +3485,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1917,7 +3608,7 @@
           }
         ]
       },
-      "pluginVersion": "10.4.8",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
@@ -1971,6 +3662,58 @@
       "type": "table"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 8,
         "w": 2,
@@ -1978,13 +3721,122 @@
         "y": 30
       },
       "id": 96,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Hose Status",
-        "uid": "edyvlk8jcx534b"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "N2 Hose Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/gss_n2hosesrv_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Hose Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 8,
         "w": 3,
@@ -1992,13 +3844,122 @@
         "y": 30
       },
       "id": 93,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Fill Servo Status",
-        "uid": "adyvl1rhfn8xsd"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "N2 Fill Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/gss_n2fillsrv_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Fill Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 8,
         "w": 3,
@@ -2006,13 +3967,123 @@
         "y": 30
       },
       "id": 99,
-      "libraryPanel": {
-        "name": "Nimbus 24 N2 Solenoid Status",
-        "uid": "ddysq8j4fnj7kb"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "Nitrogen Solenoid Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_n2ventsol_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Nitrogen Solenoid Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR",
+                "ERROR_CONTINUITY"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 8,
         "w": 2,
@@ -2020,11 +4091,69 @@
         "y": 30
       },
       "id": 56,
-      "libraryPanel": {
-        "name": "Nimbus 24 Fuel Vent Status",
-        "uid": "adysqunr0vw1se"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "Fuel Vent Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_fuelventsol_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Vent Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR",
+                "ERROR_CONTINUITY"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
       "collapsed": false,
@@ -2061,7 +4190,7 @@
         "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\r\n<table style=\"width:100%; height:100%;border:0px solid black;\">\r\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 55px;\"> THANOS </td>\r\n</table>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.8",
+      "pluginVersion": "11.2.0",
       "type": "text"
     },
     {
@@ -2137,6 +4266,33 @@
       "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 3,
         "w": 2,
@@ -2144,11 +4300,45 @@
         "y": 42
       },
       "id": 140,
-      "libraryPanel": {
-        "name": "Nimbus 24 Pyro Engine Time",
-        "uid": "fe0diau7ia70ge"
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Pyro time"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/nim_pyro_engine_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pyro time",
+      "type": "stat"
     },
     {
       "datasource": {
@@ -2167,7 +4357,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2202,7 +4393,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.8",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
@@ -2242,7 +4433,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2277,7 +4469,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.8",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
@@ -2491,6 +4683,33 @@
       "type": "speakyourcode-button-panel"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 4,
@@ -2498,13 +4717,87 @@
         "y": 52
       },
       "id": 136,
-      "libraryPanel": {
-        "name": "Nimbus 24 Thanos Status",
-        "uid": "de0dhc4ohbeo0d"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "Thanos Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_thanos_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Thanos Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 2,
@@ -2512,11 +4805,58 @@
         "y": 52
       },
       "id": 138,
-      "libraryPanel": {
-        "name": "Nimbus 24 Pyro Engine Status",
-        "uid": "fe0di3084fim8f"
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
       },
-      "title": "Pyro Status"
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_pyro_engine_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pyro Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
       "datasource": {
@@ -2534,7 +4874,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -2556,7 +4897,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -2593,7 +4935,7 @@
         "textMode": "name",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.8",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
@@ -2656,7 +4998,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -2678,7 +5021,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -2715,7 +5059,7 @@
         "textMode": "name",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.8",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
@@ -2819,6 +5163,6 @@
   "timezone": "",
   "title": "Nimbus Command",
   "uid": "bdx50ohzoi5fkd",
-  "version": 241,
+  "version": 243,
   "weekStart": ""
 }

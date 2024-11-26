@@ -1,0 +1,5793 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "links": [],
+    "liveNow": true,
+    "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 110,
+        "panels": [],
+        "title": "Greg",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "default": true,
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 0,
+          "y": 1
+        },
+        "id": 120,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.Kp",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_greg_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Kp Variation",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "default": true,
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic-by-name"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "__systemRef": "hideSeriesFrom",
+              "matcher": {
+                "id": "byNames",
+                "options": {
+                  "mode": "exclude",
+                  "names": [
+                    "regAngle"
+                  ],
+                  "prefix": "All except:",
+                  "readOnly": true
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 4,
+          "y": 1
+        },
+        "id": 117,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.regAngle",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              },
+              {
+                "jsonPath": "$.data.Proportional_Term",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.data.Feedforward",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_greg_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Angles",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "default": true,
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 8,
+          "y": 1
+        },
+        "id": 112,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_ereg_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Component Status",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {}
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "component_status"
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "default": true,
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 13,
+          "w": 12,
+          "x": 12,
+          "y": 1
+        },
+        "id": 122,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.controller_errors",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_ereg_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Controller Errors",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "keepTime": false,
+              "replace": true,
+              "source": "controller_errors"
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 6
+        },
+        "id": 115,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/ereg_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/ereg_execute\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":4}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "PRESSURISE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/ereg_execute\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":1}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "CONTROLLED",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/ereg_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "secondary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/ereg_execute\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "SHUTDOWN"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "EREG DEBUG",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 14
+        },
+        "id": 92,
+        "panels": [],
+        "title": "Pyros",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "ms"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 0,
+          "y": 15
+        },
+        "id": 102,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_pyro_sep_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Sep Pyro Time",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "ms"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 3,
+          "y": 15
+        },
+        "id": 106,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_pyro_main_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Main Pyro Time",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 17,
+          "w": 8,
+          "x": 6,
+          "y": 15
+        },
+        "id": 93,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.busV",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_rec_flint_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Recovery F&S Bus Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 17,
+          "w": 10,
+          "x": 14,
+          "y": 15
+        },
+        "id": 94,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.current",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_rec_flint_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Solenoid F&S Current",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 6,
+          "w": 3,
+          "x": 0,
+          "y": 19
+        },
+        "id": 96,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pyro_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":30,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pyro_fire\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":30,\\\"destination_service\\\":10,\\\"argument\\\":15000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "FIRE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pyro_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":30,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Sep Pyro",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 6,
+          "w": 3,
+          "x": 3,
+          "y": 19
+        },
+        "id": 104,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pyro_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":30,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pyro_fire\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":30,\\\"destination_service\\\":11,\\\"argument\\\":10000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "FIRE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pyro_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":30,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Main Pyro Command",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 3,
+          "x": 0,
+          "y": 25
+        },
+        "id": 100,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_pyro_sep_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Sep Pyro Time",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {}
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "component_status"
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 3,
+          "x": 3,
+          "y": 25
+        },
+        "id": 108,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_pyro_main_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Main Pyro Status",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {}
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "component_status"
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 32
+        },
+        "id": 90,
+        "panels": [],
+        "title": "Canard Bay",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 0,
+          "y": 33
+        },
+        "id": 91,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/canard_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":40}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/canard_execute\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":40,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Set roll rate",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/canard_wiggle\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":40}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Wiggle",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/canard_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":40}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Canard Board",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 41
+        },
+        "id": 80,
+        "panels": [],
+        "title": "Payload Deployer",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 24,
+          "x": 0,
+          "y": 42
+        },
+        "id": 109,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.ServoVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_deployer_chad_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Deployer Chad Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 2,
+          "x": 0,
+          "y": 47
+        },
+        "id": 82,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/servo_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/servo_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31,\\\"destination_service\\\":10,\\\"argument\\\":180}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/servo_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31,\\\"destination_service\\\":10,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/servo_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Payload Deployer Servo (10)",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 2,
+          "y": 47
+        },
+        "id": 85,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/nim_paydepsrv0_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Payload Deployer Servo (10) Position",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 6,
+          "y": 47
+        },
+        "id": 86,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_paydepsrv0_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Payload Deployer Servo (10) Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 10,
+          "y": 47
+        },
+        "id": 84,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/payload_dep_compound_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/payload_dep_compound_deploy\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Deploy",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/payload_dep_compound_reset\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Reset",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/payload_dep_compound_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Payload Deployer Compound",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 14,
+          "y": 47
+        },
+        "id": 88,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_paydepsrv1_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Payload Deployer Servo (11) Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 18,
+          "y": 47
+        },
+        "id": 87,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/nim_paydepsrv1_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Payload Deployer Servo (11) Position",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 2,
+          "x": 22,
+          "y": 47
+        },
+        "id": 83,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/servo_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/servo_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31,\\\"destination_service\\\":11,\\\"argument\\\":180}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/servo_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31,\\\"destination_service\\\":11,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/servo_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":31,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Payload Deployer Servo (11)",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 55
+        },
+        "id": 62,
+        "panels": [],
+        "title": "PDUs",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 0,
+          "y": 56
+        },
+        "id": 74,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.battVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_pdu0_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "PDU0 Battery Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 4,
+          "y": 56
+        },
+        "id": 71,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.depVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_pdu0_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "PDU0 Dep Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 8,
+          "y": 56
+        },
+        "id": 73,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.logicVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_pdu0_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "PDU0 Logic Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 12,
+          "y": 56
+        },
+        "id": 79,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.battVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_pdu1_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "PDU1 Battery Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 16,
+          "y": 56
+        },
+        "id": 77,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.depVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_pdu1_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "PDU1 Dep Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 20,
+          "y": 56
+        },
+        "id": 78,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.logicVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_pdu1_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "PDU1 Logic Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "default": true,
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 0,
+          "y": 64
+        },
+        "id": 66,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.state",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "hide": false,
+            "path": "/nim_pdu0_telem",
+            "refId": "B",
+            "withStreaming": true
+          }
+        ],
+        "title": "PDU0 State",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "state"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {}
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 4,
+          "y": 64
+        },
+        "id": 64,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Restart Logic",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "GO LIVE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Back To Ready",
+              "variant": "primary"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "PDU0",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 8,
+          "x": 8,
+          "y": 64
+        },
+        "id": 89,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_full_reset\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21,\\\"restart_duration\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Full Bus Restart",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Restart Logic",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "GO LIVE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Back To Ready"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "PDU Compound Commands",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 16,
+          "y": 64
+        },
+        "id": 68,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Restart Logic",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "GO LIVE",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Back To Ready",
+              "variant": "primary"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "PDU1",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "default": true,
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 20,
+          "y": 64
+        },
+        "id": 70,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.state",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "hide": false,
+            "path": "/nim_pdu1_telem",
+            "refId": "B",
+            "withStreaming": true
+          }
+        ],
+        "title": "PDU1 State",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "state"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {}
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 72
+        },
+        "id": 18,
+        "panels": [],
+        "title": "Solenoids",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "green",
+                    "index": 0,
+                    "text": "CLOSED"
+                  },
+                  "1": {
+                    "color": "red",
+                    "index": 1,
+                    "text": "OPEN"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 0,
+          "y": 73
+        },
+        "id": 15,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/nim_oxventsol_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox Vent Sol Value",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "green",
+                    "index": 0,
+                    "text": "CLOSED"
+                  },
+                  "1": {
+                    "color": "red",
+                    "index": 1,
+                    "text": "OPEN"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 3,
+          "y": 73
+        },
+        "id": 22,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/nim_n2ventsol_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "N2 Solenoid Value",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "green",
+                    "index": 0,
+                    "text": "CLOSED"
+                  },
+                  "1": {
+                    "color": "red",
+                    "index": 1,
+                    "text": "OPEN"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 6,
+          "y": 73
+        },
+        "id": 28,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.8",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/nim_fuelventsol_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Fuel Vent Solenoid Status",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 7,
+          "x": 9,
+          "y": 73
+        },
+        "id": 52,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.busV",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_sol_flint_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Solenoid F&S Bus Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 7,
+          "w": 3,
+          "x": 0,
+          "y": 77
+        },
+        "id": 13,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_sol_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Blip Vent",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Ox Vent Solenoid",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 7,
+          "w": 3,
+          "x": 3,
+          "y": 77
+        },
+        "id": 20,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "N2 Solenoid",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 7,
+          "w": 3,
+          "x": 6,
+          "y": 77
+        },
+        "id": 26,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Fuel Solenoid",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 7,
+          "x": 9,
+          "y": 82
+        },
+        "id": 61,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.current",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_sol_flint_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Solenoid F&S Current",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 3,
+          "x": 0,
+          "y": 84
+        },
+        "id": 17,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_oxventsol_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox Vent Sol Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR",
+                  "ERROR_CONTINUITY"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 3,
+          "x": 3,
+          "y": 84
+        },
+        "id": 24,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_n2ventsol_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Nitrogen Solenoid Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR",
+                  "ERROR_CONTINUITY"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 3,
+          "x": 6,
+          "y": 84
+        },
+        "id": 30,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/nim_fuelventsol_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Fuel Vent Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR",
+                  "ERROR_CONTINUITY"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 92
+        },
+        "id": 3,
+        "panels": [],
+        "title": "Servo Valves",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 0,
+          "y": 93
+        },
+        "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.ServoVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/nim_midfeed_chad_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Midfeed Chad Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 8,
+          "x": 4,
+          "y": 93
+        },
+        "id": 60,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.ServoVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/gss_ox_chad_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox GSS Chad Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 8,
+          "x": 12,
+          "y": 93
+        },
+        "id": 53,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.ServoVoltage",
+                "language": "jsonpath",
+                "name": ""
+              },
+              {
+                "jsonPath": "$.timestamp",
+                "language": "jsonpath",
+                "name": "",
+                "type": "time"
+              }
+            ],
+            "path": "/gss_n2_chad_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "N2 GSS Chad Voltage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "default": true,
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 0,
+          "y": 98
+        },
+        "id": 9,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/nim_oxventsrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          },
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "hide": true,
+            "path": "/nim_oxventpot_telem",
+            "refId": "B",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox Vent Position",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 4,
+          "y": 98
+        },
+        "id": 40,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/gss_oxhosesrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox Hose Position",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 8,
+          "y": 98
+        },
+        "id": 47,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/gss_oxfillsrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox Fill Position",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 12,
+          "y": 98
+        },
+        "id": 51,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/gss_n2hosesrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "N2 Hose Position",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 16,
+          "y": 98
+        },
+        "id": 59,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.value",
+                "language": "jsonpath",
+                "name": "",
+                "type": "number"
+              }
+            ],
+            "path": "/gss_n2fillsrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "N2 Fill Position",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 10,
+          "w": 4,
+          "x": 0,
+          "y": 102
+        },
+        "id": 5,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":180}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":115}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Fast Vent",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":105}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Slow Vent",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_srv_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11, \\\"destination_service\\\":10,\\\"duration\\\":0.2,\\\"open_position\\\":160}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Blip Vent"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":11,\\\"destination_service\\\":10,\\\"argument\\\":95}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Extra Slow Vent"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Ox Vent Servo",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 10,
+          "w": 4,
+          "x": 4,
+          "y": 102
+        },
+        "id": 38,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":10,\\\"argument\\\":120}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":10,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Ox Hose",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 10,
+          "w": 4,
+          "x": 8,
+          "y": 102
+        },
+        "id": 45,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11,\\\"argument\\\":170}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Ox Fill",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 10,
+          "w": 4,
+          "x": 12,
+          "y": 102
+        },
+        "id": 34,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10,\\\"argument\\\":60}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "N2 Hose",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 10,
+          "w": 4,
+          "x": 16,
+          "y": 102
+        },
+        "id": 55,
+        "options": {
+          "buttons": [
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "ARM",
+              "variant": "destructive"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11,\\\"argument\\\":60}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open Slow"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11,\\\"argument\\\":90}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Open Fast",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "Close",
+              "variant": "primary"
+            },
+            {
+              "datasource": "Command Server",
+              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+              "text": "DISARM",
+              "variant": "destructive"
+            }
+          ],
+          "orientation": "vertical"
+        },
+        "targets": [
+          {
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "hide": true,
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "N2 Fill",
+        "type": "speakyourcode-button-panel"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 0,
+          "y": 112
+        },
+        "id": 7,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "nim_oxventsrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox Vent Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 4,
+          "y": 112
+        },
+        "id": 43,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/gss_oxhosesrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox Hose Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 8,
+          "y": 112
+        },
+        "id": 49,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/gss_oxfillsrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "Ox Fill Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 12,
+          "y": 112
+        },
+        "id": 36,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/gss_n2hosesrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "N2 Hose Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "golioth-websocket-datasource",
+          "uid": "d5EHcyv4z"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "ERROR"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent"
+                      },
+                      {
+                        "color": "semi-dark-red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 4,
+          "x": 16,
+          "y": 112
+        },
+        "id": 57,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "golioth-websocket-datasource",
+              "uid": "d5EHcyv4z"
+            },
+            "fields": [
+              {
+                "jsonPath": "$.data.component_status",
+                "language": "jsonpath",
+                "name": ""
+              }
+            ],
+            "path": "/gss_n2fillsrv_telem",
+            "refId": "A",
+            "withStreaming": true
+          }
+        ],
+        "title": "N2 Fill Status",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "json",
+              "keepTime": false,
+              "replace": false,
+              "source": "component_status"
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "component_status",
+                  "NOMINAL",
+                  "DISARMED",
+                  "ERROR"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 120
+        },
+        "id": 2,
+        "panels": [],
+        "title": "Lower Feed",
+        "type": "row"
+      }
+    ],
+    "refresh": "10s",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-1m",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "Nimbus 24 Actuators",
+    "uid": "bdyshfnvf4rnkf",
+    "version": 5,
+    "weekStart": ""
+  }
