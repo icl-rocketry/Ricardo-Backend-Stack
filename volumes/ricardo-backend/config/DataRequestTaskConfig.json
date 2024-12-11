@@ -74,7 +74,7 @@
   "task_name": "nim_pdu0_telem",
   "autostart": false,
   "poll_delta": 400,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -115,18 +115,18 @@
     ]
    }
   ],
-  "rxCounter": 213,
-  "txCounter": 10418,
-  "connected": false,
-  "lastReceivedPacket": "af120059a9020066140102d40cc7419141040400002cde000000000000",
-  "rxBytes": 6177,
-  "txBytes": 166688
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_pdu1_telem",
   "autostart": false,
   "poll_delta": 400,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -167,18 +167,18 @@
     ]
    }
   ],
-  "rxCounter": 9790,
-  "txCounter": 9862,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af1200b37d020066150102c80cc5455146040400008f163c0000000000",
-  "rxBytes": 283910,
-  "txBytes": 157792
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_oxventsrv_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -232,18 +232,18 @@
     ]
    }
   ],
-  "rxCounter": 5325,
-  "txCounter": 5348,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600927d0a00010b0102020000000000",
-  "rxBytes": 90525,
-  "txBytes": 85568
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_greg_telem",
   "autostart": false,
   "poll_delta": 350,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -278,18 +278,18 @@
     ]
    }
   ],
-  "rxCounter": 21878,
-  "txCounter": 22310,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af2000a97d0200730d01020000a042a5b64d3f00000000000000000000404001040000ff0a380000000000",
-  "rxBytes": 940754,
-  "txBytes": 356960
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_ereg_telem",
   "autostart": false,
   "poll_delta": 750,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -439,18 +439,18 @@
     ]
    }
   ],
-  "rxCounter": 10371,
-  "txCounter": 10427,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600a37d0a00010d0102020001000000",
-  "rxBytes": 176307,
-  "txBytes": 166832
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "gss_oxfillsrv_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -504,18 +504,18 @@
     ]
    }
   ],
-  "rxCounter": 7822,
-  "txCounter": 7822,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600957d0b0001030101020000000000",
-  "rxBytes": 132974,
-  "txBytes": 125152
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_fuelventsol_telem",
   "autostart": false,
   "poll_delta": 1500,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -557,18 +557,18 @@
     ]
    }
   ],
-  "rxCounter": 5195,
-  "txCounter": 5217,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af06007a7d0c00010e0102010001000000",
-  "rxBytes": 88315,
-  "txBytes": 83472
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "gss_n2fillsrv_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -622,18 +622,18 @@
     ]
    }
   ],
-  "rxCounter": 7816,
-  "txCounter": 7822,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600a77d0b0001660102020000000000",
-  "rxBytes": 132872,
-  "txBytes": 125152
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "gss_sen_telem",
   "autostart": false,
   "poll_delta": 200,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -673,18 +673,18 @@
     ]
    }
   ],
-  "rxCounter": 38842,
-  "txCounter": 38961,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af2400b07d0200676401028dd091c26e8fbdc1649dbdc37de520c380dcce3f0000c07f01040000effa3c0000000000",
-  "rxBytes": 1825574,
-  "txBytes": 623376
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_sen_telem",
   "autostart": false,
   "poll_delta": 250,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -724,18 +724,18 @@
     ]
    }
   ],
-  "rxCounter": 31031,
-  "txCounter": 31200,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af2400af7d0200670c0102000095c436eb8d3f048c7c3f2c62b83f0000000033ce954301040000d20b380000000000",
-  "rxBytes": 1458457,
-  "txBytes": 499200
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "gss_oxhosesrv_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -789,18 +789,18 @@
     ]
    }
   ],
-  "rxCounter": 7822,
-  "txCounter": 7822,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600a87d0a0001030101020000000000",
-  "rxBytes": 132974,
-  "txBytes": 125152
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "gss_n2hosesrv_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -838,12 +838,12 @@
     ]
    }
   ],
-  "rxCounter": 7815,
-  "txCounter": 7822,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600aa7d0a0001660102020000000000",
-  "rxBytes": 132855,
-  "txBytes": 125152
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_sen_telem_raw",
@@ -893,7 +893,7 @@
   "task_name": "nim_n2ventsol_telem",
   "autostart": false,
   "poll_delta": 1750,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -935,18 +935,18 @@
     ]
    }
   ],
-  "rxCounter": 4453,
-  "txCounter": 4473,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600ab7d0b00010e0102010001000000",
-  "rxBytes": 75701,
-  "txBytes": 71568
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_oxventsol_telem",
   "autostart": false,
   "poll_delta": 1750,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1002,18 +1002,18 @@
     ]
    }
   ],
-  "rxCounter": 4454,
-  "txCounter": 4473,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600b27d0d00010e0102010001000000",
-  "rxBytes": 75718,
-  "txBytes": 71568
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_stark_telem",
   "autostart": false,
   "poll_delta": 350,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1052,18 +1052,18 @@
     ]
    }
   ],
-  "rxCounter": 9571,
-  "txCounter": 22309,
-  "connected": false,
-  "lastReceivedPacket": "af3000324b02000a0a01021b44bf4086049d431e25db432b4ddac05703bec130b0803f2cc66f3f0000000000000000010001002527010000000000",
-  "rxBytes": 564689,
-  "txBytes": 356944
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_thanos_telem",
   "autostart": false,
   "poll_delta": 750,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1157,12 +1157,12 @@
     ]
    }
   ],
-  "rxCounter": 4476,
-  "txCounter": 10427,
-  "connected": false,
-  "lastReceivedPacket": "af0600444b0a00010a0102020001000000",
-  "rxBytes": 76092,
-  "txBytes": 166832
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_stark_telem_raw",
@@ -1293,7 +1293,7 @@
   "task_name": "nim_pyro_engine_telem",
   "autostart": false,
   "poll_delta": 400,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1335,18 +1335,18 @@
     ]
    }
   ],
-  "rxCounter": 8383,
-  "txCounter": 19528,
-  "connected": false,
-  "lastReceivedPacket": "af0600314b1400010a01020a0000000000",
-  "rxBytes": 142511,
-  "txBytes": 312448
+  "rxCounter": 0,
+  "txCounter": 0,
+  "connected": true,
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_pyro_main_telem",
   "autostart": false,
   "poll_delta": 400,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1389,18 +1389,18 @@
     ]
    }
   ],
-  "rxCounter": 19454,
-  "txCounter": 19528,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600ae7d0b00011e01020a0000000000",
-  "rxBytes": 330718,
-  "txBytes": 312448
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_pyro_sep_telem",
   "autostart": false,
   "poll_delta": 400,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1443,18 +1443,18 @@
     ]
    }
   ],
-  "rxCounter": 19453,
-  "txCounter": 19528,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af0600b47d0a00011e01020a0000000000",
-  "rxBytes": 330701,
-  "txBytes": 312448
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_paydepsrv1_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1508,18 +1508,18 @@
     ]
    }
   ],
-  "rxCounter": 7793,
-  "txCounter": 7820,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af06008d7d0b00011f010202003c000000",
-  "rxBytes": 132481,
-  "txBytes": 125120
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_paydepsrv0_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1573,18 +1573,18 @@
     ]
    }
   ],
-  "rxCounter": 7793,
-  "txCounter": 7820,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af06008e7d0a00011f0102020000000000",
-  "rxBytes": 132481,
-  "txBytes": 125120
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_midfeed_chad_telem",
   "autostart": false,
   "poll_delta": 2000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1615,18 +1615,18 @@
     ]
    }
   ],
-  "rxCounter": 3896,
-  "txCounter": 3914,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af1000967d0200670b010261fcbc40010400009009380000000000",
-  "rxBytes": 105192,
-  "txBytes": 62624
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_deployer_chad_telem",
   "autostart": false,
   "poll_delta": 2000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1657,18 +1657,18 @@
     ]
    }
   ],
-  "rxCounter": 1,
-  "txCounter": 1,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af1000997d0200671f01020e41bd4001040000d109380000000000",
-  "rxBytes": 27,
-  "txBytes": 16
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_sol_flint_telem",
   "autostart": false,
   "poll_delta": 500,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1704,17 +1704,17 @@
     ]
    }
   ],
-  "rxCounter": 15348,
-  "txCounter": 15631,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af1400b17d02006e0e010200b0563e0100484101040000d60b380000000000",
-  "rxBytes": 475788,
-  "txBytes": 250096
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_fc_telem",
   "autostart": false,
-  "poll_delta": 1000,
+  "poll_delta": 20,
   "running": true,
   "logger": true,
   "receiveOnly": false,
@@ -1922,18 +1922,18 @@
     ]
    }
   ],
-  "rxCounter": 5690,
-  "txCounter": 7820,
+  "rxCounter": 17,
+  "txCounter": 88,
   "connected": true,
-  "lastReceivedPacket": "afb3008f7d020065020102000000000000000000000000000000000000000000000000000000000000000000000000f0f38e3f65bebdbb52df334071a50d3e53d1b73d42ab053f6043563f000000000000000000000000000000d0bb002064bf0080debec21216be441ffabf9ce084c000803bbe00c0da3e00803b3e00a077be00d0913e00c0723e000000000000000000000000380d0000544600001801000000000000000000000000000002540400fb0838000000000096ff000040c1",
-  "rxBytes": 1081100,
-  "txBytes": 125120
+  "lastReceivedPacket": "afb300160002006502010100000000000000000000000000000000000000000000000000000000000000000000000077c884bc0d7c08bc717aadbdfbca7f3f488807bc38337abbea882dbd0000000000000000000000000000000c3d0000903c002080bf441f7abf441f7a3ebffbddc000007abd00007abd0000008000c012be00c0b4bd00b90c4000000000000000000000000045150000200700001800000000000000000000000000000002580c00f55a0000000000005b00000080be",
+  "rxBytes": 3230,
+  "txBytes": 1408
  },
  {
   "task_name": "gss_n2_chad_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1968,18 +1968,18 @@
     ]
    }
   ],
-  "rxCounter": 7814,
-  "txCounter": 7820,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af1000907d02006766010228f8db4001040000e5f73c0000000000",
-  "rxBytes": 210978,
-  "txBytes": 125120
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "gss_ox_chad_telem",
   "autostart": false,
   "poll_delta": 1000,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -2014,18 +2014,18 @@
     ]
    }
   ],
-  "rxCounter": 7820,
-  "txCounter": 7820,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af1000917d020067030101bdecbd400100000041a5790000000000",
-  "rxBytes": 211140,
-  "txBytes": 125120
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  },
  {
   "task_name": "nim_rec_flint_telem",
   "autostart": false,
   "poll_delta": 500,
-  "running": true,
+  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -2061,11 +2061,11 @@
     ]
    }
   ],
-  "rxCounter": 15520,
-  "txCounter": 15631,
+  "rxCounter": 0,
+  "txCounter": 0,
   "connected": true,
-  "lastReceivedPacket": "af1400b57d02006e1e010200603d3ea01a474101040000040c380000000000",
-  "rxBytes": 481120,
-  "txBytes": 250096
+  "lastReceivedPacket": "",
+  "rxBytes": 0,
+  "txBytes": 0
  }
 ]
