@@ -1,0 +1,3572 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.deployVoltage",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "hide": false,
+          "path": "/${LMQTaskName}",
+          "refId": "B",
+          "withStreaming": true
+        }
+      ],
+      "title": "LMQ Deploy Voltage",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "state"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {}
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 4,
+        "y": 0
+      },
+      "id": 17,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${LMQ_address},\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Restart Logic",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${LMQ_address}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "GO LIVE",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${LMQ_address}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Back To Ready",
+            "variant": "primary"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "LMQ Command",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 7,
+        "y": 0
+      },
+      "id": 134,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "transparent"
+            },
+            "image": {
+              "field": "",
+              "fixed": "img/bg/nim24_patch.png",
+              "mode": "fixed"
+            },
+            "size": "contain"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [],
+          "name": "Element 1708726781751",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 10,
+        "y": 0
+      },
+      "id": 131,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_full_reset\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21,\\\"restart_duration\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Full Bus Restart",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Restart Logic",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "GO LIVE",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_compound_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination0\\\":20,\\\"destination1\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Back To Ready"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "PDU Compound Commands",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 14,
+        "y": 0
+      },
+      "id": 141,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "transparent"
+            },
+            "image": {
+              "field": "",
+              "fixed": "img/bg/iclr.png",
+              "mode": "fixed"
+            },
+            "size": "contain"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [],
+          "name": "Element 1708726781751",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 80,
+      "panels": [],
+      "title": "Filling Step",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 0,
+        "y": 8
+      },
+      "id": 41,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${OxFillTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Fill Position",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "CLOSED"
+                },
+                "1": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "OPEN"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 2,
+        "y": 8
+      },
+      "id": 84,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${OxVentSolTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Vent Sol Status",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "CLOSED"
+                },
+                "1": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "OPEN"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 4,
+        "y": 8
+      },
+      "id": 39,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${FuelVentSolTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Vent Solenoid Status",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 6,
+        "y": 8
+      },
+      "id": 142,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${N2PressTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Press Position",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 10,
+        "y": 8
+      },
+      "id": 110,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/hotfire_startTest\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Start Test",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/hotfire_abortTest\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":4}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ABORT"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Hotfire Test",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 14,
+        "y": 8
+      },
+      "id": 57,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.oxAngle",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${StarkTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox main Position",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 16,
+        "y": 8
+      },
+      "id": 115,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${PyroTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pyro time",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 18,
+        "y": 8
+      },
+      "id": 116,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${PyroTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pyro Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 20,
+        "y": 8
+      },
+      "id": 112,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.controller_states",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${ThanosTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Controller State",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "keepTime": false,
+            "replace": true,
+            "source": "controller_states"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 22,
+        "y": 8
+      },
+      "id": 111,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/thanos_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":1}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/thanos_execute\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Shutdown",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/thanos_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Thanos",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 9,
+        "w": 2,
+        "x": 0,
+        "y": 12
+      },
+      "id": 82,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_fill_addr},\\\"destination_service\\\":${ox_fill_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_fill_addr},\\\"destination_service\\\":${ox_fill_service},\\\"argument\\\":170}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_fill_addr},\\\"destination_service\\\":${ox_fill_service},\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Fill",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 9,
+        "w": 2,
+        "x": 2,
+        "y": 12
+      },
+      "id": 133,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${ox_vent_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${ox_vent_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${ox_vent_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_sol_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${ox_vent_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Blip Vent",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${ox_vent_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Vent Solenoid",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 9,
+        "w": 2,
+        "x": 4,
+        "y": 12
+      },
+      "id": 106,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${fuel_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${fuel_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${fuel_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${address_flint_sol},\\\"destination_service\\\":${fuel_sol_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Fuel Solenoid",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 9,
+        "w": 2,
+        "x": 6,
+        "y": 12
+      },
+      "id": 143,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${n2_press_addr},\\\"destination_service\\\":${n2_press_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${n2_press_addr},\\\"destination_service\\\":${n2_press_service},\\\"argument\\\":170}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${n2_press_addr},\\\"destination_service\\\":${n2_press_service},\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${n2_press_addr},\\\"destination_service\\\":${n2_press_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "N2 Pressurisation",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 14,
+        "y": 12
+      },
+      "id": 114,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.fuelAngle",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${StarkTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel main Position",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 16,
+        "y": 12
+      },
+      "id": 113,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${ThanosTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Thanos Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "level"
+            },
+            "properties": [
+              {
+                "id": "custom.align",
+                "value": "center"
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "CRITICAL": {
+                        "color": "red",
+                        "index": 1
+                      },
+                      "ERROR": {
+                        "color": "yellow",
+                        "index": 3
+                      },
+                      "INFO": {
+                        "color": "green",
+                        "index": 0
+                      },
+                      "WARNING": {
+                        "color": "orange",
+                        "index": 2
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "custom.width",
+                "value": 70
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "name"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 208
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "msg"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 946
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "time"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 114
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 14,
+        "x": 10,
+        "y": 16
+      },
+      "id": 65,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "time"
+          }
+        ]
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/new_event",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Panel Title",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "keepTime": false,
+            "replace": true,
+            "source": "$"
+          }
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "source": "source"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "level",
+                "name",
+                "msg",
+                "time",
+                "application",
+                "ip"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 0,
+        "y": 21
+      },
+      "id": 83,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${OxFillTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Fill Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 2,
+        "y": 21
+      },
+      "id": 87,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${OxVentSolTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Vent Sol Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR",
+                "ERROR_CONTINUITY"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 4,
+        "y": 21
+      },
+      "id": 56,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${FuelVentSolTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Vent Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR",
+                "ERROR_CONTINUITY"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 6,
+        "y": 21
+      },
+      "id": 144,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${N2PressTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Press Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 29
+      },
+      "id": 77,
+      "panels": [],
+      "title": "Debug",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 0,
+        "y": 30
+      },
+      "id": 24,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosoxlag\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Set Ox Lag",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "title": "Ox Lag",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 5,
+        "y": 30
+      },
+      "id": 27,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosfuellag\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Set Fuel Lag",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "title": "Fuel Lag",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 3,
+        "w": 10,
+        "x": 14,
+        "y": 30
+      },
+      "id": 54,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\r\n<table style=\"width:100%; height:100%;border:0px solid black;\">\r\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 55px;\"> THANOS </td>\r\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 10,
+        "w": 4,
+        "x": 14,
+        "y": 33
+      },
+      "id": 145,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/thanos_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/thanos_debug\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Debug"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/thanos_debug\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":1}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Ignition",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/thanos_debug\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Shutdown",
+            "variant": "link"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/thanos_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Thanos Engine",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 18,
+        "y": 33
+      },
+      "id": 140,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/nim_pyro_engine_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pyro time",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 20,
+        "y": 33
+      },
+      "id": 118,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.fuelAngle",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/nim_stark_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Main Position",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 22,
+        "y": 33
+      },
+      "id": 58,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.oxAngle",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/nim_stark_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Main Position",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 0,
+        "y": 36
+      },
+      "id": 25,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosoxangle\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":155}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Set Ox Angle",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "title": "Ox Angle Preset",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 5,
+        "y": 36
+      },
+      "id": 26,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosfuelangle\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":135}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Set Fuel Lag",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "title": "Fuel Angle Preset",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 2,
+        "x": 18,
+        "y": 36
+      },
+      "id": 119,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/pyro_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":20}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/pyro_fire\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":20,\\\"argument\\\":500}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "FIRE",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/pyro_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":20}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Pyro Main",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 2,
+        "x": 20,
+        "y": 36
+      },
+      "id": 124,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":{stark_address},\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":12,\\\"argument\\\":180}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":12,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Fuel Main",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 2,
+        "x": 22,
+        "y": 36
+      },
+      "id": 117,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":10,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":11,\\\"argument\\\":180}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":11,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Main",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 14,
+        "y": 43
+      },
+      "id": 136,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_thanos_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Thanos Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 18,
+        "y": 43
+      },
+      "id": 138,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_pyro_engine_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pyro Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 20,
+        "y": 43
+      },
+      "id": 121,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_fuelmain_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Main Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR",
+                "ERROR_CONTINUITY"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 22,
+        "y": 43
+      },
+      "id": 120,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/nim_oxmain_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Main Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR",
+                "ERROR_CONTINUITY"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "hide": 2,
+        "label": "Command Server Ip",
+        "name": "commandserverip",
+        "query": "ricardo-commandserver:1339",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "47",
+          "value": "47"
+        },
+        "hide": 2,
+        "name": "press_angl",
+        "options": [
+          {
+            "selected": true,
+            "text": "47",
+            "value": "47"
+          }
+        ],
+        "query": "47",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "hide": 2,
+        "name": "address_flint_sol",
+        "query": "6",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "label": "",
+        "name": "ox_fill_addr",
+        "query": "5",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "ox_fill_service",
+        "query": "10",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "OxFillTaskName",
+        "query": "sts_ox_fill_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "OxVentSolTaskName",
+        "query": "sts_ox_sol_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "FuelVentSolTaskName",
+        "query": "sts_fuel_sol_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "N2PressTaskName",
+        "query": "sts_n2_press_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "StarkTaskName",
+        "query": "sts_stark_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "label": "",
+        "name": "ThanosTaskName",
+        "query": "sts_thanos_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "LMQTaskName",
+        "query": "sts_pdu_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "PyroTaskName",
+        "query": "sts_pyro_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "ox_vent_sol_service",
+        "query": "11",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "fuel_sol_service",
+        "query": "13",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "label": "",
+        "name": "n2_press_service",
+        "query": "11",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "stark_address",
+        "query": "2",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "LMQ_address",
+        "query": "",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "n2_press_addr",
+        "query": "8",
+        "skipUrlSync": false,
+        "type": "constant"
+      }
+    ]
+  },
+  "time": {
+    "from": "2024-11-30T17:57:13.033Z",
+    "to": "2024-11-30T18:01:13.033Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Silwood Command",
+  "uid": "de58nr2q10ttse",
+  "version": 1,
+  "weekStart": ""
+}

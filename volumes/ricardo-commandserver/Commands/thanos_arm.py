@@ -11,7 +11,7 @@ def thanos_arm(instance,args):
 
     command_packet_args = {"source":1,
                         "source_service":instance.source_service,
-                        "destination":10,
+                        "destination":2,
                         "destination_service":10,
                         "command_id":3,
                         "command_arg":args['argument']}
