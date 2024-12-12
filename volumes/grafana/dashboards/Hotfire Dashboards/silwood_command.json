@@ -29,10 +29,10 @@
   "panels": [
     {
       "datasource": {
-        "default": true,
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -43,15 +43,16 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
+                "color": "green",
                 "value": null
               },
               {
                 "color": "red",
-                "value": 1
+                "value": 6000
               }
             ]
-          }
+          },
+          "unit": "mvolt"
         },
         "overrides": []
       },
@@ -61,10 +62,10 @@
         "x": 0,
         "y": 0
       },
-      "id": 9,
+      "id": 146,
       "options": {
-        "colorMode": "background_solid",
-        "graphMode": "none",
+        "colorMode": "value",
+        "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
@@ -76,7 +77,7 @@
           "values": false
         },
         "showPercentChange": false,
-        "textMode": "name",
+        "textMode": "auto",
         "wideLayout": true
       },
       "pluginVersion": "10.4.8",
@@ -84,36 +85,22 @@
         {
           "datasource": {
             "type": "golioth-websocket-datasource",
-            "uid": "d5EHcyv4z"
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
           },
           "fields": [
             {
-              "jsonPath": "$.data.deployVoltage",
+              "jsonPath": "$.data.depVoltage",
               "language": "jsonpath",
-              "name": ""
+              "name": "",
+              "type": "number"
             }
           ],
-          "hide": false,
           "path": "/${LMQTaskName}",
-          "refId": "B",
+          "refId": "A",
           "withStreaming": true
         }
       ],
       "title": "LMQ Deploy Voltage",
-      "transformations": [
-        {
-          "id": "extractFields",
-          "options": {
-            "format": "auto",
-            "replace": true,
-            "source": "state"
-          }
-        },
-        {
-          "id": "organize",
-          "options": {}
-        }
-      ],
       "type": "stat"
     },
     {
@@ -712,7 +699,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
@@ -743,6 +729,157 @@
         "h": 4,
         "w": 2,
         "x": 6,
+        "y": 8
+      },
+      "id": 150,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${OxVentSRVTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Vent Servo",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 8,
+        "y": 8
+      },
+      "id": 148,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${FuelVentSRVTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Vent Position",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 10,
         "y": 8
       },
       "id": 142,
@@ -793,8 +930,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 10,
+        "w": 2,
+        "x": 12,
         "y": 8
       },
       "id": 110,
@@ -1442,6 +1579,160 @@
         "x": 6,
         "y": 12
       },
+      "id": 128,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":180}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":115}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Fast Vent",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":105}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Slow Vent",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_srv_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr}, \\\"destination_service\\\":${ox_vent_srv_service},\\\"duration\\\":0.2,\\\"open_position\\\":160}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Blip Vent"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":95}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Extra Slow Vent"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Vent Servo",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 9,
+        "w": 2,
+        "x": 8,
+        "y": 12
+      },
+      "id": 147,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${fuel_vent_srv_addr},\\\"destination_service\\\":${fuel_vent_srv_service}}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${fuel_vent_srv_addr},\\\"destination_service\\\":${fuel_vent_srv_service},\\\"argument\\\":170}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${fuel_vent_srv_addr},\\\"destination_service\\\":${fuel_vent_srv_service},\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Fuel Vent",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 9,
+        "w": 2,
+        "x": 10,
+        "y": 12
+      },
       "id": 143,
       "options": {
         "buttons": [
@@ -1783,8 +2074,8 @@
       },
       "gridPos": {
         "h": 13,
-        "w": 14,
-        "x": 10,
+        "w": 9,
+        "x": 12,
         "y": 16
       },
       "id": 65,
@@ -2235,7 +2526,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
@@ -2291,6 +2581,253 @@
         "h": 8,
         "w": 2,
         "x": 6,
+        "y": 21
+      },
+      "id": 152,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${OxVentSRVTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Vent Servo Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 8,
+        "y": 21
+      },
+      "id": 149,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/${FuelVentSRVTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Vent Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 10,
         "y": 21
       },
       "id": 144,
@@ -2535,7 +3072,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2610,7 +3148,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2685,7 +3224,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3001,7 +3541,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -3088,7 +3629,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -3175,7 +3717,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -3197,7 +3740,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -3297,7 +3841,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -3319,7 +3864,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -3418,7 +3964,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "47",
           "value": "47"
         },
@@ -3545,8 +4091,9 @@
       },
       {
         "hide": 2,
+        "label": "7",
         "name": "LMQ_address",
-        "query": "",
+        "query": "7",
         "skipUrlSync": false,
         "type": "constant"
       },
@@ -3554,6 +4101,49 @@
         "hide": 2,
         "name": "n2_press_addr",
         "query": "8",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "label": "",
+        "name": "FuelVentSRVTaskName",
+        "query": "sts_fuel_ventsrv_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "fuel_vent_srv_addr",
+        "query": "",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "fuel_vent_srv_service",
+        "query": "",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "OxVentSRVTaskName",
+        "query": "sts_ox_ventsrv_telem",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "ox_vent_srv_addr",
+        "query": "",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "hide": 2,
+        "name": "ox_vent_srv_service",
+        "query": "",
         "skipUrlSync": false,
         "type": "constant"
       }
@@ -3567,6 +4157,6 @@
   "timezone": "",
   "title": "Silwood Command",
   "uid": "de58nr2q10ttse",
-  "version": 1,
+  "version": 9,
   "weekStart": ""
 }
