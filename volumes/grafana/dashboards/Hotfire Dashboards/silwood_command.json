@@ -3005,7 +3005,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3080,7 +3081,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3155,7 +3157,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3341,7 +3344,7 @@
         "buttons": [
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":{stark_address},\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "ARM",
             "variant": "destructive"
           },
@@ -3406,7 +3409,7 @@
         "buttons": [
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":10,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "ARM",
             "variant": "destructive"
           },
@@ -3471,7 +3474,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -3558,7 +3562,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -3645,7 +3650,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -3667,7 +3673,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -3767,7 +3774,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -3789,7 +3797,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -4081,6 +4090,6 @@
   "timezone": "",
   "title": "Silwood Command",
   "uid": "de58nr2q10ttse",
-  "version": 14,
+  "version": 15,
   "weekStart": ""
 }
