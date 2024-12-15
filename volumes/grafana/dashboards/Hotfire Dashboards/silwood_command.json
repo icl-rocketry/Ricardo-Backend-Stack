@@ -3479,8 +3479,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "red",
@@ -3567,8 +3566,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "red",
@@ -3655,8 +3653,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3678,8 +3675,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -3779,8 +3775,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3802,8 +3797,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -4095,6 +4089,6 @@
   "timezone": "",
   "title": "Silwood Command",
   "uid": "de58nr2q10ttse",
-  "version": 16,
+  "version": 17,
   "weekStart": ""
 }

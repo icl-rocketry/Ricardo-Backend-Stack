@@ -1556,7 +1556,7 @@
                   "index": 0,
                   "text": "NC"
                 },
-                "to": 0
+                "to": -800
               },
               "type": "range"
             }
@@ -1881,6 +1881,6 @@
   "timezone": "",
   "title": "Sensor View",
   "uid": "ae588qgo7vke8f",
-  "version": 10,
+  "version": 11,
   "weekStart": ""
 }
