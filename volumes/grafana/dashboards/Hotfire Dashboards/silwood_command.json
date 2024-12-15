@@ -1420,7 +1420,7 @@
           },
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_srv_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr}, \\\"destination_service\\\":${ox_vent_srv_service},\\\"duration\\\":0.2,\\\"open_position\\\":160}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_srv_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr}, \\\"destination_service\\\":${ox_vent_srv_service},\\\"duration\\\":0.4,\\\"open_position\\\":160}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "Blip Vent"
           },
           {
@@ -1688,6 +1688,11 @@
             "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${n2_press_addr},\\\"destination_service\\\":${n2_press_service}}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "ARM",
             "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${n2_press_addr},\\\"destination_service\\\":${n2_press_service},\\\"argument\\\":140}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Pressurise"
           },
           {
             "datasource": "Command Server",
@@ -3409,7 +3414,7 @@
         "buttons": [
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${stark_address},\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":10,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "ARM",
             "variant": "destructive"
           },
@@ -4090,6 +4095,6 @@
   "timezone": "",
   "title": "Silwood Command",
   "uid": "de58nr2q10ttse",
-  "version": 15,
+  "version": 16,
   "weekStart": ""
 }
