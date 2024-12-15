@@ -193,7 +193,7 @@
       "id": 8,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -387,7 +387,7 @@
       "id": 10,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -484,7 +484,7 @@
       "id": 11,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -785,7 +785,7 @@
       "maxDataPoints": 10,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -793,7 +793,7 @@
           "calcs": [
             "mean"
           ],
-          "fields": "/^ch2sens$/",
+          "fields": "/^adjusted mass$/",
           "values": false
         },
         "showPercentChange": false,
@@ -831,27 +831,11 @@
         {
           "id": "calculateField",
           "options": {
-            "alias": "positive mass",
-            "binary": {
-              "left": "ch3sens",
-              "operator": "*",
-              "right": "-1"
-            },
-            "mode": "binary",
-            "reduce": {
-              "reducer": "sum"
-            },
-            "replaceFields": true
-          }
-        },
-        {
-          "id": "calculateField",
-          "options": {
             "alias": "adjusted mass",
             "binary": {
-              "left": "positive mass",
+              "left": "ch2sens",
               "operator": "-",
-              "right": "0"
+              "right": "8"
             },
             "mode": "binary",
             "reduce": {
@@ -915,7 +899,7 @@
       "id": 25,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -1012,7 +996,7 @@
       "id": 12,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -1109,7 +1093,7 @@
       "id": 28,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -1604,7 +1588,7 @@
       "maxDataPoints": 10,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -1890,13 +1874,13 @@
     ]
   },
   "time": {
-    "from": "2024-12-14T14:26:53.418Z",
-    "to": "2024-12-14T14:36:53.418Z"
+    "from": "now-30s",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Sensor View",
   "uid": "ae588qgo7vke8f",
-  "version": 9,
+  "version": 10,
   "weekStart": ""
 }
