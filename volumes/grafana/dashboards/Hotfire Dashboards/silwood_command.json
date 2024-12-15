@@ -1342,7 +1342,7 @@
           },
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":3,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_fill_addr},\\\"destination_service\\\":${ox_fill_service}}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "DISARM",
             "variant": "destructive"
           }
@@ -3479,7 +3479,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -3566,7 +3567,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -3653,7 +3655,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -3675,7 +3678,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -3775,7 +3779,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "semi-dark-blue",
@@ -3797,7 +3802,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent"
+                      "color": "transparent",
+                      "value": null
                     },
                     {
                       "color": "semi-dark-red",
@@ -4089,6 +4095,6 @@
   "timezone": "",
   "title": "Silwood Command",
   "uid": "de58nr2q10ttse",
-  "version": 17,
+  "version": 18,
   "weekStart": ""
 }
