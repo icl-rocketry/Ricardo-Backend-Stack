@@ -2861,13 +2861,35 @@
         "buttons": [
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosoxlag\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/setthanosoxlag\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "Set Ox Lag",
             "variant": "destructive"
           }
         ],
         "orientation": "vertical"
       },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
       "title": "Ox Lag",
       "type": "speakyourcode-button-panel"
     },
@@ -2887,13 +2909,35 @@
         "buttons": [
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosfuellag\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosfuellag\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":1000}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "Set Fuel Lag",
             "variant": "destructive"
           }
         ],
         "orientation": "vertical"
       },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
       "title": "Fuel Lag",
       "type": "speakyourcode-button-panel"
     },
@@ -3061,7 +3105,7 @@
               "type": "number"
             }
           ],
-          "path": "/nim_pyro_engine_telem",
+          "path": "/${PyroTaskName}",
           "refId": "A",
           "withStreaming": true
         }
@@ -3071,7 +3115,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
@@ -3137,7 +3180,7 @@
               "type": "number"
             }
           ],
-          "path": "/nim_stark_telem",
+          "path": "/${StarkTaskName}",
           "refId": "A",
           "withStreaming": true
         }
@@ -3147,7 +3190,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
@@ -3213,7 +3255,7 @@
               "type": "number"
             }
           ],
-          "path": "/nim_stark_telem",
+          "path": "/${StarkTaskName}",
           "refId": "A",
           "withStreaming": true
         }
@@ -3223,55 +3265,171 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 5,
         "x": 0,
         "y": 38
       },
-      "id": 25,
+      "id": 156,
       "options": {
-        "buttons": [
-          {
-            "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosoxangle\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":155}\",\n        \"method\": \"POST\"\n}\n}",
-            "text": "Set Ox Angle",
-            "variant": "destructive"
-          }
-        ],
-        "orientation": "vertical"
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Ox Angle Preset",
-      "type": "speakyourcode-button-panel"
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ox_lag_preset",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${StarkTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Desired Ox lag",
+      "type": "stat"
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 5,
         "x": 5,
         "y": 38
       },
-      "id": 26,
+      "id": 157,
       "options": {
-        "buttons": [
-          {
-            "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosfuelangle\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":135}\",\n        \"method\": \"POST\"\n}\n}",
-            "text": "Set Fuel Lag",
-            "variant": "destructive"
-          }
-        ],
-        "orientation": "vertical"
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Fuel Angle Preset",
-      "type": "speakyourcode-button-panel"
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.fuel_lag_preset",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${StarkTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Desired fuel lag",
+      "type": "stat"
     },
     {
       "datasource": {
@@ -3465,6 +3623,102 @@
     },
     {
       "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 0,
+        "y": 42
+      },
+      "id": 25,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosoxangle\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":155}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Set Ox Angle",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Ox Angle Preset",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 5,
+        "y": 42
+      },
+      "id": 26,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/setthanosfuelangle\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":135}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Set Fuel Lag",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Fuel Angle Preset",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
@@ -3529,7 +3783,7 @@
               "name": ""
             }
           ],
-          "path": "/nim_thanos_telem",
+          "path": "/${ThanosTaskName}",
           "refId": "A",
           "withStreaming": true
         }
@@ -3617,7 +3871,7 @@
               "name": ""
             }
           ],
-          "path": "/nim_pyro_engine_telem",
+          "path": "/${PyroTaskName}",
           "refId": "A",
           "withStreaming": true
         }
@@ -3886,6 +4140,174 @@
         }
       ],
       "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "degree"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 0,
+        "y": 48
+      },
+      "id": 154,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ox_preset_angle",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${StarkTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Desired Ox angle",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "degree"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 5,
+        "y": 48
+      },
+      "id": 155,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.fuel_preset_angle",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/${StarkTaskName}",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Desired fuel angle",
+      "type": "stat"
     }
   ],
   "schemaVersion": 39,
@@ -4095,6 +4517,6 @@
   "timezone": "",
   "title": "Silwood Command",
   "uid": "de58nr2q10ttse",
-  "version": 19,
+  "version": 24,
   "weekStart": ""
 }
