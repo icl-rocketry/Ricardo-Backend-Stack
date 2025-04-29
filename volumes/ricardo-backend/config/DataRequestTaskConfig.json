@@ -19,6 +19,7 @@
   "packet_descriptor": {
    "ram": "uint32_t"
   },
+  "bitfield_decoders":[],
   "rxCounter": 0,
   "txCounter": 0,
   "connected": true,
