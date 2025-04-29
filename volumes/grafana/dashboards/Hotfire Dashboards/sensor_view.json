@@ -744,20 +744,7 @@
             "mode": "thresholds"
           },
           "decimals": 1,
-          "mappings": [
-            {
-              "options": {
-                "from": -1234567,
-                "result": {
-                  "color": "dark-red",
-                  "index": 0,
-                  "text": "NC"
-                },
-                "to": 0
-              },
-              "type": "range"
-            }
-          ],
+          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -835,7 +822,7 @@
             "binary": {
               "left": "ch2sens",
               "operator": "-",
-              "right": "8"
+              "right": "0"
             },
             "mode": "binary",
             "reduce": {
@@ -1424,7 +1411,7 @@
               "type": "time"
             },
             {
-              "jsonPath": "$.data.temp0",
+              "jsonPath": "$.data.temp1",
               "language": "jsonpath",
               "name": "OX Tank",
               "type": "number"
@@ -1521,7 +1508,7 @@
               "type": "time"
             },
             {
-              "jsonPath": "$.data.temp1",
+              "jsonPath": "$.data.temp0",
               "language": "jsonpath",
               "name": "OX Tank",
               "type": "number"
@@ -1630,40 +1617,6 @@
         }
       ],
       "title": "Thrust",
-      "transformations": [
-        {
-          "id": "calculateField",
-          "options": {
-            "alias": "positive mass",
-            "binary": {
-              "left": "ch3sens",
-              "operator": "*",
-              "right": "-1"
-            },
-            "mode": "binary",
-            "reduce": {
-              "reducer": "sum"
-            },
-            "replaceFields": true
-          }
-        },
-        {
-          "id": "calculateField",
-          "options": {
-            "alias": "adjusted mass",
-            "binary": {
-              "left": "positive mass",
-              "operator": "-",
-              "right": "0"
-            },
-            "mode": "binary",
-            "reduce": {
-              "reducer": "sum"
-            },
-            "replaceFields": true
-          }
-        }
-      ],
       "type": "stat"
     },
     {
@@ -1881,6 +1834,6 @@
   "timezone": "",
   "title": "Sensor View",
   "uid": "ae588qgo7vke8f",
-  "version": 11,
+  "version": 12,
   "weekStart": ""
 }
