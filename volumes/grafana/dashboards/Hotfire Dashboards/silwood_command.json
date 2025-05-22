@@ -1408,19 +1408,19 @@
           },
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":115}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":135}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "Fast Vent",
             "variant": "primary"
           },
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":85}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":115}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "Slow Vent",
             "variant": "primary"
           },
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_srv_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr}, \\\"destination_service\\\":${ox_vent_srv_service},\\\"duration\\\":0.4,\\\"open_position\\\":160}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_srv_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr}, \\\"destination_service\\\":${ox_vent_srv_service},\\\"duration\\\":0.6,\\\"open_position\\\":160}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "Blip Vent"
           },
           {
@@ -1431,7 +1431,7 @@
           },
           {
             "datasource": "Command Server",
-            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":75}\",\n        \"method\": \"POST\"\n}\n}",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":${ox_vent_srv_addr},\\\"destination_service\\\":${ox_vent_srv_service},\\\"argument\\\":105}\",\n        \"method\": \"POST\"\n}\n}",
             "text": "Extra Slow Vent"
           }
         ],
@@ -3054,8 +3054,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3129,8 +3128,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3204,8 +3202,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3280,8 +3277,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3364,8 +3360,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3733,8 +3728,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "red",
@@ -3821,8 +3815,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "red",
@@ -3909,8 +3902,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3932,8 +3924,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -4033,8 +4024,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -4056,8 +4046,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -4158,8 +4147,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4242,8 +4230,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4517,6 +4504,6 @@
   "timezone": "",
   "title": "Silwood Command",
   "uid": "de58nr2q10ttse",
-  "version": 25,
+  "version": 26,
   "weekStart": ""
 }
