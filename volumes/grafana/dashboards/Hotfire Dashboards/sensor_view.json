@@ -1216,7 +1216,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
+        "w": 6,
         "x": 0,
         "y": 13
       },
@@ -1240,8 +1240,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
-        "x": 5,
+        "w": 4,
+        "x": 6,
         "y": 13
       },
       "id": 30,
@@ -1373,7 +1373,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
+        "w": 2,
         "x": 0,
         "y": 16
       },
@@ -1470,8 +1470,202 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
-        "x": 5,
+        "w": 2,
+        "x": 2,
+        "y": 16
+      },
+      "id": 43,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.temp1",
+              "language": "jsonpath",
+              "name": "OX Tank",
+              "type": "number"
+            }
+          ],
+          "hide": false,
+          "path": "/${Kermit2TaskName}",
+          "refId": "B",
+          "withStreaming": true
+        }
+      ],
+      "title": "Temperature",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "color": "dark-red",
+                  "index": 0,
+                  "text": "NC"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 4,
+        "y": 16
+      },
+      "id": 42,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.temp0",
+              "language": "jsonpath",
+              "name": "OX Tank",
+              "type": "number"
+            }
+          ],
+          "hide": false,
+          "path": "/${Kermit2TaskName}",
+          "refId": "B",
+          "withStreaming": true
+        }
+      ],
+      "title": "Temperature",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "color": "dark-red",
+                  "index": 0,
+                  "text": "NC"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 6,
         "y": 16
       },
       "id": 31,
@@ -1823,6 +2017,14 @@
         "query": "sts_sen0_telem",
         "skipUrlSync": false,
         "type": "constant"
+      },
+      {
+        "hide": 2,
+        "label": "Kermit2Taskname",
+        "name": "Kermit2Taskname",
+        "query": "sts_sen1_telem",
+        "skipUrlSync": false,
+        "type": "constant"
       }
     ]
   },
@@ -1834,6 +2036,6 @@
   "timezone": "",
   "title": "Sensor View",
   "uid": "ae588qgo7vke8f",
-  "version": 12,
+  "version": 14,
   "weekStart": ""
 }
