@@ -26,20 +26,14 @@
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
-      "gridPos": {
-        "h": 3,
-        "w": 5,
-        "x": 0,
-        "y": 0
-      },
-      "id": 16,
+      "id": 21,
       "options": {
         "code": {
           "language": "plaintext",
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 25px;\"> OX TANK PRESSURE</td>\n</table>",
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 25px;\"> Ox Tank </td>\n</table>",
         "mode": "html"
       },
       "pluginVersion": "10.4.8",
@@ -53,7 +47,55 @@
       "gridPos": {
         "h": 3,
         "w": 5,
-        "x": 5,
+        "x": 6,
+        "y": 0
+      },
+      "id": 16,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 25px;\"> N2 Tank</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 11,
+        "y": 0
+      },
+      "id": 18,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 25px;\"> Fuel Tank</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 16,
         "y": 0
       },
       "id": 17,
@@ -65,54 +107,6 @@
         },
         "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 25px;\"> FUEL TANK PRESSURE</td>\n</table>",
         "mode": "markdown"
-      },
-      "pluginVersion": "10.4.8",
-      "type": "text"
-    },
-    {
-      "datasource": {
-        "type": "golioth-websocket-datasource",
-        "uid": "d5EHcyv4z"
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 5,
-        "x": 10,
-        "y": 0
-      },
-      "id": 18,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 25px;\"> N2 TANK PRESSURE</td>\n</table>",
-        "mode": "html"
-      },
-      "pluginVersion": "10.4.8",
-      "type": "text"
-    },
-    {
-      "datasource": {
-        "type": "golioth-websocket-datasource",
-        "uid": "d5EHcyv4z"
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 6,
-        "x": 15,
-        "y": 0
-      },
-      "id": 21,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 25px;\"> CHAMBER PRESSURE</td>\n</table>",
-        "mode": "html"
       },
       "pluginVersion": "10.4.8",
       "type": "text"
@@ -186,11 +180,11 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 5,
+        "w": 6,
         "x": 0,
         "y": 3
       },
-      "id": 8,
+      "id": 11,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -235,7 +229,7 @@
           "withStreaming": true
         }
       ],
-      "title": "Ox Tank Pressure (Bar A)",
+      "title": "Ox Tank",
       "type": "stat"
     },
     {
@@ -284,10 +278,10 @@
       "gridPos": {
         "h": 4,
         "w": 5,
-        "x": 5,
+        "x": 6,
         "y": 3
       },
-      "id": 7,
+      "id": 8,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -321,18 +315,18 @@
               "type": "time"
             },
             {
-              "jsonPath": "$.data.ch4sens",
+              "jsonPath": "$.data.ch0sens",
               "language": "jsonpath",
               "name": "",
               "type": "number"
             }
           ],
-          "path": "/${StarkTaskName}",
+          "path": "/${KermitTaskName}",
           "refId": "A",
           "withStreaming": true
         }
       ],
-      "title": "Fuel Tank Pressure",
+      "title": "N2 Tank",
       "type": "stat"
     },
     {
@@ -381,7 +375,7 @@
       "gridPos": {
         "h": 4,
         "w": 5,
-        "x": 10,
+        "x": 11,
         "y": 3
       },
       "id": 10,
@@ -429,7 +423,7 @@
           "withStreaming": true
         }
       ],
-      "title": "N2 Pressure",
+      "title": "Fuel Tank",
       "type": "stat"
     },
     {
@@ -477,11 +471,11 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 6,
-        "x": 15,
+        "w": 5,
+        "x": 16,
         "y": 3
       },
-      "id": 11,
+      "id": 7,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -515,18 +509,18 @@
               "type": "time"
             },
             {
-              "jsonPath": "$.data.ch3sens",
+              "jsonPath": "$.data.FuelTankP",
               "language": "jsonpath",
               "name": "",
               "type": "number"
             }
           ],
-          "path": "/${StarkTaskName}",
+          "path": "/nim_greg_telem",
           "refId": "A",
           "withStreaming": true
         }
       ],
-      "title": "Chamber Pressure (Bar A)",
+      "title": "Fuel Tank Pressure",
       "type": "stat"
     },
     {
@@ -2014,28 +2008,28 @@
       {
         "hide": 2,
         "name": "KermitTaskName",
-        "query": "sts_sen0_telem",
+        "query": "plt_sen_telem",
         "skipUrlSync": false,
         "type": "constant"
       },
       {
         "hide": 2,
-        "label": "Kermit2Taskname",
-        "name": "Kermit2Taskname",
-        "query": "sts_sen1_telem",
+        "label": "GSSKermit0Taskname",
+        "name": "GSSKermit0Taskname",
+        "query": "gss_sen0_telem",
         "skipUrlSync": false,
         "type": "constant"
       }
     ]
   },
   "time": {
-    "from": "now-30s",
-    "to": "now"
+    "from": "2025-08-18T11:33:01.946Z",
+    "to": "2025-08-18T11:35:01.946Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Sensor View",
   "uid": "ae588qgo7vke8f",
-  "version": 14,
+  "version": 24,
   "weekStart": ""
 }

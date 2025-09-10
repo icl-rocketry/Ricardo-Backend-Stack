@@ -1,2341 +1,721 @@
 {
-    "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": {
-            "type": "grafana",
-            "uid": "-- Grafana --"
-          },
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
-        }
-      ]
-    },
-    "editable": true,
-    "fiscalYearStartMonth": 0,
-    "graphTooltip": 0,
-    "id": 45,
-    "links": [],
-    "liveNow": true,
-    "panels": [
+  "annotations": {
+    "list": [
       {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 0
-        },
-        "id": 110,
-        "panels": [],
-        "title": "Greg",
-        "type": "row"
-      },
-      {
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 0,
-          "y": 1
-        },
-        "id": 120,
-        "libraryPanel": {
-          "name": "NIMBUS 24 Greg Kp Variation",
-          "uid": "fe0dmbzc9fny8a"
-        },
-        "title": "Kp Variation"
-      },
-      {
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 4,
-          "y": 1
-        },
-        "id": 117,
-        "libraryPanel": {
-          "name": "NIMBUS 24 Ereg Angles",
-          "uid": "ce0dmcv7psi68e"
-        },
-        "title": "Angles"
-      },
-      {
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 8,
-          "y": 1
-        },
-        "id": 112,
-        "libraryPanel": {
-          "name": "NIMBUS 24 EREG Component Status",
-          "uid": "be0dmi0ub5c74c"
-        },
-        "title": "Component Status"
-      },
-      {
-        "gridPos": {
-          "h": 13,
-          "w": 12,
-          "x": 12,
-          "y": 1
-        },
-        "id": 122,
-        "libraryPanel": {
-          "name": "NIMBUS 24 Greg Controller Errors",
-          "uid": "de0dm9h0v3oxsf"
-        },
-        "title": "Controller Errors"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 6
-        },
-        "id": 115,
-        "libraryPanel": {
-          "name": "NIMBUS 24 EREG DEBUG Command",
-          "uid": "fe0dmjlogz11ce"
-        },
-        "title": "EREG DEBUG"
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 14
-        },
-        "id": 92,
-        "panels": [
-          {
-            "gridPos": {
-              "h": 4,
-              "w": 3,
-              "x": 0,
-              "y": 58
-            },
-            "id": 102,
-            "libraryPanel": {
-              "name": "Nimbus 24 Pyro Sep Time",
-              "uid": "adzlgkh38r3swb"
-            },
-            "title": "Sep Pyro Time"
-          },
-          {
-            "gridPos": {
-              "h": 4,
-              "w": 3,
-              "x": 3,
-              "y": 58
-            },
-            "id": 106,
-            "libraryPanel": {
-              "name": "Nimbus 24 Pyro Main Time",
-              "uid": "ddzlhspcf6i2oc"
-            },
-            "title": "Main Pyro Time"
-          },
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "palette-classic"
-                },
-                "custom": {
-                  "axisBorderShow": false,
-                  "axisCenteredZero": false,
-                  "axisColorMode": "text",
-                  "axisLabel": "",
-                  "axisPlacement": "auto",
-                  "barAlignment": 0,
-                  "drawStyle": "line",
-                  "fillOpacity": 0,
-                  "gradientMode": "none",
-                  "hideFrom": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": false
-                  },
-                  "insertNulls": false,
-                  "lineInterpolation": "linear",
-                  "lineWidth": 1,
-                  "pointSize": 5,
-                  "scaleDistribution": {
-                    "type": "linear"
-                  },
-                  "showPoints": "auto",
-                  "spanNulls": false,
-                  "stacking": {
-                    "group": "A",
-                    "mode": "none"
-                  },
-                  "thresholdsStyle": {
-                    "mode": "off"
-                  }
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 17,
-              "w": 8,
-              "x": 6,
-              "y": 58
-            },
-            "id": 93,
-            "options": {
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": true
-              },
-              "tooltip": {
-                "mode": "single",
-                "sort": "none"
-              }
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "golioth-websocket-datasource",
-                  "uid": "d5EHcyv4z"
-                },
-                "fields": [
-                  {
-                    "jsonPath": "$.data.busV",
-                    "language": "jsonpath",
-                    "name": ""
-                  },
-                  {
-                    "jsonPath": "$.timestamp",
-                    "language": "jsonpath",
-                    "name": "",
-                    "type": "time"
-                  }
-                ],
-                "path": "/nim_rec_flint_telem",
-                "refId": "A",
-                "withStreaming": true
-              }
-            ],
-            "title": "Recovery F&S Bus Voltage",
-            "type": "timeseries"
-          },
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "palette-classic"
-                },
-                "custom": {
-                  "axisBorderShow": false,
-                  "axisCenteredZero": false,
-                  "axisColorMode": "text",
-                  "axisLabel": "",
-                  "axisPlacement": "auto",
-                  "barAlignment": 0,
-                  "drawStyle": "line",
-                  "fillOpacity": 0,
-                  "gradientMode": "none",
-                  "hideFrom": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": false
-                  },
-                  "insertNulls": false,
-                  "lineInterpolation": "linear",
-                  "lineWidth": 1,
-                  "pointSize": 5,
-                  "scaleDistribution": {
-                    "type": "linear"
-                  },
-                  "showPoints": "auto",
-                  "spanNulls": false,
-                  "stacking": {
-                    "group": "A",
-                    "mode": "none"
-                  },
-                  "thresholdsStyle": {
-                    "mode": "off"
-                  }
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 17,
-              "w": 10,
-              "x": 14,
-              "y": 58
-            },
-            "id": 94,
-            "options": {
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": true
-              },
-              "tooltip": {
-                "mode": "single",
-                "sort": "none"
-              }
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "golioth-websocket-datasource",
-                  "uid": "d5EHcyv4z"
-                },
-                "fields": [
-                  {
-                    "jsonPath": "$.data.current",
-                    "language": "jsonpath",
-                    "name": ""
-                  },
-                  {
-                    "jsonPath": "$.timestamp",
-                    "language": "jsonpath",
-                    "name": "",
-                    "type": "time"
-                  }
-                ],
-                "path": "/nim_rec_flint_telem",
-                "refId": "A",
-                "withStreaming": true
-              }
-            ],
-            "title": "Solenoid F&S Current",
-            "type": "timeseries"
-          },
-          {
-            "gridPos": {
-              "h": 6,
-              "w": 3,
-              "x": 0,
-              "y": 62
-            },
-            "id": 96,
-            "libraryPanel": {
-              "name": "Nimbus 24 Pyro Sep Command",
-              "uid": "adzlgk2v92ccgc"
-            },
-            "title": "Sep Pyro"
-          },
-          {
-            "gridPos": {
-              "h": 6,
-              "w": 3,
-              "x": 3,
-              "y": 62
-            },
-            "id": 104,
-            "libraryPanel": {
-              "name": "Nimbus 24 Pyro Main Command",
-              "uid": "bdzlhtan4iiv4c"
-            },
-            "title": "Main Pyro Command"
-          },
-          {
-            "gridPos": {
-              "h": 7,
-              "w": 3,
-              "x": 0,
-              "y": 68
-            },
-            "id": 100,
-            "libraryPanel": {
-              "name": "Nimbus 24 Pyro Sep Status",
-              "uid": "fdzlgkto9u5fkf"
-            },
-            "title": "Sep Pyro Time"
-          },
-          {
-            "gridPos": {
-              "h": 7,
-              "w": 3,
-              "x": 3,
-              "y": 68
-            },
-            "id": 108,
-            "libraryPanel": {
-              "name": "Nimbus 24 Pyro Main Status",
-              "uid": "adzlhtvc6q7swc"
-            },
-            "title": "Main Pyro Status"
-          }
-        ],
-        "title": "Pyros",
-        "type": "row"
-      },
-      {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 15
-        },
-        "id": 90,
-        "panels": [],
-        "title": "Canard Bay",
-        "type": "row"
-      },
-      {
+        "builtIn": 1,
         "datasource": {
-          "type": "yesoreyeram-infinity-datasource",
-          "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          "type": "grafana",
+          "uid": "-- Grafana --"
         },
-        "description": "",
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 0,
-          "y": 16
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 41,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
         },
-        "id": 91,
-        "options": {
-          "buttons": [
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 35,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
             {
-              "datasource": "Command Server",
-              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/canard_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":40}\",\n        \"method\": \"POST\"\n}\n}",
-              "text": "ARM",
-              "variant": "destructive"
-            },
-            {
-              "datasource": "Command Server",
-              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/canard_execute\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":40,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
-              "text": "Set roll rate",
-              "variant": "destructive"
-            },
-            {
-              "datasource": "Command Server",
-              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/canard_wiggle\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":40}\",\n        \"method\": \"POST\"\n}\n}",
-              "text": "Wiggle",
-              "variant": "primary"
-            },
-            {
-              "datasource": "Command Server",
-              "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/canard_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":40}\",\n        \"method\": \"POST\"\n}\n}",
-              "text": "DISARM",
-              "variant": "destructive"
+              "jsonPath": "$.data.controller_errors",
+              "language": "jsonpath",
+              "name": ""
             }
           ],
-          "orientation": "vertical"
+          "path": "/plt_ereg_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Controller Errors",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "keepTime": false,
+            "replace": true,
+            "source": "controller_errors"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
-        "targets": [
-          {
-            "columns": [],
-            "datasource": {
-              "type": "yesoreyeram-infinity-datasource",
-              "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.FuelTankP",
+              "language": "jsonpath",
+              "name": ""
             },
-            "filters": [],
-            "format": "table",
-            "global_query_id": "",
-            "hide": true,
-            "refId": "A",
-            "root_selector": "",
-            "source": "url",
-            "type": "json",
-            "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
-            "url_options": {
-              "data": "",
-              "method": "GET"
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
             }
-          }
-        ],
-        "title": "Canard Board",
-        "type": "speakyourcode-button-panel"
+          ],
+          "path": "/plt_greg_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
       },
-      {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 24
-        },
-        "id": 80,
-        "panels": [],
-        "title": "Payload Deployer",
-        "type": "row"
-      },
-      {
-        "datasource": {
-          "type": "golioth-websocket-datasource",
-          "uid": "d5EHcyv4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
           },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 24,
-          "x": 0,
-          "y": 25
-        },
-        "id": 109,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
             },
-            "fields": [
-              {
-                "jsonPath": "$.data.ServoVoltage",
-                "language": "jsonpath",
-                "name": ""
-              },
-              {
-                "jsonPath": "$.timestamp",
-                "language": "jsonpath",
-                "name": "",
-                "type": "time"
-              }
-            ],
-            "path": "/nim_deployer_chad_telem",
-            "refId": "A",
-            "withStreaming": true
-          }
-        ],
-        "title": "Deployer Chad Voltage",
-        "type": "timeseries"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 2,
-          "x": 0,
-          "y": 30
-        },
-        "id": 82,
-        "libraryPanel": {
-          "name": "Nimbus 24 Payload Deployer Servo (10)",
-          "uid": "cdz2kj1vcqtj4e"
-        },
-        "title": "Payload Deployer Servo (10)"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 2,
-          "y": 30
-        },
-        "id": 85,
-        "libraryPanel": {
-          "name": "Nimbus 24 Payload Deployer Servo (10) Position",
-          "uid": "fdz2lfamtlx4wa"
-        },
-        "title": "Payload Deployer Servo (10) Position"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 6,
-          "y": 30
-        },
-        "id": 86,
-        "libraryPanel": {
-          "name": "Nimbus 24 Payload Deployer Servo (10) Status",
-          "uid": "fdz2lftdynxmoa"
-        },
-        "title": "Payload Deployer Servo (10) Status"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 10,
-          "y": 30
-        },
-        "id": 84,
-        "libraryPanel": {
-          "name": "Nimbus 24 Payload Deployer Compound",
-          "uid": "ddz2lklm94k5ce"
-        },
-        "title": "Payload Deployer Compound"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 14,
-          "y": 30
-        },
-        "id": 88,
-        "libraryPanel": {
-          "name": "Nimbus 24 Payload Deployer Servo (11) Status",
-          "uid": "cdz2lg4kza60wf"
-        },
-        "title": "Payload Deployer Servo (11) Status"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 18,
-          "y": 30
-        },
-        "id": 87,
-        "libraryPanel": {
-          "name": "Nimbus 24 Payload Deployer Servo (11) Position",
-          "uid": "fdz2li9dww0sgd"
-        },
-        "title": "Payload Deployer Servo (11) Position"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 2,
-          "x": 22,
-          "y": 30
-        },
-        "id": 83,
-        "libraryPanel": {
-          "name": "Nimbus 24 Payload Deployer Servo (11)",
-          "uid": "cdz2kjeamkagwf"
-        },
-        "title": "Payload Deployer Servo (11)"
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 38
-        },
-        "id": 62,
-        "panels": [
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
             },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "palette-classic"
-                },
-                "custom": {
-                  "axisBorderShow": false,
-                  "axisCenteredZero": false,
-                  "axisColorMode": "text",
-                  "axisLabel": "",
-                  "axisPlacement": "auto",
-                  "barAlignment": 0,
-                  "drawStyle": "line",
-                  "fillOpacity": 0,
-                  "gradientMode": "none",
-                  "hideFrom": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": false
-                  },
-                  "insertNulls": false,
-                  "lineInterpolation": "linear",
-                  "lineWidth": 1,
-                  "pointSize": 5,
-                  "scaleDistribution": {
-                    "type": "linear"
-                  },
-                  "showPoints": "auto",
-                  "spanNulls": false,
-                  "stacking": {
-                    "group": "A",
-                    "mode": "none"
-                  },
-                  "thresholdsStyle": {
-                    "mode": "off"
-                  }
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
             },
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 0,
-              "y": 85
-            },
-            "id": 74,
-            "options": {
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": true
-              },
-              "tooltip": {
-                "mode": "single",
-                "sort": "none"
-              }
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "golioth-websocket-datasource",
-                  "uid": "d5EHcyv4z"
-                },
-                "fields": [
-                  {
-                    "jsonPath": "$.data.battVoltage",
-                    "language": "jsonpath",
-                    "name": ""
-                  },
-                  {
-                    "jsonPath": "$.timestamp",
-                    "language": "jsonpath",
-                    "name": "",
-                    "type": "time"
-                  }
-                ],
-                "path": "/nim_pdu0_telem",
-                "refId": "A",
-                "withStreaming": true
-              }
-            ],
-            "title": "PDU0 Battery Voltage",
-            "type": "timeseries"
-          },
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "palette-classic"
-                },
-                "custom": {
-                  "axisBorderShow": false,
-                  "axisCenteredZero": false,
-                  "axisColorMode": "text",
-                  "axisLabel": "",
-                  "axisPlacement": "auto",
-                  "barAlignment": 0,
-                  "drawStyle": "line",
-                  "fillOpacity": 0,
-                  "gradientMode": "none",
-                  "hideFrom": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": false
-                  },
-                  "insertNulls": false,
-                  "lineInterpolation": "linear",
-                  "lineWidth": 1,
-                  "pointSize": 5,
-                  "scaleDistribution": {
-                    "type": "linear"
-                  },
-                  "showPoints": "auto",
-                  "spanNulls": false,
-                  "stacking": {
-                    "group": "A",
-                    "mode": "none"
-                  },
-                  "thresholdsStyle": {
-                    "mode": "off"
-                  }
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 4,
-              "y": 85
-            },
-            "id": 71,
-            "options": {
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": true
-              },
-              "tooltip": {
-                "mode": "single",
-                "sort": "none"
-              }
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "golioth-websocket-datasource",
-                  "uid": "d5EHcyv4z"
-                },
-                "fields": [
-                  {
-                    "jsonPath": "$.data.depVoltage",
-                    "language": "jsonpath",
-                    "name": ""
-                  },
-                  {
-                    "jsonPath": "$.timestamp",
-                    "language": "jsonpath",
-                    "name": "",
-                    "type": "time"
-                  }
-                ],
-                "path": "/nim_pdu0_telem",
-                "refId": "A",
-                "withStreaming": true
-              }
-            ],
-            "title": "PDU0 Dep Voltage",
-            "type": "timeseries"
-          },
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "palette-classic"
-                },
-                "custom": {
-                  "axisBorderShow": false,
-                  "axisCenteredZero": false,
-                  "axisColorMode": "text",
-                  "axisLabel": "",
-                  "axisPlacement": "auto",
-                  "barAlignment": 0,
-                  "drawStyle": "line",
-                  "fillOpacity": 0,
-                  "gradientMode": "none",
-                  "hideFrom": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": false
-                  },
-                  "insertNulls": false,
-                  "lineInterpolation": "linear",
-                  "lineWidth": 1,
-                  "pointSize": 5,
-                  "scaleDistribution": {
-                    "type": "linear"
-                  },
-                  "showPoints": "auto",
-                  "spanNulls": false,
-                  "stacking": {
-                    "group": "A",
-                    "mode": "none"
-                  },
-                  "thresholdsStyle": {
-                    "mode": "off"
-                  }
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 8,
-              "y": 85
-            },
-            "id": 73,
-            "options": {
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": true
-              },
-              "tooltip": {
-                "mode": "single",
-                "sort": "none"
-              }
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "golioth-websocket-datasource",
-                  "uid": "d5EHcyv4z"
-                },
-                "fields": [
-                  {
-                    "jsonPath": "$.data.logicVoltage",
-                    "language": "jsonpath",
-                    "name": ""
-                  },
-                  {
-                    "jsonPath": "$.timestamp",
-                    "language": "jsonpath",
-                    "name": "",
-                    "type": "time"
-                  }
-                ],
-                "path": "/nim_pdu0_telem",
-                "refId": "A",
-                "withStreaming": true
-              }
-            ],
-            "title": "PDU0 Logic Voltage",
-            "type": "timeseries"
-          },
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "palette-classic"
-                },
-                "custom": {
-                  "axisBorderShow": false,
-                  "axisCenteredZero": false,
-                  "axisColorMode": "text",
-                  "axisLabel": "",
-                  "axisPlacement": "auto",
-                  "barAlignment": 0,
-                  "drawStyle": "line",
-                  "fillOpacity": 0,
-                  "gradientMode": "none",
-                  "hideFrom": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": false
-                  },
-                  "insertNulls": false,
-                  "lineInterpolation": "linear",
-                  "lineWidth": 1,
-                  "pointSize": 5,
-                  "scaleDistribution": {
-                    "type": "linear"
-                  },
-                  "showPoints": "auto",
-                  "spanNulls": false,
-                  "stacking": {
-                    "group": "A",
-                    "mode": "none"
-                  },
-                  "thresholdsStyle": {
-                    "mode": "off"
-                  }
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 12,
-              "y": 85
-            },
-            "id": 79,
-            "options": {
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": true
-              },
-              "tooltip": {
-                "mode": "single",
-                "sort": "none"
-              }
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "golioth-websocket-datasource",
-                  "uid": "d5EHcyv4z"
-                },
-                "fields": [
-                  {
-                    "jsonPath": "$.data.battVoltage",
-                    "language": "jsonpath",
-                    "name": ""
-                  },
-                  {
-                    "jsonPath": "$.timestamp",
-                    "language": "jsonpath",
-                    "name": "",
-                    "type": "time"
-                  }
-                ],
-                "path": "/nim_pdu1_telem",
-                "refId": "A",
-                "withStreaming": true
-              }
-            ],
-            "title": "PDU1 Battery Voltage",
-            "type": "timeseries"
-          },
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "palette-classic"
-                },
-                "custom": {
-                  "axisBorderShow": false,
-                  "axisCenteredZero": false,
-                  "axisColorMode": "text",
-                  "axisLabel": "",
-                  "axisPlacement": "auto",
-                  "barAlignment": 0,
-                  "drawStyle": "line",
-                  "fillOpacity": 0,
-                  "gradientMode": "none",
-                  "hideFrom": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": false
-                  },
-                  "insertNulls": false,
-                  "lineInterpolation": "linear",
-                  "lineWidth": 1,
-                  "pointSize": 5,
-                  "scaleDistribution": {
-                    "type": "linear"
-                  },
-                  "showPoints": "auto",
-                  "spanNulls": false,
-                  "stacking": {
-                    "group": "A",
-                    "mode": "none"
-                  },
-                  "thresholdsStyle": {
-                    "mode": "off"
-                  }
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 16,
-              "y": 85
-            },
-            "id": 77,
-            "options": {
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": true
-              },
-              "tooltip": {
-                "mode": "single",
-                "sort": "none"
-              }
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "golioth-websocket-datasource",
-                  "uid": "d5EHcyv4z"
-                },
-                "fields": [
-                  {
-                    "jsonPath": "$.data.depVoltage",
-                    "language": "jsonpath",
-                    "name": ""
-                  },
-                  {
-                    "jsonPath": "$.timestamp",
-                    "language": "jsonpath",
-                    "name": "",
-                    "type": "time"
-                  }
-                ],
-                "path": "/nim_pdu1_telem",
-                "refId": "A",
-                "withStreaming": true
-              }
-            ],
-            "title": "PDU1 Dep Voltage",
-            "type": "timeseries"
-          },
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "palette-classic"
-                },
-                "custom": {
-                  "axisBorderShow": false,
-                  "axisCenteredZero": false,
-                  "axisColorMode": "text",
-                  "axisLabel": "",
-                  "axisPlacement": "auto",
-                  "barAlignment": 0,
-                  "drawStyle": "line",
-                  "fillOpacity": 0,
-                  "gradientMode": "none",
-                  "hideFrom": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": false
-                  },
-                  "insertNulls": false,
-                  "lineInterpolation": "linear",
-                  "lineWidth": 1,
-                  "pointSize": 5,
-                  "scaleDistribution": {
-                    "type": "linear"
-                  },
-                  "showPoints": "auto",
-                  "spanNulls": false,
-                  "stacking": {
-                    "group": "A",
-                    "mode": "none"
-                  },
-                  "thresholdsStyle": {
-                    "mode": "off"
-                  }
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 20,
-              "y": 85
-            },
-            "id": 78,
-            "options": {
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": true
-              },
-              "tooltip": {
-                "mode": "single",
-                "sort": "none"
-              }
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "golioth-websocket-datasource",
-                  "uid": "d5EHcyv4z"
-                },
-                "fields": [
-                  {
-                    "jsonPath": "$.data.logicVoltage",
-                    "language": "jsonpath",
-                    "name": ""
-                  },
-                  {
-                    "jsonPath": "$.timestamp",
-                    "language": "jsonpath",
-                    "name": "",
-                    "type": "time"
-                  }
-                ],
-                "path": "/nim_pdu1_telem",
-                "refId": "A",
-                "withStreaming": true
-              }
-            ],
-            "title": "PDU1 Logic Voltage",
-            "type": "timeseries"
-          },
-          {
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 0,
-              "y": 93
-            },
-            "id": 66,
-            "libraryPanel": {
-              "name": "NIMBUS 24 PDU0 State",
-              "uid": "adyw4gl6yheyod"
-            },
-            "title": "PDU0 State"
-          },
-          {
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 4,
-              "y": 93
-            },
-            "id": 64,
-            "libraryPanel": {
-              "name": "NIMBUS 24 PDU0 CONTROL",
-              "uid": "bdyw8us1zqqkgd"
-            },
-            "title": "PDU0"
-          },
-          {
-            "gridPos": {
-              "h": 8,
-              "w": 8,
-              "x": 8,
-              "y": 93
-            },
-            "id": 89,
-            "libraryPanel": {
-              "name": "Nimbus 24 PDU Compound Commands",
-              "uid": "fdz3o22ohfg1se"
-            },
-            "title": "PDU Compound Commands"
-          },
-          {
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 16,
-              "y": 93
-            },
-            "id": 68,
-            "libraryPanel": {
-              "name": "NIMBUS 24 PDU1 CONTROL",
-              "uid": "cdyw8xhacge80a"
-            },
-            "title": "PDU1"
-          },
-          {
-            "gridPos": {
-              "h": 8,
-              "w": 4,
-              "x": 20,
-              "y": 93
-            },
-            "id": 70,
-            "libraryPanel": {
-              "name": "NIMBUS 24 PDU1 State",
-              "uid": "cdyw9gjbliygwd"
-            },
-            "title": "PDU1 State"
-          }
-        ],
-        "title": "PDUs",
-        "type": "row"
-      },
-      {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 39
-        },
-        "id": 18,
-        "panels": [],
-        "title": "Solenoids",
-        "type": "row"
-      },
-      {
-        "gridPos": {
-          "h": 4,
-          "w": 3,
-          "x": 0,
-          "y": 40
-        },
-        "id": 15,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Vent Sol Value",
-          "uid": "adysobl6qpz40f"
-        },
-        "title": "Ox Vent Sol Value"
-      },
-      {
-        "gridPos": {
-          "h": 4,
-          "w": 3,
-          "x": 3,
-          "y": 40
-        },
-        "id": 22,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Solenoid Value",
-          "uid": "edysq7u0iwao0b"
-        },
-        "title": "N2 Solenoid Value"
-      },
-      {
-        "gridPos": {
-          "h": 4,
-          "w": 3,
-          "x": 6,
-          "y": 40
-        },
-        "id": 28,
-        "libraryPanel": {
-          "name": "Nimbus 24 Fuel Vent Solenoid Value",
-          "uid": "adysqtbd8os1sf"
-        },
-        "title": "Fuel Vent Solenoid Status"
-      },
-      {
-        "datasource": {
-          "type": "golioth-websocket-datasource",
-          "uid": "d5EHcyv4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
+            "thresholdsStyle": {
+              "mode": "off"
             }
           },
-          "overrides": []
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
-        "gridPos": {
-          "h": 9,
-          "w": 7,
-          "x": 9,
-          "y": 40
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
         },
-        "id": 52,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
           },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
+          "fields": [
+            {
+              "jsonPath": "$.data.Kp",
+              "language": "jsonpath",
+              "name": ""
             },
-            "fields": [
-              {
-                "jsonPath": "$.data.busV",
-                "language": "jsonpath",
-                "name": ""
-              },
-              {
-                "jsonPath": "$.timestamp",
-                "language": "jsonpath",
-                "name": "",
-                "type": "time"
-              }
-            ],
-            "path": "/nim_sol_flint_telem",
-            "refId": "A",
-            "withStreaming": true
-          }
-        ],
-        "title": "Solenoid F&S Bus Voltage",
-        "type": "timeseries"
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            }
+          ],
+          "path": "/plt_greg_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Kp Variation",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
       },
-      {
-        "gridPos": {
-          "h": 7,
-          "w": 3,
-          "x": 0,
-          "y": 44
-        },
-        "id": 13,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Vent Solenoid Command",
-          "uid": "cdysnwyihg0lcb"
-        },
-        "title": "Ox Vent Solenoid"
-      },
-      {
-        "gridPos": {
-          "h": 7,
-          "w": 3,
-          "x": 3,
-          "y": 44
-        },
-        "id": 20,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Solenoid Command",
-          "uid": "cdysq5ppk25fkb"
-        },
-        "title": "N2 Solenoid"
-      },
-      {
-        "gridPos": {
-          "h": 7,
-          "w": 3,
-          "x": 6,
-          "y": 44
-        },
-        "id": 26,
-        "libraryPanel": {
-          "name": "Nimbus 24 Fuel Solenoid Command",
-          "uid": "bdysqu0l6a4n4f"
-        },
-        "title": "Fuel Solenoid"
-      },
-      {
-        "datasource": {
-          "type": "golioth-websocket-datasource",
-          "uid": "d5EHcyv4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic-by-name"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
             },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
             },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
             }
           },
-          "overrides": []
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
-        "gridPos": {
-          "h": 10,
-          "w": 7,
-          "x": 9,
-          "y": 49
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
         },
-        "id": 61,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
           },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
+          "fields": [
+            {
+              "jsonPath": "$.data.regAngle",
+              "language": "jsonpath",
+              "name": ""
             },
-            "fields": [
-              {
-                "jsonPath": "$.data.current",
-                "language": "jsonpath",
-                "name": ""
-              },
-              {
-                "jsonPath": "$.timestamp",
-                "language": "jsonpath",
-                "name": "",
-                "type": "time"
-              }
-            ],
-            "path": "/nim_sol_flint_telem",
-            "refId": "A",
-            "withStreaming": true
-          }
-        ],
-        "title": "Solenoid F&S Current",
-        "type": "timeseries"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 3,
-          "x": 0,
-          "y": 51
-        },
-        "id": 17,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Vent Sol Status",
-          "uid": "ddysp4c64ndhcc"
-        },
-        "title": "Ox Vent Sol Status"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 3,
-          "x": 3,
-          "y": 51
-        },
-        "id": 24,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Solenoid Status",
-          "uid": "ddysq8j4fnj7kb"
-        },
-        "title": "Nitrogen Solenoid Status"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 3,
-          "x": 6,
-          "y": 51
-        },
-        "id": 30,
-        "libraryPanel": {
-          "name": "Nimbus 24 Fuel Vent Status",
-          "uid": "adysqunr0vw1se"
-        },
-        "title": "Fuel Vent Status"
-      },
-      {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 59
-        },
-        "id": 3,
-        "panels": [],
-        "title": "Servo Valves",
-        "type": "row"
-      },
-      {
-        "datasource": {
-          "type": "golioth-websocket-datasource",
-          "uid": "d5EHcyv4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
             },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
+            {
+              "jsonPath": "$.data.Proportional_Term",
+              "language": "jsonpath",
+              "name": ""
             },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
+            {
+              "jsonPath": "$.data.Feedforward",
+              "language": "jsonpath",
+              "name": ""
             }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 0,
-          "y": 60
-        },
-        "id": 1,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
+          ],
+          "path": "/plt_greg_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Angles",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 12,
+        "y": 24
+      },
+      "id": 8,
+      "options": {
+        "buttons": [
           {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fields": [
-              {
-                "jsonPath": "$.data.ServoVoltage",
-                "language": "jsonpath",
-                "name": ""
-              },
-              {
-                "jsonPath": "$.timestamp",
-                "language": "jsonpath",
-                "name": "",
-                "type": "time"
-              }
-            ],
-            "path": "/nim_midfeed_chad_telem",
-            "refId": "A",
-            "withStreaming": true
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/armpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/firepyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10,\\\"argument\\\":1}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "CONTROLLED",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/disarmpyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "secondary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/firepyro\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10,\\\"argument\\\":3}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "SHUTDOWN",
+            "variant": "link"
           }
         ],
-        "title": "Midfeed Chad Voltage",
-        "type": "timeseries"
+        "orientation": "vertical"
       },
-      {
-        "datasource": {
-          "type": "golioth-websocket-datasource",
-          "uid": "d5EHcyv4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
+      "pluginVersion": "0.3.2",
+      "targets": [
+        {
+          "refId": "A"
+        }
+      ],
+      "title": "EREG DEBUG",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
               },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
+              {
+                "color": "red",
+                "value": 1
               }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 16,
+        "y": 24
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.controller_states",
+              "language": "jsonpath",
+              "name": ""
             }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 8,
-          "x": 4,
-          "y": 60
-        },
-        "id": 60,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
+          ],
+          "path": "/plt_ereg_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Controller State",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "keepTime": false,
+            "replace": true,
+            "source": "controller_states"
           }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fields": [
-              {
-                "jsonPath": "$.data.ServoVoltage",
-                "language": "jsonpath",
-                "name": ""
-              },
-              {
-                "jsonPath": "$.timestamp",
-                "language": "jsonpath",
-                "name": "",
-                "type": "time"
-              }
-            ],
-            "path": "/gss_ox_chad_telem",
-            "refId": "A",
-            "withStreaming": true
-          }
-        ],
-        "title": "Ox GSS Chad Voltage",
-        "type": "timeseries"
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
       },
-      {
-        "datasource": {
-          "type": "golioth-websocket-datasource",
-          "uid": "d5EHcyv4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
               },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
+              {
+                "color": "red",
+                "value": 1
               }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 20,
+        "y": 24
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
             }
-          },
-          "overrides": []
+          ],
+          "path": "/plt_ereg_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Component Status",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
         },
-        "gridPos": {
-          "h": 5,
-          "w": 8,
-          "x": 12,
-          "y": 60
-        },
-        "id": 53,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "auto",
+            "replace": true,
+            "source": "component_status"
           }
-        },
-        "targets": [
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 12,
+        "x": 12,
+        "y": 32
+      },
+      "id": 7,
+      "options": {
+        "buttons": [
           {
-            "datasource": {
-              "type": "golioth-websocket-datasource",
-              "uid": "d5EHcyv4z"
-            },
-            "fields": [
-              {
-                "jsonPath": "$.data.ServoVoltage",
-                "language": "jsonpath",
-                "name": ""
-              },
-              {
-                "jsonPath": "$.timestamp",
-                "language": "jsonpath",
-                "name": "",
-                "type": "time"
-              }
-            ],
-            "path": "/gss_n2_chad_telem",
-            "refId": "A",
-            "withStreaming": true
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/eregarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/eregexec\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10,\\\"argument\\\":4}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "PRESSURISE",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/eregdisarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "secondary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"http://${commandserverip}/api/eregexec\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":0,\\\"destination_service\\\":10,\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "SHUTDOWN",
+            "variant": "link"
           }
         ],
-        "title": "N2 GSS Chad Voltage",
-        "type": "timeseries"
+        "orientation": "horizontal"
       },
+      "pluginVersion": "0.3.2",
+      "targets": [
+        {
+          "refId": "A"
+        }
+      ],
+      "title": "EREG Operation",
+      "type": "speakyourcode-button-panel"
+    }
+  ],
+  "preload": false,
+  "refresh": false,
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": [
       {
-        "gridPos": {
-          "h": 4,
-          "w": 4,
-          "x": 0,
-          "y": 65
+        "current": {
+          "text": "ricardo-commandserver:1339",
+          "value": "ricardo-commandserver:1339"
         },
-        "id": 9,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Vent Position",
-          "uid": "edyso1pmw10cgd"
-        },
-        "title": "Ox Vent Position"
-      },
-      {
-        "gridPos": {
-          "h": 4,
-          "w": 4,
-          "x": 4,
-          "y": 65
-        },
-        "id": 40,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Hose Vent Servo Position",
-          "uid": "cdyvkmk1tqy2oa"
-        },
-        "title": "Ox Hose Position"
-      },
-      {
-        "gridPos": {
-          "h": 4,
-          "w": 4,
-          "x": 8,
-          "y": 65
-        },
-        "id": 47,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Fill Servo Position",
-          "uid": "edyvkpshounswb"
-        },
-        "title": "Ox Fill Position"
-      },
-      {
-        "gridPos": {
-          "h": 4,
-          "w": 4,
-          "x": 12,
-          "y": 65
-        },
-        "id": 51,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Hose Position",
-          "uid": "adyvlja5g8o3kb"
-        },
-        "title": "N2 Hose Position"
-      },
-      {
-        "gridPos": {
-          "h": 4,
-          "w": 4,
-          "x": 16,
-          "y": 65
-        },
-        "id": 59,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Fill Servo Position ",
-          "uid": "ddyvkzzwu6by8c"
-        },
-        "title": "N2 Fill Position"
-      },
-      {
-        "gridPos": {
-          "h": 10,
-          "w": 4,
-          "x": 0,
-          "y": 69
-        },
-        "id": 5,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Vent Servo",
-          "uid": "fdysnqs828lc0b"
-        },
-        "title": "Ox Vent Servo"
-      },
-      {
-        "gridPos": {
-          "h": 10,
-          "w": 4,
-          "x": 4,
-          "y": 69
-        },
-        "id": 38,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Hose Vent Servo Command",
-          "uid": "edyvklmxp7h8ge"
-        },
-        "title": "Ox Hose"
-      },
-      {
-        "gridPos": {
-          "h": 10,
-          "w": 4,
-          "x": 8,
-          "y": 69
-        },
-        "id": 45,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Fill Servo Command",
-          "uid": "ddyvknpt255a8d"
-        },
-        "title": "Ox Fill"
-      },
-      {
-        "gridPos": {
-          "h": 10,
-          "w": 4,
-          "x": 12,
-          "y": 69
-        },
-        "id": 34,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Hose Command",
-          "uid": "cdyvljqme4yyod"
-        },
-        "title": "N2 Hose"
-      },
-      {
-        "gridPos": {
-          "h": 10,
-          "w": 4,
-          "x": 16,
-          "y": 69
-        },
-        "id": 55,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Fill Servo Command ",
-          "uid": "edyvl0tg5gav4f"
-        },
-        "title": "N2 Fill"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 0,
-          "y": 79
-        },
-        "id": 7,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Vent Status",
-          "uid": "cdysnt3a371tsa"
-        },
-        "title": "Ox Vent Status"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 4,
-          "y": 79
-        },
-        "id": 43,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Hose Vent Servo Status",
-          "uid": "cdyvkm3tozr40d"
-        },
-        "title": "Ox Hose Status"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 8,
-          "y": 79
-        },
-        "id": 49,
-        "libraryPanel": {
-          "name": "Nimbus 24 Ox Fill Servo Status",
-          "uid": "edyvkqdkk05j4a"
-        },
-        "title": "Ox Fill Status"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 12,
-          "y": 79
-        },
-        "id": 36,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Hose Status",
-          "uid": "edyvlk8jcx534b"
-        },
-        "title": "N2 Hose Status"
-      },
-      {
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 16,
-          "y": 79
-        },
-        "id": 57,
-        "libraryPanel": {
-          "name": "Nimbus 24 N2 Fill Servo Status",
-          "uid": "adyvl1rhfn8xsd"
-        },
-        "title": "N2 Fill Status"
-      },
-      {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 87
-        },
-        "id": 2,
-        "panels": [],
-        "title": "Lower Feed",
-        "type": "row"
+        "hide": 2,
+        "name": "commandserverip",
+        "query": "ricardo-commandserver:1339",
+        "skipUrlSync": true,
+        "type": "constant"
       }
-    ],
-    "refresh": "10s",
-    "schemaVersion": 39,
-    "tags": [],
-    "templating": {
-      "list": []
-    },
-    "time": {
-      "from": "now-1m",
-      "to": "now"
-    },
-    "timepicker": {},
-    "timezone": "browser",
-    "title": "Nimbus 24 Actuators",
-    "uid": "bdyshfnvf4rnkf",
-    "version": 95,
-    "weekStart": ""
-  }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Greg Debug",
+  "uid": "f0cef0a3-302c-4551-92ce-c1f22b1777fc",
+  "version": 17
+}
