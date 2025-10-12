@@ -11,7 +11,7 @@ def hotfire_startTest(instance,args):
 
     command_packet_args = {"source":1,
                         "source_service":instance.source_service,
-                        "destination":2,
+                        "destination":8,
                         "destination_service":10,
                         "command_id":2,
                         "command_arg":1}
@@ -22,7 +22,7 @@ def hotfire_startTest(instance,args):
 
     command_packet_args = {"source":1,
                         "source_service":instance.source_service,
-                        "destination":13,
+                        "destination":9,
                         "destination_service":10,
                         "command_id":2,
                         "command_arg":1}

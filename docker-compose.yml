@@ -52,7 +52,7 @@ services:
     user: "${UID}:${GID}"
     environment:
       - RICARDO_BACKEND_DEVICE=${SERIAL_PATH}
-      - RICARDO_BACKEND_BAUD=1036800
+      - RICARDO_BACKEND_BAUD=2304000
     ports:
       - 1337:1337
       - 1338:1338
