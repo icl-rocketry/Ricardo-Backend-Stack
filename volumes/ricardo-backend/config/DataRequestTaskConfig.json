@@ -2,41 +2,8 @@
  {
   "task_name": "gss_sen0_telem",
   "autostart": false,
-<<<<<<< Updated upstream
-  "poll_delta": 500,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "debug"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 0,
-   "destination_service": 2,
-   "command_id": 250,
-   "command_arg": 1
-  },
-  "packet_descriptor": {
-   "ram": "uint32_t"
-  },
-  "bitfield_decoders": [],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "gss_sen0_telem",
-  "autostart": false,
-  "poll_delta": 200,
-  "running": false,
-=======
   "poll_delta": 200,
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -76,31 +43,18 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
-=======
   "rxCounter": 150,
   "txCounter": 152,
   "connected": true,
   "lastReceivedPacket": "af24005c7b02006764010200007e434080bfc11993bfc101df93c20000c07f0000c07f01000800d4de210000000000",
   "rxBytes": 7050,
   "txBytes": 2432
->>>>>>> Stashed changes
  },
  {
   "task_name": "gss_sen1_telem",
   "autostart": false,
   "poll_delta": 200,
-<<<<<<< Updated upstream
-  "running": false,
-=======
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -140,32 +94,18 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
-=======
   "rxCounter": 150,
   "txCounter": 152,
   "connected": true,
   "lastReceivedPacket": "af24005d7b020067650102c455e5c0eb9e283f0050f7452c3594c2000000000000000001000800d5de210000000000",
   "rxBytes": 7050,
   "txBytes": 2432
->>>>>>> Stashed changes
  },
  {
   "task_name": "gss_pdu_telem",
   "autostart": false,
-<<<<<<< Updated upstream
-  "poll_delta": 1000,
-  "running": false,
-=======
   "poll_delta": 1500,
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -206,17 +146,6 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "gss_chad0_act_telem",
-=======
   "rxCounter": 21,
   "txCounter": 21,
   "connected": true,
@@ -226,7 +155,6 @@
  },
  {
   "task_name": "gss_chad0_telem",
->>>>>>> Stashed changes
   "autostart": false,
   "poll_delta": 1000,
   "running": false,
@@ -239,254 +167,6 @@
   "request_config": {
    "source": 1,
    "destination": 3,
-<<<<<<< Updated upstream
-   "destination_service": 11,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "gss_chad1_act_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "chad",
-   "gss"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 102,
-   "destination_service": 11,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "gss_chad1_srv_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "chad",
-   "gss"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 102,
-   "destination_service": 10,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "gss_chad2_act_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "chad",
-   "gss"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 103,
-   "destination_service": 11,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "gss_chad2_srv_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "chad",
-   "gss"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 103,
-   "destination_service": 10,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "gss_chad0_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "chad",
-   "gss"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 3,
-=======
->>>>>>> Stashed changes
    "destination_service": 2,
    "command_id": 8,
    "command_arg": 0
@@ -508,32 +188,18 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
-=======
   "rxCounter": 31,
   "txCounter": 31,
   "connected": true,
   "lastReceivedPacket": "af10004a7b0200670301010040ba4501200000c32a210000000000",
   "rxBytes": 837,
   "txBytes": 496
->>>>>>> Stashed changes
  },
  {
   "task_name": "gss_chad1_telem",
   "autostart": false,
-<<<<<<< Updated upstream
-  "poll_delta": 1000,
-  "running": false,
-=======
   "poll_delta": 1500,
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -564,32 +230,18 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
-=======
   "rxCounter": 21,
   "txCounter": 21,
   "connected": true,
   "lastReceivedPacket": "af1000507b0200676601020078b9450120000009de210000000000",
   "rxBytes": 567,
   "txBytes": 336
->>>>>>> Stashed changes
  },
  {
   "task_name": "gss_chad2_telem",
   "autostart": false,
-<<<<<<< Updated upstream
-  "poll_delta": 1000,
-  "running": false,
-=======
   "poll_delta": 1500,
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -620,36 +272,6 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "gss_chad0_srv_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "chad",
-   "gss"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 3,
-   "destination_service": 10,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-=======
   "rxCounter": 21,
   "txCounter": 21,
   "connected": true,
@@ -683,7 +305,6 @@
    "Kp": "float",
    "system_status": "uint32_t",
    "system_time": "uint64_t"
->>>>>>> Stashed changes
   },
   "bitfield_decoders": [
    {
@@ -692,37 +313,11 @@
     "flags": [
      {
       "id": 0,
-<<<<<<< Updated upstream
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-=======
       "description": "STATE_IDLE"
->>>>>>> Stashed changes
      }
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_engine_stark_telem",
-  "autostart": false,
-  "poll_delta": 200,
-  "running": false,
-=======
   "rxCounter": 50,
   "txCounter": 50,
   "connected": true,
@@ -735,24 +330,18 @@
   "autostart": false,
   "poll_delta": 1000,
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
    "plt",
-<<<<<<< Updated upstream
-   "stark"
-=======
    "stark",
    "pyro"
->>>>>>> Stashed changes
   ],
   "request_config": {
    "source": 1,
    "destination": 8,
    "destination_service": 20,
    "command_id": 1,
-<<<<<<< Updated upstream
    "command_arg": 0
   },
   "packet_descriptor": {
@@ -783,85 +372,6 @@
     ]
    }
   ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_greg_telem",
-  "autostart": false,
-  "poll_delta": 350,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "greg",
-   "plt"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 12,
-   "destination_service": 2,
-   "command_id": 8,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "Feedforward": "float",
-   "FuelTankP": "float",
-   "regAngle": "uint32_t",
-   "Proportional_Term": "float",
-   "Kp": "float",
-   "system_status": "uint32_t",
-   "system_time": "uint64_t"
-=======
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
->>>>>>> Stashed changes
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_pyro_main_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-=======
   "rxCounter": 26,
   "txCounter": 26,
   "connected": true,
@@ -874,200 +384,6 @@
   "autostart": false,
   "poll_delta": 1500,
   "running": true,
->>>>>>> Stashed changes
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "plt",
-<<<<<<< Updated upstream
-   "flint",
-   "pyro"
-=======
-   "solenoids"
->>>>>>> Stashed changes
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 13,
-   "destination_service": 11,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-<<<<<<< Updated upstream
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_fuel_sol_vent_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "plt",
-   "solenoids"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 13,
-   "destination_service": 12,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   },
-   {
-    "variable_name": "open_closed",
-    "bitfield": "value",
-    "flags": [
-     {
-      "id": 2,
-      "description": "CLOSED"
-     },
-     {
-      "id": 0,
-      "description": "OPEN"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_fuel_sol_fill_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "plt",
-   "solenoids"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 8,
-   "destination_service": 12,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   },
-   {
-    "variable_name": "open_closed",
-    "bitfield": "value",
-    "flags": [
-     {
-      "id": 2,
-      "description": "CLOSED"
-     },
-     {
-      "id": 0,
-      "description": "OPEN"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_ox_sol_vent_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1123,169 +439,6 @@
     ]
    }
   ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_ox_sol_fill_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "plt",
-   "solenoids"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 8,
-   "destination_service": 11,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   },
-   {
-    "variable_name": "open_closed",
-    "bitfield": "value",
-    "flags": [
-     {
-      "id": 2,
-      "description": "CLOSED"
-     },
-     {
-      "id": 0,
-      "description": "OPEN"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_ox_srv_vent_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "servo",
-   "plt"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 12,
-   "destination_service": 10,
-   "command_id": 1,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "state": "uint16_t",
-   "value": "int32_t"
-=======
->>>>>>> Stashed changes
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "component_status",
-    "bitfield": "state",
-    "flags": [
-     {
-      "id": 0,
-      "description": "NOMINAL"
-     },
-     {
-      "id": 1,
-      "description": "DISARMED"
-     },
-     {
-<<<<<<< Updated upstream
-      "id": 6,
-      "description": "ERROR"
-=======
-      "id": 3,
-      "description": "ERROR_CONTINUITY"
-     },
-     {
-      "id": 6,
-      "description": "ERROR"
-     }
-    ]
-   },
-   {
-    "variable_name": "open_closed",
-    "bitfield": "value",
-    "flags": [
-     {
-      "id": 2,
-      "description": "CLOSED"
-     },
-     {
-      "id": 0,
-      "description": "OPEN"
->>>>>>> Stashed changes
-     }
-    ]
-   }
-  ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_ereg_telem",
-  "autostart": false,
-  "poll_delta": 200,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "greg",
-   "plt"
-  ],
-  "request_config": {
-   "source": 1,
-=======
   "rxCounter": 17,
   "txCounter": 18,
   "connected": true,
@@ -1422,7 +575,6 @@
   ],
   "request_config": {
    "source": 1,
->>>>>>> Stashed changes
    "destination": 9,
    "destination_service": 10,
    "command_id": 1,
@@ -1564,31 +716,18 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
-=======
   "rxCounter": 17,
   "txCounter": 17,
   "connected": true,
   "lastReceivedPacket": "af0600237b0a0001090102020001000000",
   "rxBytes": 289,
   "txBytes": 272
->>>>>>> Stashed changes
  },
  {
   "task_name": "plt_sen_telem",
   "autostart": false,
   "poll_delta": 200,
-<<<<<<< Updated upstream
-  "running": false,
-=======
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1688,69 +827,10 @@
   "txBytes": 0
  },
  {
-<<<<<<< Updated upstream
-  "task_name": "plt_pdu0_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-  "logger": true,
-  "receiveOnly": false,
-  "groups": [
-   "pdu",
-   "plt"
-  ],
-  "request_config": {
-   "source": 1,
-   "destination": 10,
-   "destination_service": 2,
-   "command_id": 4,
-   "command_arg": 0
-  },
-  "packet_descriptor": {
-   "logicVoltage": "uint16_t",
-   "depVoltage": "uint16_t",
-   "battVoltage": "uint16_t",
-   "system_status": "uint32_t",
-   "system_time": "uint64_t"
-  },
-  "bitfield_decoders": [
-   {
-    "variable_name": "state",
-    "bitfield": "system_status",
-    "flags": [
-     {
-      "id": 0,
-      "description": "STATE_IDLE"
-     },
-     {
-      "id": 1,
-      "description": "STATE_READY"
-     },
-     {
-      "id": 2,
-      "description": "STATE_LIVE"
-     }
-    ]
-   }
-  ],
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
- },
- {
-  "task_name": "plt_pdu1_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-=======
   "task_name": "plt_pdu1_telem",
   "autostart": false,
   "poll_delta": 1500,
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -1791,38 +871,21 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
-=======
   "rxCounter": 17,
   "txCounter": 17,
   "connected": true,
   "lastReceivedPacket": "af1200247b0200660b0102381300008b5b0100000081301a0000000000",
   "rxBytes": 493,
   "txBytes": 272
->>>>>>> Stashed changes
  },
  {
   "task_name": "plt_fc_telem",
   "autostart": false,
-<<<<<<< Updated upstream
-  "poll_delta": 20,
-=======
   "poll_delta": 5000,
->>>>>>> Stashed changes
   "running": false,
   "logger": true,
   "receiveOnly": false,
   "groups": [
-<<<<<<< Updated upstream
-   "plt",
-=======
->>>>>>> Stashed changes
    "pickle"
   ],
   "request_config": {
@@ -2033,12 +1096,6 @@
   "txBytes": 0
  },
  {
-<<<<<<< Updated upstream
-  "task_name": "plt_ox_sol_vent1_telem",
-  "autostart": false,
-  "poll_delta": 1000,
-  "running": false,
-=======
   "task_name": "plt_goofy_telem",
   "autostart": false,
   "poll_delta": 200,
@@ -2193,7 +1250,6 @@
   "autostart": false,
   "poll_delta": 1500,
   "running": true,
->>>>>>> Stashed changes
   "logger": true,
   "receiveOnly": false,
   "groups": [
@@ -2203,11 +1259,7 @@
   "request_config": {
    "source": 1,
    "destination": 13,
-<<<<<<< Updated upstream
-   "destination_service": 11,
-=======
    "destination_service": 12,
->>>>>>> Stashed changes
    "command_id": 1,
    "command_arg": 0
   },
@@ -2253,14 +1305,6 @@
     ]
    }
   ],
-<<<<<<< Updated upstream
-  "rxCounter": 0,
-  "txCounter": 0,
-  "connected": true,
-  "lastReceivedPacket": "",
-  "rxBytes": 0,
-  "txBytes": 0
-=======
   "rxCounter": 17,
   "txCounter": 17,
   "connected": true,
@@ -2561,6 +1605,5 @@
   "lastReceivedPacket": "af0600557b0b0001670102020000000000",
   "rxBytes": 357,
   "txBytes": 336
->>>>>>> Stashed changes
  }
 ]
