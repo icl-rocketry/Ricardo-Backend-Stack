@@ -1,0 +1,1807 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 15,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> OX BOTTLE 1 PRESSURE\n      \n     </td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 4,
+        "y": 0
+      },
+      "id": 25,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 40px;\"> N2 Bottle PRESSURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 9,
+        "y": 0
+      },
+      "id": 18,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 40px;\"> N2 TANK PRESSURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 14,
+        "y": 0
+      },
+      "id": 16,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 40px;\"> OX TANK PRESSURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 19,
+        "y": 0
+      },
+      "id": 14,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 40px;\">FUEL TANK PRESSURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 0,
+        "y": 4
+      },
+      "id": 30,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch1sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_sen0_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Bottle 1 Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 4,
+        "y": 4
+      },
+      "id": 26,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch0sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_sen1_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Bottle Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 9,
+        "y": 4
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": true,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.N2TankP",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/emb_greg1_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 14,
+        "y": 4
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": true,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.OxTankP",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/emb_greg0_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Tank Pressure (Bar A)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 19,
+        "y": 4
+      },
+      "id": 29,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.FuelTankP",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/emb_greg1_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Tank Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 9
+      },
+      "id": 33,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> OX HOSE PRESSURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 4,
+        "y": 9
+      },
+      "id": 36,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> N2 HOSE PRESSURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 9
+      },
+      "id": 39,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> Rocket Mass\n      \n     </td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 14,
+        "y": 9
+      },
+      "id": 21,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> CHAMBER PRESSURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 9
+      },
+      "id": 32,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> N2 TANK PRESSURE (OX EREG)</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 12
+      },
+      "id": 34,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch2sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_sen0_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Hose Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 4,
+        "y": 12
+      },
+      "id": 35,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch3sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_sen0_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Hose Pressure ",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "masskg"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 9,
+        "y": 12
+      },
+      "id": 40,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Mass$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch1sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_sen1_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Rocket Mass (kg)",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Mass",
+            "binary": {
+              "left": "ch1sens",
+              "operator": "/",
+              "right": "9.81"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 14,
+        "y": 12
+      },
+      "id": 11,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch0sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/emb_stark_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Chamber Pressure (Bar A)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 12
+      },
+      "id": 28,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.N2TankP",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/emb_greg0_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Tank Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 18
+      },
+      "id": 37,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> OX BOTTLE 2 PRESSURE\n      \n     </td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 4,
+        "y": 18
+      },
+      "id": 22,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> FUEL INJECTOR PRESSURE </td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 18
+      },
+      "id": 31,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> OX INJECTOR PRESSURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 14,
+        "y": 18
+      },
+      "id": 23,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> Fuel INJECTOR\n          TEMPERATURE</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 18
+      },
+      "id": 43,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> Thrust</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 21
+      },
+      "id": 38,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch0sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_sen0_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Bottle 2 Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 4,
+        "y": 21
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch2sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/emb_stark_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Fuel Injector P (Bar A)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bar"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 9,
+        "y": 21
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": true,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch1sens",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/emb_stark_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Ox Injector Pressure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 14,
+        "y": 21
+      },
+      "id": 24,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.temp",
+              "language": "jsonpath",
+              "name": "OX Tank",
+              "type": "number"
+            }
+          ],
+          "hide": false,
+          "path": "/emb_stark_telem",
+          "refId": "B",
+          "withStreaming": true
+        }
+      ],
+      "title": "Temperature",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "forceN"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 21
+      },
+      "id": 44,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.ch2sens",
+              "language": "jsonpath",
+              "name": "Thrust",
+              "type": "number"
+            }
+          ],
+          "hide": false,
+          "path": "/gss_sen1_telem",
+          "refId": "B",
+          "withStreaming": true
+        }
+      ],
+      "title": "Thrust",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Thrust",
+            "binary": {
+              "left": "Thrust",
+              "operator": "*",
+              "right": "-1"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 27
+      },
+      "id": 41,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> Turbine Flow</td>\n</table>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.8",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "litre/sec"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 30
+      },
+      "id": 42,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.timestamp",
+              "language": "jsonpath",
+              "name": "",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.data.flowmeter",
+              "language": "jsonpath",
+              "name": "OX Tank",
+              "type": "number"
+            }
+          ],
+          "hide": false,
+          "path": "/emb_stark_telem",
+          "refId": "B",
+          "withStreaming": true
+        }
+      ],
+      "title": "Turbine Flow",
+      "type": "stat"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Ember Sensors",
+  "uid": "d5EHcyv4A",
+  "version": 7,
+  "weekStart": ""
+}
