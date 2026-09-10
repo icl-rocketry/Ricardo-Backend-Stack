@@ -15,7 +15,7 @@ def valve_sol_open(instance,args):
                         "destination":args['destination'],
                         "destination_service":args['destination_service'],
                         "command_id":2,
-                        "command_arg":2147483642}
+                        "command_arg":1}
 
     instance.send_command_packet(command_packet_args)
 

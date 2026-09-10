@@ -16,7 +16,7 @@ def oxvent_sol_blip(instance,args):
                         "destination":args['destination'],
                         "destination_service":args['destination_service'],
                         "command_id":2,
-                        "command_arg":10000}
+                        "command_arg":1}
 
     instance.send_command_packet(command_packet_args)
     time.sleep(args.get('duration',1))
