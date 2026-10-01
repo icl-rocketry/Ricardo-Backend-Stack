@@ -270,6 +270,104 @@
     },
     {
       "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 10,
+        "y": 0
+      },
+      "id": 156,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "transparent"
+            },
+            "image": {
+              "field": "",
+              "fixed": "img/bg/ember_patch.png",
+              "mode": "fixed"
+            },
+            "size": "contain"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [],
+          "name": "Element 1708726781751",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "canvas"
+    },
+    {
+      "datasource": {
         "type": "golioth-websocket-datasource",
         "uid": "d5EHcyv4z"
       },
@@ -1278,7 +1376,7 @@
       },
       "description": "",
       "gridPos": {
-        "h": 8,
+        "h": 4,
         "w": 4,
         "x": 10,
         "y": 9
@@ -1764,6 +1862,204 @@
         }
       ],
       "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "level"
+            },
+            "properties": [
+              {
+                "id": "custom.align",
+                "value": "center"
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "CRITICAL": {
+                        "color": "red",
+                        "index": 1
+                      },
+                      "ERROR": {
+                        "color": "yellow",
+                        "index": 3
+                      },
+                      "INFO": {
+                        "color": "green",
+                        "index": 0
+                      },
+                      "WARNING": {
+                        "color": "orange",
+                        "index": 2
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "custom.width",
+                "value": 70
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "name"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 208
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "msg"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 946
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "time"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 114
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 10,
+        "y": 13
+      },
+      "id": 157,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "time"
+          }
+        ]
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/new_event",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "Task Handler and Log Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "keepTime": false,
+            "replace": true,
+            "source": "$"
+          }
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "source": "source"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "level",
+                "name",
+                "msg",
+                "time",
+                "application",
+                "ip"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "table"
     },
     {
       "datasource": {
@@ -2361,7 +2657,7 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 3,
+        "w": 2,
         "x": 16,
         "y": 18
       },
@@ -2403,7 +2699,82 @@
           "withStreaming": true
         }
       ],
-      "title": "N2 Fill Position",
+      "title": "N2 Fill 1 Position",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 18,
+        "y": 18
+      },
+      "id": 153,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d570fe70-8207-4bea-8097-7dab5773c990"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.value",
+              "language": "jsonpath",
+              "name": "",
+              "type": "number"
+            }
+          ],
+          "path": "/gss_chad2_srv10_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 Fill 2 Position",
       "type": "stat"
     },
     {
@@ -2452,8 +2823,8 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 3,
-        "x": 19,
+        "w": 2,
+        "x": 20,
         "y": 18
       },
       "id": 97,
@@ -3022,7 +3393,7 @@
       "description": "",
       "gridPos": {
         "h": 9,
-        "w": 3,
+        "w": 2,
         "x": 16,
         "y": 22
       },
@@ -3083,7 +3454,7 @@
           }
         }
       ],
-      "title": "N2 Fill",
+      "title": "N2 Fill 1",
       "type": "speakyourcode-button-panel"
     },
     {
@@ -3094,8 +3465,80 @@
       "description": "",
       "gridPos": {
         "h": 9,
-        "w": 3,
-        "x": 19,
+        "w": 2,
+        "x": 18,
+        "y": 22
+      },
+      "id": 154,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "ARM",
+            "variant": "destructive"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10,\\\"argument\\\":60}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open Slow"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10,\\\"argument\\\":90}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Open Fast",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_move\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10,\\\"argument\\\":0}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "Close",
+            "variant": "primary"
+          },
+          {
+            "datasource": "Command Server",
+            "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":102,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
+            "text": "DISARM",
+            "variant": "destructive"
+          }
+        ],
+        "orientation": "vertical"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": true,
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "N2 Fill 2",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 9,
+        "w": 2,
+        "x": 20,
         "y": 22
       },
       "id": 108,
@@ -3236,8 +3679,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3259,8 +3701,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -3359,8 +3800,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3382,8 +3822,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -3481,8 +3920,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3504,8 +3942,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -3604,8 +4041,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3627,8 +4063,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -3728,8 +4163,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3751,8 +4185,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -3851,8 +4284,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3874,8 +4306,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -3974,8 +4405,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -3997,8 +4427,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -4013,7 +4442,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 3,
+        "w": 2,
         "x": 16,
         "y": 31
       },
@@ -4054,7 +4483,7 @@
           "withStreaming": true
         }
       ],
-      "title": "N2 Fill Status",
+      "title": "N2 1 Fill Status",
       "transformations": [
         {
           "id": "extractFields",
@@ -4097,8 +4526,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -4120,8 +4548,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -4136,8 +4563,129 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 3,
-        "x": 19,
+        "w": 2,
+        "x": 18,
+        "y": 31
+      },
+      "id": 155,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "golioth-websocket-datasource",
+            "uid": "d5EHcyv4z"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.data.component_status",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "path": "/gss_chad2_srv10_telem",
+          "refId": "A",
+          "withStreaming": true
+        }
+      ],
+      "title": "N2 2 Fill Status",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "keepTime": false,
+            "replace": false,
+            "source": "component_status"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "component_status",
+                "NOMINAL",
+                "DISARMED",
+                "ERROR"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "golioth-websocket-datasource",
+        "uid": "d5EHcyv4z"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ERROR"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 20,
         "y": 31
       },
       "id": 99,
@@ -4221,8 +4769,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "semi-dark-blue",
@@ -4244,8 +4791,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "transparent",
-                      "value": null
+                      "color": "transparent"
                     },
                     {
                       "color": "semi-dark-red",
@@ -4349,7 +4895,7 @@
             "h": 3,
             "w": 10,
             "x": 14,
-            "y": 40
+            "y": 56
           },
           "id": 54,
           "options": {
@@ -4374,7 +4920,7 @@
             "h": 10,
             "w": 4,
             "x": 14,
-            "y": 43
+            "y": 59
           },
           "id": 27,
           "options": {
@@ -4467,7 +5013,7 @@
             "h": 3,
             "w": 2,
             "x": 18,
-            "y": 43
+            "y": 59
           },
           "id": 140,
           "options": {
@@ -4542,7 +5088,7 @@
             "h": 3,
             "w": 2,
             "x": 20,
-            "y": 43
+            "y": 59
           },
           "id": 118,
           "options": {
@@ -4617,7 +5163,7 @@
             "h": 3,
             "w": 2,
             "x": 22,
-            "y": 43
+            "y": 59
           },
           "id": 58,
           "options": {
@@ -4669,7 +5215,7 @@
             "h": 7,
             "w": 2,
             "x": 18,
-            "y": 46
+            "y": 62
           },
           "id": 119,
           "options": {
@@ -4729,7 +5275,7 @@
             "h": 7,
             "w": 2,
             "x": 20,
-            "y": 46
+            "y": 62
           },
           "id": 124,
           "options": {
@@ -4794,7 +5340,7 @@
             "h": 7,
             "w": 2,
             "x": 22,
-            "y": 46
+            "y": 62
           },
           "id": 117,
           "options": {
@@ -4881,7 +5427,7 @@
             "h": 8,
             "w": 4,
             "x": 14,
-            "y": 53
+            "y": 69
           },
           "id": 136,
           "options": {
@@ -4968,7 +5514,7 @@
             "h": 8,
             "w": 2,
             "x": 18,
-            "y": 53
+            "y": 69
           },
           "id": 138,
           "options": {
@@ -5079,7 +5625,7 @@
             "h": 8,
             "w": 2,
             "x": 20,
-            "y": 53
+            "y": 69
           },
           "id": 121,
           "options": {
@@ -5201,7 +5747,7 @@
             "h": 8,
             "w": 2,
             "x": 22,
-            "y": 53
+            "y": 69
           },
           "id": 120,
           "options": {
@@ -5288,8 +5834,8 @@
       {
         "current": {
           "selected": false,
-          "text": "1",
-          "value": "1"
+          "text": "110",
+          "value": "110"
         },
         "hide": 0,
         "name": "press_angl_ox",
@@ -5300,7 +5846,7 @@
             "value": "1"
           }
         ],
-        "query": "1",
+        "query": "110",
         "skipUrlSync": false,
         "type": "textbox"
       },
@@ -5321,8 +5867,8 @@
       {
         "current": {
           "selected": false,
-          "text": "2",
-          "value": "2"
+          "text": "",
+          "value": ""
         },
         "hide": 0,
         "name": "press_angl_fuel",
@@ -5333,21 +5879,20 @@
             "value": "2"
           }
         ],
-        "query": "2",
+        "query": "",
         "skipUrlSync": false,
         "type": "textbox"
       }
     ]
   },
   "time": {
-    "from": "2026-09-04T13:28:26.830Z",
-    "to": "2026-09-04T13:30:26.830Z"
+    "from": "2026-09-04T13:27:26.830Z",
+    "to": "2026-09-04T13:31:26.830Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Ember Propulsion Command",
   "uid": "f9d50f7d-c200-48cd-86be-ce85af30ea88",
-  "version": 17,
+  "version": 28,
   "weekStart": ""
 }
-
