@@ -35,7 +35,7 @@ services:
       - 3000:3000
     volumes:
       - ./volumes/grafana/grafana.db:/var/lib/grafana/grafana.db
-      - ./volumes/grafana/img:/usr/share/grafana/public/img/bg
+      - ./volumes/grafana/img:/usr/share/grafana/public/img/bg/
       - ./volumes/grafana/provisioning/dashboard-configs:/etc/grafana/provisioning/dashboards
       - ./volumes/grafana/dashboards/:/var/lib/grafana/dashboards
     restart: unless-stopped
