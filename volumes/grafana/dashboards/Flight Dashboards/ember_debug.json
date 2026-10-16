@@ -4,24 +4,23 @@
   "metadata": {
     "name": "bdyshfnvf4rnkf",
     "namespace": "default",
-    "uid": "wg9XPBI3UNTcvr8K10I5T79vfwsADF8Ces1kRXqGLDkX",
-    "resourceVersion": "1792157418521002",
-    "generation": 10,
-    "creationTimestamp": "2025-10-13T01:25:05Z",
+    "uid": "e6e65dd1-85c8-4308-ae1b-7ec30f5277b7",
+    "resourceVersion": "1792159125543004",
+    "generation": 2,
+    "creationTimestamp": "2026-10-16T13:32:15Z",
     "labels": {
-      "grafana.app/deprecatedInternalID": "82"
+      "grafana.app/deprecatedInternalID": "3403205904642048"
     },
     "annotations": {
-      "grafana.app/createdBy": "provisioning:",
+      "grafana.app/createdBy": "access-policy:service",
       "grafana.app/folder": "ce4xx5309dk3ka",
       "grafana.app/managedBy": "classic-file-provisioning",
       "grafana.app/managerId": "Ricardo",
-      "grafana.app/saved-from-ui": "Grafana v13.2.3 (90ffed056f)",
-      "grafana.app/sourceChecksum": "7299e3713c34df7c3d90291f6fb0fca9",
-      "grafana.app/sourcePath": "Flight Dashboards/pluto_debug.json",
-      "grafana.app/sourceTimestamp": "1760395226",
-      "grafana.app/updatedBy": "provisioning:",
-      "grafana.app/updatedTimestamp": "2025-10-13T22:40:31Z",
+      "grafana.app/sourceChecksum": "a9ea7713290e019fc75bd608faeee399",
+      "grafana.app/sourcePath": "/var/lib/grafana/dashboards/Flight Dashboards/ember_debug.json",
+      "grafana.app/sourceTimestamp": "1792159110000",
+      "grafana.app/updatedBy": "access-policy:service",
+      "grafana.app/updatedTimestamp": "2026-10-16T13:58:45Z",
       "grafana.app/folderTitle": "Flight Dashboards",
       "grafana.app/folderUrl": "/dashboards/f/ce4xx5309dk3ka/flight-dashboards"
     }
@@ -1100,7 +1099,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_ereg_telem",
+                        "path": "/emb_ereg1_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1206,7 +1205,7 @@
                   "showLineNumbers": false,
                   "showMiniMap": false
                 },
-                "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 20px;\"> EREG </td>\n</table>",
+                "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 20px;\"> FUEL EREG 1</td>\n</table>",
                 "mode": "html"
               }
             },
@@ -1382,31 +1381,31 @@
                 "buttons": [
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "ARM",
                     "variant": "destructive"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Open",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Close",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_sol_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/oxvent_sol_blip\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Blip Vent",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":13}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "DISARM",
                     "variant": "destructive"
                   }
@@ -1517,7 +1516,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_goofy_telem",
+                        "path": "/emb_stark_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1829,7 +1828,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_linecutter_0_telem",
+                        "path": "/emb_linecutter_0_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1972,7 +1971,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_linecutter_0_telem",
+                        "path": "/emb_linecutter_1_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2017,7 +2016,7 @@
           "description": "",
           "id": 136,
           "links": [],
-          "title": "Crosshair 0",
+          "title": "Crosshair 1",
           "vizConfig": {
             "group": "stat",
             "kind": "VizConfig",
@@ -2090,6 +2089,182 @@
           }
         }
       },
+      "panel-137": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 137,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "text",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              },
+              "options": {
+                "code": {
+                  "language": "plaintext",
+                  "showLineNumbers": false,
+                  "showMiniMap": false
+                },
+                "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 20px;\"> OX EREG 0</td>\n</table>",
+                "mode": "html"
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-138": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 138,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "text",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              },
+              "options": {
+                "code": {
+                  "language": "plaintext",
+                  "showLineNumbers": false,
+                  "showMiniMap": false
+                },
+                "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 20px;\"> GRIDFINS </td>\n</table>",
+                "mode": "html"
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-139": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "d5EHcyv4z"
+                      },
+                      "group": "golioth-websocket-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "fields": [
+                          {
+                            "jsonPath": "$.data.controller_errors",
+                            "language": "jsonpath",
+                            "name": ""
+                          }
+                        ],
+                        "path": "/emb_ereg0_telem",
+                        "withStreaming": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "extractFields",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "format": "auto",
+                      "keepTime": false,
+                      "replace": true,
+                      "source": "controller_errors"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 139,
+          "links": [],
+          "title": "EREG Status",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "background_solid",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "name",
+                "wideLayout": true
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
       "panel-15": {
         "kind": "Panel",
         "spec": {
@@ -2116,7 +2291,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_oxventsol_telem",
+                        "path": "/emb_ox_sol_vent_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2222,7 +2397,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_oxventsol_telem",
+                        "path": "/emb_ox_sol_vent_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2398,25 +2573,25 @@
                 "buttons": [
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":14}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "ARM",
                     "variant": "destructive"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Open",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Close",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "DISARM",
                     "variant": "destructive"
                   }
@@ -2454,7 +2629,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_n2ventsol_telem",
+                        "path": "/emb_n2_sol_vent_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2560,7 +2735,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_n2ventsol_telem",
+                        "path": "/emb_n2_sol_vent_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2736,25 +2911,25 @@
                 "buttons": [
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_arm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "ARM",
                     "variant": "destructive"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Open",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Close",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_disarm\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":14,\\\"destination_service\\\":11}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "DISARM",
                     "variant": "destructive"
                   }
@@ -2792,7 +2967,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_fuelventsol_telem",
+                        "path": "/emb_fuel_sol_vent_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2898,7 +3073,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fuelventsol_telem",
+                        "path": "/emb_fuel_sol_vent_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4114,7 +4289,7 @@
                             "type": "time"
                           }
                         ],
-                        "path": "/plt_sol_flint_telem",
+                        "path": "/emb_sol_flint_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4814,7 +4989,7 @@
                             "type": "time"
                           }
                         ],
-                        "path": "/plt_sol_flint_telem",
+                        "path": "/emb_sol_flint_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5014,7 +5189,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_pdu0_telem",
+                        "path": "/emb_pdu0_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5346,7 +5521,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_pdu1_telem",
+                        "path": "/emb_pdu1_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5460,7 +5635,7 @@
                             "type": "time"
                           }
                         ],
-                        "path": "/plt_pdu0_telem",
+                        "path": "/emb_pdu0_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5585,7 +5760,7 @@
                             "type": "time"
                           }
                         ],
-                        "path": "/plt_pdu0_telem",
+                        "path": "/emb_pdu0_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5710,7 +5885,7 @@
                             "type": "time"
                           }
                         ],
-                        "path": "/plt_pdu0_telem",
+                        "path": "/emb_pdu0_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5835,7 +6010,7 @@
                             "type": "time"
                           }
                         ],
-                        "path": "/plt_pdu1_telem",
+                        "path": "/emb_pdu1_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5960,7 +6135,7 @@
                             "type": "time"
                           }
                         ],
-                        "path": "/plt_pdu1_telem",
+                        "path": "/emb_pdu1_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -6085,7 +6260,7 @@
                             "type": "time"
                           }
                         ],
-                        "path": "/plt_pdu1_telem",
+                        "path": "/emb_pdu1_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -6756,7 +6931,7 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-127"
+                          "name": "panel-137"
                         },
                         "height": 2,
                         "width": 4,
@@ -6834,7 +7009,7 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-132"
+                          "name": "panel-139"
                         },
                         "height": 9,
                         "width": 4,
@@ -6866,6 +7041,45 @@
                         "width": 2,
                         "x": 22,
                         "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-127"
+                        },
+                        "height": 2,
+                        "width": 4,
+                        "x": 0,
+                        "y": 11
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-138"
+                        },
+                        "height": 2,
+                        "width": 4,
+                        "x": 4,
+                        "y": 11
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-132"
+                        },
+                        "height": 9,
+                        "width": 4,
+                        "x": 0,
+                        "y": 13
                       }
                     }
                   ]

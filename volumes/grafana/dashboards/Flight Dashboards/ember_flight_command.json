@@ -4,23 +4,23 @@
   "metadata": {
     "name": "455BTsDVz",
     "namespace": "default",
-    "uid": "4RWbwEmLYG7hA3CYLWYxl386Su4ZgaMhCeGHAAea60MX",
-    "resourceVersion": "1792157536138992",
-    "generation": 42,
-    "creationTimestamp": "2025-10-13T01:24:35Z",
+    "uid": "e52bcf60-5491-4d8e-a584-5b7912b035c4",
+    "resourceVersion": "1792159643360996",
+    "generation": 2,
+    "creationTimestamp": "2026-10-16T13:34:54Z",
     "labels": {
-      "grafana.app/deprecatedInternalID": "81"
+      "grafana.app/deprecatedInternalID": "3403872949362688"
     },
     "annotations": {
-      "grafana.app/createdBy": "provisioning:",
+      "grafana.app/createdBy": "access-policy:service",
       "grafana.app/folder": "ce4xx5309dk3ka",
       "grafana.app/managedBy": "classic-file-provisioning",
       "grafana.app/managerId": "Ricardo",
-      "grafana.app/sourceChecksum": "d653de43c87692093f397ffb464b474c",
+      "grafana.app/sourceChecksum": "6f78f86e3bf38edcc8b95d2893e5d87c",
       "grafana.app/sourcePath": "/var/lib/grafana/dashboards/Flight Dashboards/ember_flight_command.json",
-      "grafana.app/sourceTimestamp": "1791319430000",
+      "grafana.app/sourceTimestamp": "1792159631000",
       "grafana.app/updatedBy": "access-policy:service",
-      "grafana.app/updatedTimestamp": "2026-10-16T13:32:16Z",
+      "grafana.app/updatedTimestamp": "2026-10-16T14:07:23Z",
       "grafana.app/folderTitle": "Flight Dashboards",
       "grafana.app/folderUrl": "/dashboards/f/ce4xx5309dk3ka/flight-dashboards"
     }
@@ -86,7 +86,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -225,7 +225,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -352,7 +352,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -438,7 +438,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -561,7 +561,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -690,7 +690,7 @@
                             "name": "pd"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -802,7 +802,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -931,7 +931,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1171,7 +1171,7 @@
               "options": {
                 "buttons": [
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "Command Server",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_reset_localisation\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Reset localization",
                     "variant": "secondary"
@@ -1261,7 +1261,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1506,7 +1506,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1603,7 +1603,7 @@
                             "name": "Longitude"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1701,7 +1701,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1842,7 +1842,7 @@
                             "name": "D"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1950,7 +1950,7 @@
                             "name": "D"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2042,7 +2042,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2165,7 +2165,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2288,7 +2288,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2417,7 +2417,7 @@
                             "name": "pd"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2545,7 +2545,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2790,7 +2790,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -2922,7 +2922,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -3080,44 +3080,44 @@
               "options": {
                 "buttons": [
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_reset_localisation\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Reset localization",
                     "variant": "secondary"
                   },
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_reset_orientation\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}\n",
                     "text": "Reset orientation",
                     "variant": "secondary"
                   },
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_enter_debug\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Enter Debug"
                   },
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_enter_preflight\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Enter Preflight"
                   },
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_enter_launch\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Enter Launch"
                   },
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_enter_flight\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Enter Flight"
                   },
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_enter_recovery\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Enter Recovery"
                   },
                   {
-                    "datasource": "Command-Server-Wireless",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_exit_debug\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Exit Debug"
                   }
@@ -3159,7 +3159,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -3192,7 +3192,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -3474,7 +3474,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -3566,7 +3566,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -3663,7 +3663,7 @@
                             "name": "Longitude"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -3767,7 +3767,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -3895,7 +3895,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4025,7 +4025,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4058,7 +4058,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4347,7 +4347,7 @@
                             "name": "D"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4455,7 +4455,7 @@
                             "name": "D"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4563,7 +4563,7 @@
                             "name": "D"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4867,7 +4867,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5277,22 +5277,22 @@
               "options": {
                 "buttons": [
                   {
-                    "datasource": "Command Server",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/camera_poweron\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Cameras ON"
                   },
                   {
-                    "datasource": "Command Server",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_set_home\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Set Home"
                   },
                   {
-                    "datasource": "Command Server",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_go_for_launch\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "GO Launch"
                   },
                   {
-                    "datasource": "Command Server",
+                    "datasource": "commandserver-wireless",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pickle_abort_launch\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"argument\\\":2}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "ABORT Launch"
                   }
@@ -5345,7 +5345,7 @@
                             "name": "D"
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -5453,7 +5453,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/plt_fc_telem",
+                        "path": "/emb_fc_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
