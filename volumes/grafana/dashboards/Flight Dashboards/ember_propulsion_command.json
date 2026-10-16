@@ -5,8 +5,8 @@
     "name": "f9d50f7d-c200-48cd-86be-ce85af30ea88",
     "namespace": "default",
     "uid": "934e16ea-70dc-430c-9dee-ba0c20d3b307",
-    "resourceVersion": "1791390995130989",
-    "generation": 2,
+    "resourceVersion": "1792154932242997",
+    "generation": 4,
     "creationTimestamp": "2026-10-06T20:30:07Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "4388083511967744"
@@ -16,11 +16,11 @@
       "grafana.app/folder": "ce4xx5309dk3ka",
       "grafana.app/managedBy": "classic-file-provisioning",
       "grafana.app/managerId": "Ricardo",
-      "grafana.app/sourceChecksum": "8d6bd89125d0f09092bce4cbb45834bb",
+      "grafana.app/sourceChecksum": "a42387373713b2563dc40a7c73897712",
       "grafana.app/sourcePath": "/var/lib/grafana/dashboards/Flight Dashboards/ember_propulsion_command.json",
-      "grafana.app/sourceTimestamp": "1791390951000",
+      "grafana.app/sourceTimestamp": "1792154912000",
       "grafana.app/updatedBy": "access-policy:service",
-      "grafana.app/updatedTimestamp": "2026-10-07T16:36:34Z",
+      "grafana.app/updatedTimestamp": "2026-10-16T12:48:52Z",
       "grafana.app/folderTitle": "Flight Dashboards",
       "grafana.app/folderUrl": "/dashboards/f/ce4xx5309dk3ka/flight-dashboards"
     }
@@ -1159,7 +1159,7 @@
                 "orientation": "vertical"
               }
             },
-            "version": ""
+            "version": "0.3.2"
           }
         }
       },
@@ -1219,7 +1219,8 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "green"
+                        "color": "green",
+                        "value": 0
                       },
                       {
                         "color": "red",
@@ -1248,7 +1249,7 @@
                 "wideLayout": true
               }
             },
-            "version": "10.4.8"
+            "version": "13.2.3"
           }
         }
       },
@@ -1329,7 +1330,7 @@
                 "orientation": "vertical"
               }
             },
-            "version": ""
+            "version": "0.3.2"
           }
         }
       },
@@ -1418,7 +1419,8 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "transparent"
+                        "color": "transparent",
+                        "value": 0
                       },
                       {
                         "color": "semi-dark-blue",
@@ -1440,7 +1442,8 @@
                           "mode": "absolute",
                           "steps": [
                             {
-                              "color": "transparent"
+                              "color": "transparent",
+                              "value": 0
                             },
                             {
                               "color": "semi-dark-red",
@@ -1471,7 +1474,7 @@
                 "wideLayout": true
               }
             },
-            "version": "10.4.8"
+            "version": "13.2.3"
           }
         }
       },
@@ -1560,7 +1563,8 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "transparent"
+                        "color": "transparent",
+                        "value": 0
                       },
                       {
                         "color": "semi-dark-blue",
@@ -1582,7 +1586,8 @@
                           "mode": "absolute",
                           "steps": [
                             {
-                              "color": "transparent"
+                              "color": "transparent",
+                              "value": 0
                             },
                             {
                               "color": "semi-dark-red",
@@ -1613,7 +1618,7 @@
                 "wideLayout": true
               }
             },
-            "version": "10.4.8"
+            "version": "13.2.3"
           }
         }
       },
@@ -1699,7 +1704,7 @@
                 "orientation": "vertical"
               }
             },
-            "version": ""
+            "version": "0.3.2"
           }
         }
       },
@@ -1978,7 +1983,8 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "transparent"
+                        "color": "transparent",
+                        "value": 0
                       },
                       {
                         "color": "red",
@@ -2007,7 +2013,7 @@
                 "wideLayout": true
               }
             },
-            "version": "10.4.8"
+            "version": "13.2.3"
           }
         }
       },
@@ -2085,7 +2091,8 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "transparent"
+                        "color": "transparent",
+                        "value": 0
                       },
                       {
                         "color": "red",
@@ -2114,7 +2121,7 @@
                 "wideLayout": true
               }
             },
-            "version": "10.4.8"
+            "version": "13.2.3"
           }
         }
       },
@@ -2174,7 +2181,8 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "green"
+                        "color": "green",
+                        "value": 0
                       },
                       {
                         "color": "red",
@@ -2203,7 +2211,7 @@
                 "wideLayout": true
               }
             },
-            "version": "10.4.8"
+            "version": "13.2.3"
           }
         }
       },
@@ -3232,7 +3240,7 @@
                             "type": "number"
                           }
                         ],
-                        "path": "/emb_pdu1_telem",
+                        "path": "/emb_pdu0_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -4436,13 +4444,13 @@
                   {
                     "datasource": "Command Server",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":103,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
-                    "text": "Open",
+                    "text": "Disconnect",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":103,\\\"destination_service\\\":12}\",\n        \"method\": \"POST\"\n}\n}",
-                    "text": "Close",
+                    "text": "Connect",
                     "variant": "primary"
                   },
                   {
@@ -4523,13 +4531,13 @@
                   {
                     "datasource": "Command Server",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_open\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":103,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
-                    "text": "Open",
+                    "text": "Disconnect",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
                     "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/valve_sol_close\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":103,\\\"destination_service\\\":10}\",\n        \"method\": \"POST\"\n}\n}",
-                    "text": "Close",
+                    "text": "Connect",
                     "variant": "primary"
                   },
                   {
@@ -4720,6 +4728,414 @@
           }
         }
       },
+      "panel-166": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "d5EHcyv4z"
+                      },
+                      "group": "golioth-websocket-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "fields": [
+                          {
+                            "jsonPath": "$.data.state",
+                            "language": "jsonpath",
+                            "name": ""
+                          }
+                        ],
+                        "path": "/emb_pdu1_telem",
+                        "withStreaming": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "extractFields",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "format": "auto",
+                      "replace": true,
+                      "source": "state"
+                    }
+                  }
+                },
+                {
+                  "group": "organize",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {}
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 166,
+          "links": [],
+          "title": "PDU1 State",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "transparent",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "background_solid",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "horizontal",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "name",
+                "wideLayout": true
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-167": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": true,
+                    "query": {
+                      "datasource": {
+                        "name": "aeb8453b-c683-4f8a-9177-b5b5cb73f850"
+                      },
+                      "group": "yesoreyeram-infinity-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "columns": [],
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "root_selector": "",
+                        "source": "url",
+                        "type": "json",
+                        "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET"
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 167,
+          "links": [],
+          "title": "PDU1",
+          "vizConfig": {
+            "group": "speakyourcode-button-panel",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              },
+              "options": {
+                "buttons": [
+                  {
+                    "datasource": "Command Server",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+                    "text": "Restart Logic",
+                    "variant": "primary"
+                  },
+                  {
+                    "datasource": "Command Server",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+                    "text": "GO LIVE",
+                    "variant": "destructive"
+                  },
+                  {
+                    "datasource": "Command Server",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+                    "text": "Back To Ready",
+                    "variant": "primary"
+                  }
+                ],
+                "orientation": "vertical"
+              }
+            },
+            "version": "0.3.2"
+          }
+        }
+      },
+      "panel-168": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "d5EHcyv4z"
+                      },
+                      "group": "golioth-websocket-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "fields": [
+                          {
+                            "jsonPath": "$.data.depVoltage",
+                            "language": "jsonpath",
+                            "name": "",
+                            "type": "number"
+                          }
+                        ],
+                        "path": "/emb_pdu1_telem",
+                        "withStreaming": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "calculateField",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "binary": {
+                        "left": "depVoltage",
+                        "operator": "/",
+                        "right": "1000"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": true
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 168,
+          "links": [],
+          "title": "Deployment Voltage",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 5
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-169": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "d5EHcyv4z"
+                      },
+                      "group": "golioth-websocket-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "fields": [
+                          {
+                            "jsonPath": "$.data.logicVoltage",
+                            "language": "jsonpath",
+                            "name": "",
+                            "type": "number"
+                          }
+                        ],
+                        "path": "/emb_pdu0_telem",
+                        "withStreaming": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "calculateField",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "alias": "",
+                      "binary": {
+                        "left": "logicVoltage",
+                        "operator": "/",
+                        "right": "1000"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": true
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 169,
+          "links": [],
+          "title": "Logic Voltage",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
       "panel-17": {
         "kind": "Panel",
         "spec": {
@@ -4777,19 +5193,19 @@
                 "buttons": [
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_restartlogic\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20,\\\"argument\\\":5000}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Restart Logic",
                     "variant": "primary"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_golive\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "GO LIVE",
                     "variant": "destructive"
                   },
                   {
                     "datasource": "Command Server",
-                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":21}\",\n        \"method\": \"POST\"\n}\n}",
+                    "query": "{\"source\": \"url\",\n      \"type\": \"html\",\n      \"url\": \"/api/pdu_toready\",\n      \"url_options\": {\n        \"body_content_type\": \"application/json\",\n        \"body_type\": \"raw\",\n        \"data\": \"{\\\"destination\\\":20}\",\n        \"method\": \"POST\"\n}\n}",
                     "text": "Back To Ready",
                     "variant": "primary"
                   }
@@ -4889,7 +5305,7 @@
                 "orientation": "vertical"
               }
             },
-            "version": ""
+            "version": "0.3.2"
           }
         }
       },
@@ -5231,7 +5647,7 @@
                 "mode": "html"
               }
             },
-            "version": "10.4.8"
+            "version": "13.2.3"
           }
         }
       },
@@ -5525,7 +5941,8 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "green"
+                        "color": "green",
+                        "value": 0
                       },
                       {
                         "color": "red",
@@ -5554,7 +5971,7 @@
                 "wideLayout": true
               }
             },
-            "version": "10.4.8"
+            "version": "13.2.3"
           }
         }
       },
@@ -6570,7 +6987,7 @@
                             "name": ""
                           }
                         ],
-                        "path": "/emb_pdu1_telem",
+                        "path": "/emb_pdu0_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -7584,10 +8001,10 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-112"
+                          "name": "panel-166"
                         },
                         "height": 8,
-                        "width": 2,
+                        "width": 4,
                         "x": 14,
                         "y": 0
                       }
@@ -7597,23 +8014,10 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-57"
+                          "name": "panel-167"
                         },
-                        "height": 4,
-                        "width": 2,
-                        "x": 16,
-                        "y": 0
-                      }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": {
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-113"
-                        },
-                        "height": 4,
-                        "width": 2,
+                        "height": 8,
+                        "width": 3,
                         "x": 18,
                         "y": 0
                       }
@@ -7623,11 +8027,11 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-116"
+                          "name": "panel-168"
                         },
-                        "height": 8,
-                        "width": 2,
-                        "x": 20,
+                        "height": 4,
+                        "width": 3,
+                        "x": 21,
                         "y": 0
                       }
                     },
@@ -7636,20 +8040,7 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-111"
-                        },
-                        "height": 8,
-                        "width": 2,
-                        "x": 22,
-                        "y": 0
-                      }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": {
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-152"
+                          "name": "panel-169"
                         },
                         "height": 4,
                         "width": 3,
@@ -7662,24 +8053,11 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-114"
+                          "name": "panel-152"
                         },
                         "height": 4,
-                        "width": 2,
-                        "x": 16,
-                        "y": 4
-                      }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": {
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-115"
-                        },
-                        "height": 4,
-                        "width": 2,
-                        "x": 18,
+                        "width": 3,
+                        "x": 21,
                         "y": 4
                       }
                     }
@@ -8265,7 +8643,7 @@
                           "name": "panel-162"
                         },
                         "height": 9,
-                        "width": 2,
+                        "width": 4,
                         "x": 0,
                         "y": 21
                       }
@@ -8278,8 +8656,8 @@
                           "name": "panel-163"
                         },
                         "height": 9,
-                        "width": 2,
-                        "x": 2,
+                        "width": 4,
+                        "x": 4,
                         "y": 21
                       }
                     },
@@ -8291,7 +8669,7 @@
                           "name": "panel-160"
                         },
                         "height": 8,
-                        "width": 2,
+                        "width": 4,
                         "x": 0,
                         "y": 30
                       }
@@ -8304,8 +8682,8 @@
                           "name": "panel-161"
                         },
                         "height": 8,
-                        "width": 2,
-                        "x": 2,
+                        "width": 4,
+                        "x": 4,
                         "y": 30
                       }
                     }
@@ -8318,11 +8696,63 @@
           {
             "kind": "RowsLayoutRow",
             "spec": {
-              "collapse": true,
+              "collapse": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
                   "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-116"
+                        },
+                        "height": 8,
+                        "width": 2,
+                        "x": 0,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-112"
+                        },
+                        "height": 8,
+                        "width": 2,
+                        "x": 2,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-113"
+                        },
+                        "height": 4,
+                        "width": 2,
+                        "x": 4,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-57"
+                        },
+                        "height": 4,
+                        "width": 2,
+                        "x": 6,
+                        "y": 0
+                      }
+                    },
                     {
                       "kind": "GridLayoutItem",
                       "spec": {
@@ -8393,6 +8823,32 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
+                          "name": "panel-114"
+                        },
+                        "height": 4,
+                        "width": 2,
+                        "x": 4,
+                        "y": 4
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-115"
+                        },
+                        "height": 4,
+                        "width": 2,
+                        "x": 6,
+                        "y": 4
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
                           "name": "panel-119"
                         },
                         "height": 7,
@@ -8425,6 +8881,19 @@
                         "width": 2,
                         "x": 22,
                         "y": 6
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-111"
+                        },
+                        "height": 8,
+                        "width": 2,
+                        "x": 0,
+                        "y": 8
                       }
                     },
                     {
