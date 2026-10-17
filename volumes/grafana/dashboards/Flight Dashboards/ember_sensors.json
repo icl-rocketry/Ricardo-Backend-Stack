@@ -5,8 +5,8 @@
     "name": "d5EHcyv4A",
     "namespace": "default",
     "uid": "kTfjPJCEwOR3QKK0kwXL4GQHw8XbJgtYSjtTVHcyhKgX",
-    "resourceVersion": "1791119598624985",
-    "generation": 120,
+    "resourceVersion": "1792202942291017",
+    "generation": 162,
     "creationTimestamp": "2026-09-08T21:25:40Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "86"
@@ -16,11 +16,11 @@
       "grafana.app/folder": "ce4xx5309dk3ka",
       "grafana.app/managedBy": "classic-file-provisioning",
       "grafana.app/managerId": "Ricardo",
-      "grafana.app/sourceChecksum": "a6923c18570fce4ed294e0a12cab28c5",
+      "grafana.app/sourceChecksum": "e14b780cbe20bcf7e8169742d5af6808",
       "grafana.app/sourcePath": "/var/lib/grafana/dashboards/Flight Dashboards/ember_sensors.json",
-      "grafana.app/sourceTimestamp": "1791119583000",
+      "grafana.app/sourceTimestamp": "1792202930000",
       "grafana.app/updatedBy": "access-policy:service",
-      "grafana.app/updatedTimestamp": "2026-10-04T13:13:18Z",
+      "grafana.app/updatedTimestamp": "2026-10-17T02:09:02Z",
       "grafana.app/folderTitle": "Flight Dashboards",
       "grafana.app/folderUrl": "/dashboards/f/ce4xx5309dk3ka/flight-dashboards"
     }
@@ -768,13 +768,13 @@
                             "type": "time"
                           },
                           {
-                            "jsonPath": "$.data.ch0sens",
+                            "jsonPath": "$.data.ch3sens",
                             "language": "jsonpath",
                             "name": "",
                             "type": "number"
                           }
                         ],
-                        "path": "/gss_sen1_telem",
+                        "path": "/gss_sen0_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1374,13 +1374,13 @@
                             "type": "time"
                           },
                           {
-                            "jsonPath": "$.data.ch3sens",
+                            "jsonPath": "$.data.ch0sens",
                             "language": "jsonpath",
                             "name": "",
                             "type": "number"
                           }
                         ],
-                        "path": "/gss_sen0_telem",
+                        "path": "/gss_sen1_telem",
                         "withStreaming": true
                       },
                       "version": "v0"
@@ -1683,7 +1683,7 @@
                             "type": "time"
                           },
                           {
-                            "jsonPath": "$.data.ch1sens",
+                            "jsonPath": "$.data.ch2sens",
                             "language": "jsonpath",
                             "name": "",
                             "type": "number"
@@ -1699,27 +1699,7 @@
                 }
               ],
               "queryOptions": {},
-              "transformations": [
-                {
-                  "group": "calculateField",
-                  "kind": "Transformation",
-                  "spec": {
-                    "options": {
-                      "alias": "Mass",
-                      "binary": {
-                        "left": "ch1sens",
-                        "operator": "/",
-                        "right": "9.81"
-                      },
-                      "mode": "binary",
-                      "reduce": {
-                        "reducer": "sum"
-                      },
-                      "replaceFields": true
-                    }
-                  }
-                }
-              ]
+              "transformations": []
             }
           },
           "description": "",
@@ -1733,6 +1713,7 @@
               "fieldConfig": {
                 "defaults": {
                   "color": {
+                    "fixedColor": "#ad46ff",
                     "mode": "thresholds"
                   },
                   "decimals": 1,
@@ -1755,15 +1736,15 @@
               },
               "options": {
                 "colorMode": "value",
-                "graphMode": "area",
-                "justifyMode": "center",
+                "graphMode": "none",
+                "justifyMode": "auto",
                 "orientation": "auto",
                 "percentChangeColorMode": "standard",
                 "reduceOptions": {
                   "calcs": [
                     "lastNotNull"
                   ],
-                  "fields": "/^Mass$/",
+                  "fields": "",
                   "values": false
                 },
                 "showPercentChange": false,
@@ -1912,142 +1893,6 @@
           }
         }
       },
-      "panel-43": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "",
-          "id": 43,
-          "links": [],
-          "title": "",
-          "vizConfig": {
-            "group": "text",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {},
-                "overrides": []
-              },
-              "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
-                },
-                "content": "<!-- <p style=\"text-align: center; font-size: 56px;\">THANOS</p> -->\n<table style=\"width:100%; height:100%;border:0px solid black;\">\n     <td style=\"text-align: center; vertical-align: middle; border:0px solid black; font-size: 30px;\"> Thrust</td>\n</table>",
-                "mode": "html"
-              }
-            },
-            "version": "13.2.3"
-          }
-        }
-      },
-      "panel-44": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "d5EHcyv4z"
-                      },
-                      "group": "golioth-websocket-datasource",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "fields": [
-                          {
-                            "jsonPath": "$.timestamp",
-                            "language": "jsonpath",
-                            "name": "",
-                            "type": "time"
-                          },
-                          {
-                            "jsonPath": "$.data.ch2sens",
-                            "language": "jsonpath",
-                            "name": "OX Tank",
-                            "type": "number"
-                          }
-                        ],
-                        "path": "/gss_sen1_telem",
-                        "withStreaming": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "B"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "",
-          "id": 44,
-          "links": [],
-          "title": "Thrust",
-          "vizConfig": {
-            "group": "stat",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "decimals": 2,
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "red",
-                        "value": 80
-                      }
-                    ]
-                  },
-                  "unit": "forcekN"
-                },
-                "overrides": []
-              },
-              "options": {
-                "colorMode": "value",
-                "graphMode": "area",
-                "justifyMode": "center",
-                "orientation": "auto",
-                "percentChangeColorMode": "standard",
-                "reduceOptions": {
-                  "calcs": [
-                    "lastNotNull"
-                  ],
-                  "fields": "",
-                  "values": false
-                },
-                "showPercentChange": false,
-                "text": {},
-                "textMode": "auto",
-                "wideLayout": true
-              }
-            },
-            "version": "13.2.3"
-          }
-        }
-      },
       "panel-45": {
         "kind": "Panel",
         "spec": {
@@ -2111,7 +1956,7 @@
                             "type": "time"
                           },
                           {
-                            "jsonPath": "$.data.ch0sens",
+                            "jsonPath": "$.data.ch1sens",
                             "language": "jsonpath",
                             "name": "",
                             "type": "number"
@@ -2704,19 +2549,6 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-43"
-              },
-              "height": 3,
-              "width": 5,
-              "x": 19,
-              "y": 18
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
                 "name": "panel-34"
               },
               "height": 6,
@@ -2761,19 +2593,6 @@
               "height": 6,
               "width": 5,
               "x": 14,
-              "y": 21
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-44"
-              },
-              "height": 6,
-              "width": 5,
-              "x": 19,
               "y": 21
             }
           },
